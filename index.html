@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Globe Explorer</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <canvas id="globe-canvas" aria-label="Interactive 3D world globe"></canvas>
+
+      <header class="hud">
+        <div>
+          <p class="eyebrow">3D World Map</p>
+          <h1>Global Explorer</h1>
+        </div>
+        <div class="hud-actions" aria-label="Globe controls">
+          <button class="icon-button" id="reset-view" type="button" title="Reset view">Reset</button>
+          <button class="icon-button is-active" id="auto-rotate" type="button" title="Toggle auto rotate">Auto</button>
+        </div>
+      </header>
+
+      <section class="layer-bar" aria-label="Map layers">
+        <label>
+          <input type="checkbox" data-layer="borders" checked />
+          Borders
+        </label>
+        <label>
+          <input type="checkbox" data-layer="rivers" checked />
+          Rivers
+        </label>
+        <label>
+          <input type="checkbox" data-layer="routes" checked />
+          Routes
+        </label>
+      </section>
+
+      <aside class="country-panel" aria-label="Country information">
+        <div class="panel-header">
+          <p class="eyebrow" id="panel-kicker">Country</p>
+          <h2 id="country-title">Choose a territory</h2>
+          <p class="status-line" id="status-line">Loading map data...</p>
+        </div>
+
+        <div class="stat-grid" id="quick-stats">
+          <div class="stat-card">
+            <span>ID</span>
+            <strong>-</strong>
+          </div>
+          <div class="stat-card">
+            <span>Capital</span>
+            <strong>-</strong>
+          </div>
+          <div class="stat-card">
+            <span>Continent</span>
+            <strong>-</strong>
+          </div>
+        </div>
+
+        <div class="detail-block" id="country-details">
+          <p>Select a country on the globe or from the list.</p>
+        </div>
+
+        <div class="search-block">
+          <input id="country-search" type="search" placeholder="Search country" autocomplete="off" />
+        </div>
+
+        <div class="country-list" id="country-list" aria-label="Country list"></div>
+      </aside>
+
+      <div class="coordinates" id="coordinates">Space</div>
+      <div class="map-tooltip" id="map-tooltip" hidden></div>
+    </main>
+  </body>
+</html>

@@ -27,9 +27,20 @@
           <h1>Global Explorer</h1>
         </div>
         <div class="hud-actions" aria-label="Globe controls">
+          <select class="body-select" id="body-select" title="Choose celestial body">
+            <option value="earth">Earth</option>
+            <option value="moon">Moon</option>
+            <option value="venus">Venus</option>
+            <option value="mars">Mars</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturn">Saturn</option>
+          </select>
           <button class="icon-button" id="reset-view" type="button" title="Reset view">Reset</button>
           <button class="icon-button is-active" id="auto-rotate" type="button" title="Toggle auto rotate">Auto</button>
           <button class="icon-button" id="day-night" type="button" title="Toggle day and night mode">Night</button>
+          <button class="icon-button" id="satellite-view" type="button" title="Toggle satellite style">Satellite</button>
+          <button class="icon-button" id="cinema-mode" type="button" title="Hide panels">Cinema</button>
+          <button class="icon-button" id="download-card" type="button" title="Download selected country card">Card</button>
         </div>
       </header>
 
@@ -50,6 +61,53 @@
           <input type="checkbox" data-layer="flights" checked />
           Flights
         </label>
+        <label>
+          <input type="checkbox" data-layer="seaRoutes" checked />
+          Sea
+        </label>
+        <label>
+          <input type="checkbox" data-layer="ports" checked />
+          Ports
+        </label>
+        <label>
+          <input type="checkbox" data-layer="airports" checked />
+          Airports
+        </label>
+        <label>
+          <input type="checkbox" data-layer="quakes" checked />
+          Quakes
+        </label>
+        <label>
+          <input type="checkbox" data-layer="volcanoes" checked />
+          Volcanoes
+        </label>
+        <label>
+          <input type="checkbox" data-layer="plates" />
+          Plates
+        </label>
+        <label>
+          <input type="checkbox" data-layer="climate" />
+          Climate
+        </label>
+        <label>
+          <input type="checkbox" data-layer="biomes" />
+          Biomes
+        </label>
+        <label>
+          <input type="checkbox" data-layer="measureGrid" />
+          Grid
+        </label>
+      </section>
+
+      <section class="timeline-control" id="timeline-control" aria-label="Historical year control">
+        <span>Historical year</span>
+        <input id="year-slider" type="range" min="1492" max="2026" step="1" value="2026" />
+        <strong id="year-label">2026</strong>
+      </section>
+
+      <section class="mini-map" aria-label="2D overview map">
+        <canvas id="mini-map" width="220" height="120"></canvas>
+        <span id="mini-map-label">Earth overview</span>
       </section>
 
       <aside class="country-panel" aria-label="Country information">
@@ -104,6 +162,18 @@
           <span>Capital time</span>
           <strong>-</strong>
           <p>Select a country to show the local time.</p>
+        </div>
+
+        <div class="metrics-card" id="metrics-card">
+          <span>Country signals</span>
+          <strong>Select a country</strong>
+          <p>GDP ring, internet, climate, and biome signals appear here.</p>
+        </div>
+
+        <div class="news-card" id="news-card">
+          <span>Latest news</span>
+          <strong>Choose a country</strong>
+          <p>Recent headlines will load from a public news index.</p>
         </div>
 
         <div class="detail-block" id="country-details">

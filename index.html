@@ -29,6 +29,7 @@
         <div class="hud-actions" aria-label="Globe controls">
           <button class="icon-button" id="reset-view" type="button" title="Reset view">Reset</button>
           <button class="icon-button is-active" id="auto-rotate" type="button" title="Toggle auto rotate">Auto</button>
+          <button class="icon-button" id="day-night" type="button" title="Toggle day and night mode">Night</button>
         </div>
       </header>
 
@@ -45,6 +46,10 @@
           <input type="checkbox" data-layer="routes" checked />
           Routes
         </label>
+        <label>
+          <input type="checkbox" data-layer="flights" checked />
+          Flights
+        </label>
       </section>
 
       <aside class="country-panel" aria-label="Country information">
@@ -52,6 +57,22 @@
           <p class="eyebrow" id="panel-kicker">Country</p>
           <h2 id="country-title">Choose a territory</h2>
           <p class="status-line" id="status-line">Loading map data...</p>
+        </div>
+
+        <div class="country-hero" id="country-hero" hidden>
+          <img id="country-flag" alt="" />
+          <div>
+            <span>Selected Flag</span>
+            <strong id="country-flag-label">-</strong>
+          </div>
+          <button class="favorite-button" id="favorite-toggle" type="button" aria-pressed="false">
+            Save
+          </button>
+        </div>
+
+        <div class="favorites-block" id="favorites-block" hidden>
+          <span>Favorites</span>
+          <div id="favorites-list"></div>
         </div>
 
         <div class="stat-grid" id="quick-stats">
@@ -69,18 +90,37 @@
           </div>
         </div>
 
-        <div class="detail-block" id="country-details">
-          <p>Select a country on the globe or from the list.</p>
-        </div>
-
         <div class="search-block">
           <input id="country-search" type="search" placeholder="Search country" autocomplete="off" />
+        </div>
+
+        <div class="weather-card" id="weather-card">
+          <span>Capital weather</span>
+          <strong>Choose a country</strong>
+          <p>Live weather appears here when the capital has coordinates.</p>
+        </div>
+
+        <div class="time-card" id="time-card">
+          <span>Capital time</span>
+          <strong>-</strong>
+          <p>Select a country to show the local time.</p>
+        </div>
+
+        <div class="detail-block" id="country-details">
+          <p>Select a country on the globe or from the list.</p>
         </div>
 
         <div class="country-list" id="country-list" aria-label="Country list"></div>
       </aside>
 
       <div class="coordinates" id="coordinates">Space</div>
+      <div class="terrain-legend" aria-label="Terrain color legend">
+        <span><i class="water"></i>Water</span>
+        <span><i class="forest"></i>Forest</span>
+        <span><i class="sand"></i>Sand</span>
+        <span><i class="mountain"></i>Mountains</span>
+        <span><i class="snow"></i>Snow</span>
+      </div>
       <div class="map-tooltip" id="map-tooltip" hidden></div>
     </main>
   </body>

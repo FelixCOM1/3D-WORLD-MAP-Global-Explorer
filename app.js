@@ -7,7 +7,7 @@ const RIVERS_URL =
 const REST_COUNTRIES_MAIN_URL =
   "https://restcountries.com/v3.1/all?fields=name,cca3,ccn3,capital,capitalInfo,region,subregion,continents,population,area";
 const REST_COUNTRIES_EXTRA_URL =
-  "https://restcountries.com/v3.1/all?fields=cca3,ccn3,languages,currencies,maps,flags";
+  "https://restcountries.com/v3.1/all?fields=cca2,cca3,ccn3,languages,currencies,maps,flags,tld,idd";
 
 const RADIUS = 1.75;
 const TEXTURE_WIDTH = 4096;
@@ -21,6 +21,57 @@ const REGION_COLORS = {
   Oceania: "#5fb6a5",
   Antarctic: "#cfd8df",
 };
+
+const TERRAIN_COLORS = {
+  forest: "#357f4f",
+  grass: "#72ad68",
+  sand: "#d3ad5d",
+  mountain: "#77675b",
+  snow: "#e6f0f3",
+  tundra: "#9dbb9a",
+  selected: "#9ce36d",
+  hover: "#b3dd86",
+};
+
+const DESERT_COUNTRIES = new Set([
+  "Algeria",
+  "Chad",
+  "Egypt",
+  "Libya",
+  "Mali",
+  "Mauritania",
+  "Morocco",
+  "Niger",
+  "Saudi Arabia",
+  "Sudan",
+  "Western Sahara",
+  "United Arab Emirates",
+  "Oman",
+  "Qatar",
+  "Kuwait",
+  "Yemen",
+  "Namibia",
+  "Botswana",
+  "Australia",
+  "Mongolia",
+]);
+
+const FOREST_COUNTRIES = new Set([
+  "Brazil",
+  "Colombia",
+  "DR Congo",
+  "Congo",
+  "Gabon",
+  "Indonesia",
+  "Malaysia",
+  "Papua New Guinea",
+  "Peru",
+  "Suriname",
+  "Guyana",
+  "Venezuela",
+]);
+
+const SNOW_COUNTRIES = new Set(["Antarctica", "Greenland", "Iceland"]);
 
 const NAME_FIXES = {
   "United States of America": "United States",
@@ -362,6 +413,130 @@ const ROUTE_LINES = {
   ],
 };
 
+const AIRLINE_ROUTES = {
+  type: "FeatureCollection",
+  features: [
+    greatCircleRoute("New York to London", [-74.006, 40.713], [-0.128, 51.507]),
+    greatCircleRoute("London to Dubai", [-0.128, 51.507], [55.27, 25.204]),
+    greatCircleRoute("Dubai to Singapore", [55.27, 25.204], [103.82, 1.352]),
+    greatCircleRoute("Los Angeles to Tokyo", [-118.244, 34.052], [139.65, 35.676]),
+    greatCircleRoute("Paris to Tokyo", [2.352, 48.857], [139.65, 35.676]),
+    greatCircleRoute("Sydney to Singapore", [151.209, -33.868], [103.82, 1.352]),
+    greatCircleRoute("Sao Paulo to Lisbon", [-46.633, -23.55], [-9.139, 38.722]),
+    greatCircleRoute("Johannesburg to Dubai", [28.047, -26.204], [55.27, 25.204]),
+    greatCircleRoute("Cairo to Istanbul", [31.236, 30.044], [28.978, 41.008]),
+    greatCircleRoute("Delhi to London", [77.209, 28.613], [-0.128, 51.507]),
+  ],
+};
+
+const TERRAIN_AREAS = {
+  type: "FeatureCollection",
+  features: [
+    terrainPolygon("Sahara Desert", [
+      [-17, 15],
+      [35, 15],
+      [35, 32],
+      [-17, 32],
+      [-17, 15],
+    ]),
+    terrainPolygon("Arabian Desert", [
+      [35, 12],
+      [58, 12],
+      [58, 31],
+      [35, 31],
+      [35, 12],
+    ]),
+    terrainPolygon("Gobi Desert", [
+      [84, 36],
+      [116, 36],
+      [116, 48],
+      [84, 48],
+      [84, 36],
+    ]),
+    terrainPolygon("Australian Outback", [
+      [112, -33],
+      [145, -33],
+      [145, -18],
+      [112, -18],
+      [112, -33],
+    ]),
+    terrainPolygon("Kalahari Desert", [
+      [16, -28],
+      [30, -28],
+      [30, -17],
+      [16, -17],
+      [16, -28],
+    ]),
+    terrainPolygon("Atacama Desert", [
+      [-75, -29],
+      [-67, -29],
+      [-67, -18],
+      [-75, -18],
+      [-75, -29],
+    ]),
+  ],
+};
+
+const MOUNTAIN_RANGES = {
+  type: "FeatureCollection",
+  features: [
+    terrainLine("Andes", [
+      [-75, 8],
+      [-78, -2],
+      [-76, -12],
+      [-72, -22],
+      [-70, -33],
+      [-71, -43],
+      [-69, -53],
+    ]),
+    terrainLine("Rocky Mountains", [
+      [-122, 53],
+      [-116, 47],
+      [-112, 40],
+      [-106, 35],
+      [-104, 30],
+    ]),
+    terrainLine("Himalayas", [
+      [72, 35],
+      [80, 31],
+      [88, 28],
+      [96, 29],
+    ]),
+    terrainLine("Alps", [
+      [5, 45],
+      [9, 46],
+      [13, 47],
+      [16, 46],
+    ]),
+    terrainLine("Atlas Mountains", [
+      [-10, 30],
+      [-4, 32],
+      [4, 35],
+      [10, 35],
+    ]),
+    terrainLine("Great Dividing Range", [
+      [145, -16],
+      [149, -25],
+      [150, -33],
+      [147, -38],
+    ]),
+    terrainLine("East African Rift", [
+      [36, 12],
+      [38, 3],
+      [36, -6],
+      [34, -14],
+    ]),
+  ],
+};
+
+const MOUNTAIN_LABELS = [
+  { name: "Andes", lat: -22, lon: -70 },
+  { name: "Himalayas", lat: 30, lon: 84 },
+  { name: "Alps", lat: 46, lon: 10 },
+  { name: "Rocky Mtns", lat: 43, lon: -112 },
+  { name: "Atlas", lat: 32, lon: -5 },
+];
+
 const ui = {
   canvas: document.querySelector("#globe-canvas"),
   status: document.querySelector("#status-line"),
@@ -375,6 +550,16 @@ const ui = {
   tooltip: document.querySelector("#map-tooltip"),
   reset: document.querySelector("#reset-view"),
   autoRotate: document.querySelector("#auto-rotate"),
+  dayNight: document.querySelector("#day-night"),
+  shell: document.querySelector(".app-shell"),
+  hero: document.querySelector("#country-hero"),
+  flag: document.querySelector("#country-flag"),
+  flagLabel: document.querySelector("#country-flag-label"),
+  favoriteToggle: document.querySelector("#favorite-toggle"),
+  favoritesBlock: document.querySelector("#favorites-block"),
+  favoritesList: document.querySelector("#favorites-list"),
+  weather: document.querySelector("#weather-card"),
+  capitalTime: document.querySelector("#time-card"),
   layers: document.querySelectorAll("[data-layer]"),
 };
 
@@ -384,6 +569,13 @@ let camera;
 let controls;
 let globeGroup;
 let earthMesh;
+let cloudMesh;
+let terminatorLine;
+let atmosphereMesh;
+let outerGlowMesh;
+let ambientLight;
+let keyLight;
+let rimLight;
 let earthTexture;
 let textureCanvas;
 let textureContext;
@@ -396,13 +588,23 @@ let selectedRecord = null;
 let hoverRecord = null;
 let riversGeojson = null;
 let markersGroup;
+let capitalMarkersGroup;
+let flagPinsGroup;
+let mountainLabelsGroup;
+let flightArcsGroup;
+let flightArcAnimations = [];
 let animationTarget = null;
 let lastPointerEvent = null;
+let isNightMode = false;
+let weatherRequestId = 0;
+let clockTimer = null;
+let favoriteKeys = loadFavorites();
 
 const layerState = {
   borders: true,
   rivers: true,
   routes: true,
+  flights: true,
 };
 
 init().catch((error) => {
@@ -426,6 +628,8 @@ async function init() {
   riversGeojson = riverData;
   const restData = mergeRestCountryData(restMainData, restExtraData);
   buildCountries(worldData, restData);
+  updateCapitalMarkers();
+  renderFavorites();
   buildEarthTexture();
   drawEarthTexture();
   renderCountryList();
@@ -466,14 +670,14 @@ function setupScene() {
   controls.autoRotateSpeed = 0.38;
   controls.target.set(-0.55, 0, 0);
 
-  const ambient = new THREE.AmbientLight(0xaec8ff, 1.55);
-  scene.add(ambient);
+  ambientLight = new THREE.AmbientLight(0xaec8ff, 1.55);
+  scene.add(ambientLight);
 
-  const keyLight = new THREE.DirectionalLight(0xffffff, 2.4);
+  keyLight = new THREE.DirectionalLight(0xffffff, 2.4);
   keyLight.position.set(4, 3, 6);
   scene.add(keyLight);
 
-  const rimLight = new THREE.DirectionalLight(0x75f4ff, 1.25);
+  rimLight = new THREE.DirectionalLight(0x75f4ff, 1.25);
   rimLight.position.set(-5, 1.5, -2);
   scene.add(rimLight);
 
@@ -498,34 +702,59 @@ function setupScene() {
   earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
   globeGroup.add(earthMesh);
 
-  const atmosphere = new THREE.Mesh(
+  cloudMesh = new THREE.Mesh(
+    new THREE.SphereGeometry(RADIUS * 1.028, 96, 64),
+    new THREE.MeshBasicMaterial({
+      map: makeCloudTexture(),
+      transparent: true,
+      opacity: 0.24,
+      depthWrite: false,
+      blending: THREE.NormalBlending,
+    }),
+  );
+  globeGroup.add(cloudMesh);
+
+  terminatorLine = makeTerminatorLine();
+  globeGroup.add(terminatorLine);
+
+  atmosphereMesh = new THREE.Mesh(
     new THREE.SphereGeometry(RADIUS * 1.025, 96, 64),
     new THREE.MeshBasicMaterial({
       color: 0x6ddcf1,
       transparent: true,
-      opacity: 0.14,
+      opacity: 0.22,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }),
   );
-  globeGroup.add(atmosphere);
+  globeGroup.add(atmosphereMesh);
 
-  const outerGlow = new THREE.Mesh(
-    new THREE.SphereGeometry(RADIUS * 1.035, 96, 64),
+  outerGlowMesh = new THREE.Mesh(
+    new THREE.SphereGeometry(RADIUS * 1.055, 96, 64),
     new THREE.MeshBasicMaterial({
       color: 0x9df76d,
       transparent: true,
-      opacity: 0.065,
+      opacity: 0.105,
       side: THREE.FrontSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }),
   );
-  globeGroup.add(outerGlow);
+  globeGroup.add(outerGlowMesh);
 
+  capitalMarkersGroup = new THREE.Group();
+  globeGroup.add(capitalMarkersGroup);
+  flagPinsGroup = new THREE.Group();
+  globeGroup.add(flagPinsGroup);
+  mountainLabelsGroup = new THREE.Group();
+  globeGroup.add(mountainLabelsGroup);
+  flightArcsGroup = new THREE.Group();
+  globeGroup.add(flightArcsGroup);
   markersGroup = new THREE.Group();
   globeGroup.add(markersGroup);
+  buildMountainLabels();
+  buildFlightArcs();
   scene.add(makeStars(1600));
   setGlobeLayout();
 }
@@ -538,13 +767,18 @@ function setupEvents() {
   ui.search.addEventListener("input", () => renderCountryList(ui.search.value));
   ui.reset.addEventListener("click", resetView);
   ui.autoRotate.addEventListener("click", toggleAutoRotate);
+  ui.dayNight.addEventListener("click", toggleDayNight);
+  ui.favoriteToggle.addEventListener("click", toggleFavorite);
 
   ui.layers.forEach((input) => {
     input.addEventListener("change", () => {
       layerState[input.dataset.layer] = input.checked;
       drawEarthTexture();
+      updateLayerVisibility();
     });
   });
+
+  clockTimer = window.setInterval(updateCapitalClock, 1000);
 }
 
 function buildCountries(worldData, restData) {
@@ -576,6 +810,7 @@ function makeCountryRecord(feature, index) {
   const numeric = feature.id ? String(feature.id).padStart(3, "0") : "";
   const rest = numeric ? restByNumeric.get(numeric) : null;
   const manual = MANUAL_COUNTRIES[geometryName] || null;
+  const cca2 = rest?.cca2 || "";
   const cca3 = rest?.cca3 || manual?.code || slugify(geometryName).slice(0, 3).toUpperCase();
   const continent = rest?.continents?.[0] || manual?.continent || inferContinent(rest?.region, geometryName);
   const capital = rest?.capital?.[0] || manual?.capital || "";
@@ -587,10 +822,13 @@ function makeCountryRecord(feature, index) {
         .join(", ")
     : "";
   const name = rest?.name?.common || manual?.name || geometryName;
+  const officialName = rest?.name?.official || name;
   const key = numeric || `manual-${slugify(name)}-${index}`;
   const capitalCoords = rest?.capitalInfo?.latlng
     ? { lat: rest.capitalInfo.latlng[0], lon: rest.capitalInfo.latlng[1] }
     : null;
+  const flag = rest?.flags?.svg || rest?.flags?.png || "";
+  const flagPng = cca2 ? `https://flagcdn.com/w80/${cca2.toLowerCase()}.png` : rest?.flags?.png || flag;
 
   return {
     key,
@@ -598,9 +836,11 @@ function makeCountryRecord(feature, index) {
     name,
     feature,
     numeric,
+    cca2,
     cca3,
     capital,
     capitalCoords,
+    officialName,
     continent,
     region: rest?.region || manual?.region || continent,
     subregion: rest?.subregion || manual?.subregion || "",
@@ -608,7 +848,10 @@ function makeCountryRecord(feature, index) {
     area: rest?.area || manual?.area || null,
     languages,
     currency,
-    flag: rest?.flags?.svg || rest?.flags?.png || "",
+    domain: rest?.tld?.join(", ") || "",
+    callingCode: formatCallingCode(rest?.idd),
+    flag,
+    flagPng,
     maps: rest?.maps?.googleMaps || "",
     summary: COUNTRY_FACTS[cca3] || manual?.summary || "",
     cities: manual?.cities || CITY_HIGHLIGHTS[cca3] || buildFallbackCities(capital, capitalCoords),
@@ -633,14 +876,16 @@ function drawEarthTexture() {
   const path = ctx.mapPath;
   ctx.clearRect(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
 
-  const ocean = ctx.createLinearGradient(0, 0, 0, TEXTURE_HEIGHT);
-  ocean.addColorStop(0, "#005fba");
-  ocean.addColorStop(0.46, "#0074b8");
-  ocean.addColorStop(1, "#014a7b");
+  const ocean = ctx.createLinearGradient(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
+  ocean.addColorStop(0, isNightMode ? "#032d63" : "#075ea9");
+  ocean.addColorStop(0.48, isNightMode ? "#063e69" : "#1288c4");
+  ocean.addColorStop(1, isNightMode ? "#011c32" : "#03547d");
   ctx.fillStyle = ocean;
   ctx.fillRect(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
 
+  drawOceanDepth(ctx);
   drawOceanCurrents(ctx);
+  drawWaterLevel(ctx, path);
 
   ctx.save();
   ctx.strokeStyle = "rgba(181, 230, 255, 0.13)";
@@ -657,14 +902,16 @@ function drawEarthTexture() {
     ctx.beginPath();
     path(feature);
     ctx.fillStyle = isSelected
-      ? "#8fd35f"
+      ? TERRAIN_COLORS.selected
       : isHover
-        ? "#a0d982"
-        : REGION_COLORS[record?.continent] || "#68aa72";
+        ? TERRAIN_COLORS.hover
+        : getTerrainColor(record, feature);
     ctx.globalAlpha = isSelected ? 0.98 : 0.88;
     ctx.fill();
     ctx.globalAlpha = 1;
   });
+
+  drawTerrainDetails(ctx, path);
 
   if (layerState.rivers && riversGeojson) {
     ctx.save();
@@ -688,6 +935,20 @@ function drawEarthTexture() {
     ctx.restore();
   }
 
+  if (layerState.flights) {
+    ctx.save();
+    ctx.strokeStyle = isNightMode ? "rgba(99, 239, 255, 0.9)" : "rgba(78, 241, 255, 0.74)";
+    ctx.lineWidth = 2.15;
+    ctx.shadowColor = "#56eeff";
+    ctx.shadowBlur = 10;
+    ctx.setLineDash([20, 10]);
+    ctx.beginPath();
+    path(AIRLINE_ROUTES);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+  }
+
   if (layerState.borders && countryBorders) {
     ctx.save();
     ctx.strokeStyle = "rgba(232, 255, 244, 0.44)";
@@ -696,6 +957,10 @@ function drawEarthTexture() {
     path(countryBorders);
     ctx.stroke();
     ctx.restore();
+  }
+
+  if (isNightMode) {
+    drawNightOverlay(ctx);
   }
 
   if (selectedRecord) {
@@ -715,8 +980,8 @@ function drawEarthTexture() {
 
 function drawOceanCurrents(ctx) {
   ctx.save();
-  ctx.strokeStyle = "rgba(116, 219, 255, 0.13)";
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = isNightMode ? "rgba(104, 236, 255, 0.18)" : "rgba(116, 219, 255, 0.18)";
+  ctx.lineWidth = 1.65;
   ctx.lineCap = "round";
   for (let y = 250; y < TEXTURE_HEIGHT - 210; y += 170) {
     for (let x = 90; x < TEXTURE_WIDTH - 90; x += 390) {
@@ -734,6 +999,128 @@ function drawOceanCurrents(ctx) {
     }
   }
   ctx.restore();
+}
+
+function drawOceanDepth(ctx) {
+  ctx.save();
+  for (let i = 0; i < 9; i += 1) {
+    const y = 170 + i * 210;
+    const alpha = isNightMode ? 0.055 : 0.075;
+    ctx.strokeStyle = `rgba(5, 33, 64, ${alpha})`;
+    ctx.lineWidth = 12 - i * 0.55;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x <= TEXTURE_WIDTH; x += 90) {
+      ctx.lineTo(x, y + Math.sin(x * 0.006 + i) * 28 + Math.cos(x * 0.002 + i * 2) * 18);
+    }
+    ctx.stroke();
+  }
+
+  ctx.strokeStyle = isNightMode ? "rgba(92, 202, 230, 0.14)" : "rgba(172, 242, 255, 0.2)";
+  ctx.lineWidth = 1;
+  for (let y = 90; y < TEXTURE_HEIGHT; y += 115) {
+    ctx.beginPath();
+    for (let x = 0; x <= TEXTURE_WIDTH; x += 42) {
+      const waveY = y + Math.sin(x * 0.014 + y * 0.02) * 9;
+      if (x === 0) ctx.moveTo(x, waveY);
+      else ctx.lineTo(x, waveY);
+    }
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawWaterLevel(ctx, path) {
+  ctx.save();
+  ctx.strokeStyle = isNightMode ? "rgba(90, 217, 255, 0.18)" : "rgba(128, 244, 255, 0.25)";
+  ctx.lineWidth = 8;
+  countryFeatures.forEach((feature) => {
+    ctx.beginPath();
+    path(feature);
+    ctx.stroke();
+  });
+  ctx.restore();
+}
+
+function drawTerrainDetails(ctx, path) {
+  ctx.save();
+  ctx.globalAlpha = 0.44;
+  ctx.fillStyle = isNightMode ? "#a77c38" : "#d8b35f";
+  ctx.beginPath();
+  path(TERRAIN_AREAS);
+  ctx.fill();
+  ctx.restore();
+
+  ctx.save();
+  ctx.strokeStyle = isNightMode ? "rgba(161, 134, 110, 0.9)" : "rgba(98, 78, 62, 0.72)";
+  ctx.lineWidth = 5.2;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.beginPath();
+  path(MOUNTAIN_RANGES);
+  ctx.stroke();
+  ctx.strokeStyle = "rgba(244, 250, 255, 0.68)";
+  ctx.lineWidth = 1.55;
+  ctx.beginPath();
+  path(MOUNTAIN_RANGES);
+  ctx.stroke();
+  ctx.restore();
+
+  ctx.save();
+  ctx.fillStyle = isNightMode ? "rgba(214, 235, 242, 0.72)" : "rgba(239, 249, 252, 0.62)";
+  countryFeatures.forEach((feature) => {
+    const record = recordByKey.get(feature.__recordKey);
+    if (record && (SNOW_COUNTRIES.has(record.name) || getCountryLatitude(feature) > 62)) {
+      ctx.beginPath();
+      path(feature);
+      ctx.fill();
+    }
+  });
+  ctx.restore();
+}
+
+function drawNightOverlay(ctx) {
+  ctx.save();
+  ctx.fillStyle = "rgba(0, 8, 18, 0.34)";
+  ctx.fillRect(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
+  drawNightLights(ctx);
+  ctx.restore();
+}
+
+function drawNightLights(ctx) {
+  const projection = textureContext.projection;
+  const lightCities = countryRecords
+    .flatMap((record) => record.cities.slice(0, 2))
+    .filter((item) => Number.isFinite(item.lat) && Number.isFinite(item.lon));
+
+  lightCities.forEach((item) => {
+    const [x, y] = projection([item.lon, item.lat]);
+    const glow = ctx.createRadialGradient(x, y, 0, x, y, 13);
+    glow.addColorStop(0, "rgba(255, 238, 151, 0.95)");
+    glow.addColorStop(0.42, "rgba(255, 190, 90, 0.32)");
+    glow.addColorStop(1, "rgba(255, 190, 90, 0)");
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(x, y, 13, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
+function getTerrainColor(record, feature) {
+  if (!record) return REGION_COLORS.World || TERRAIN_COLORS.grass;
+  if (SNOW_COUNTRIES.has(record.name) || getCountryLatitude(feature) > 66) return TERRAIN_COLORS.snow;
+  if (DESERT_COUNTRIES.has(record.name)) return TERRAIN_COLORS.sand;
+  if (FOREST_COUNTRIES.has(record.name)) return TERRAIN_COLORS.forest;
+  if (record.continent === "Antarctic") return TERRAIN_COLORS.snow;
+  if (record.continent === "Europe") return "#7fad6e";
+  if (record.continent === "Asia") return "#5e9f63";
+  if (record.continent === "Oceania") return "#58a889";
+  return TERRAIN_COLORS.grass;
+}
+
+function getCountryLatitude(feature) {
+  const centroid = window.d3.geoCentroid(feature);
+  return Number.isFinite(centroid[1]) ? Math.abs(centroid[1]) : 0;
 }
 
 function renderCountryList(filter = "") {
@@ -765,37 +1152,77 @@ function renderPanel(record) {
   if (!record) {
     ui.panelKicker.textContent = "Country";
     ui.title.textContent = "Choose a territory";
+    ui.hero.hidden = true;
+    ui.flag.removeAttribute("src");
+    ui.flag.alt = "";
+    ui.favoriteToggle.hidden = true;
+    ui.favoriteToggle.classList.remove("is-saved");
+    ui.favoriteToggle.setAttribute("aria-pressed", "false");
     ui.quickStats.innerHTML = makeStatCards([
-      ["ID", "-"],
-      ["Capital", "-"],
-      ["Continent", "-"],
+      ["id", "ID", "-"],
+      ["capital", "Capital", "-"],
+      ["continent", "Continent", "-"],
     ]);
-    ui.details.innerHTML = "<p>Select a country on the globe or from the list.</p>";
+    ui.details.hidden = true;
+    ui.details.innerHTML = "";
+    renderWeather(null);
+    renderCapitalTime(null);
+    renderFavorites();
     return;
   }
 
   ui.panelKicker.textContent = "Country";
   ui.title.textContent = record.name;
+  ui.details.hidden = false;
+  ui.hero.hidden = !record.flag;
+  ui.favoriteToggle.hidden = false;
+  updateFavoriteButton(record);
+  if (record.flag) {
+    ui.flag.src = record.flag;
+    ui.flag.alt = `${record.name} flag`;
+    ui.flagLabel.textContent = record.name;
+  } else {
+    ui.flag.removeAttribute("src");
+    ui.flag.alt = "";
+    ui.flagLabel.textContent = "-";
+  }
   ui.quickStats.innerHTML = makeStatCards([
-    ["ID", record.id],
-    ["Capital", record.capital || "-"],
-    ["Continent", record.continent || "-"],
+    ["id", "ID", record.id],
+    ["capital", "Capital", record.capital || "-"],
+    ["continent", "Continent", record.continent || "-"],
   ]);
 
   const summary =
     record.summary ||
     `${record.name} is in ${record.subregion || record.region || record.continent}. Population and geography details update from live country data when available.`;
   const mapLink = record.maps ? `<a href="${record.maps}" target="_blank" rel="noreferrer">Open map</a>` : "";
+  const cityCards = record.cities
+    .slice(0, 4)
+    .map(
+      (item) => `
+        <article class="city-photo-card">
+          <img src="${escapeHtml(getCityPhotoUrl(item, record))}" alt="${escapeHtml(item.name)} city photo" loading="lazy" onerror="this.closest('.city-photo-card').classList.add('is-photo-missing')" />
+          <strong>${escapeHtml(item.name)}</strong>
+          <span>${escapeHtml(item.note)}</span>
+        </article>
+      `,
+    )
+    .join("");
 
   ui.details.innerHTML = `
     <p>${escapeHtml(summary)}</p>
     <ul>
+      <li><strong>Official name:</strong> ${escapeHtml(record.officialName || record.name)}</li>
       <li><strong>Region:</strong> ${escapeHtml(joinCompact([record.region, record.subregion], " / ") || "-")}</li>
       <li><strong>Population:</strong> ${escapeHtml(formatNumber(record.population))}</li>
       <li><strong>Area:</strong> ${escapeHtml(record.area ? `${formatNumber(record.area)} km2` : "-")}</li>
-      <li><strong>Languages:</strong> ${escapeHtml(record.languages || "-")}</li>
+      <li><strong>Official language:</strong> ${escapeHtml(record.languages || "-")}</li>
       <li><strong>Currency:</strong> ${escapeHtml(record.currency || "-")} ${mapLink}</li>
+      <li><strong>Internet domain:</strong> ${escapeHtml(record.domain || "-")}</li>
+      <li><strong>Calling code:</strong> ${escapeHtml(record.callingCode || "-")}</li>
     </ul>
+    <h3>City photos</h3>
+    <div class="city-photo-grid">${cityCards}</div>
     <h3>Interesting cities</h3>
     <ul>
       ${record.cities
@@ -803,19 +1230,121 @@ function renderPanel(record) {
         .join("")}
     </ul>
   `;
+  renderWeather(record);
+  renderCapitalTime(record);
 }
 
 function makeStatCards(stats) {
   return stats
     .map(
-      ([label, value]) => `
+      ([icon, label, value]) => `
         <div class="stat-card">
-          <span>${escapeHtml(label)}</span>
+          <span><i class="stat-icon ${escapeHtml(icon)}">${escapeHtml(label.charAt(0))}</i>${escapeHtml(label)}</span>
           <strong>${escapeHtml(value || "-")}</strong>
         </div>
       `,
     )
     .join("");
+}
+
+function renderWeather(record) {
+  weatherRequestId += 1;
+  const requestId = weatherRequestId;
+  if (!record) {
+    ui.weather.innerHTML = `
+      <span>Capital weather</span>
+      <strong>Choose a country</strong>
+      <p>Live weather appears here when the capital has coordinates.</p>
+    `;
+    return;
+  }
+
+  const coords = getWeatherCoords(record);
+  if (!coords) {
+    ui.weather.innerHTML = `
+      <span>Capital weather</span>
+      <strong>No coordinates</strong>
+      <p>${escapeHtml(record.capital || record.name)} does not have capital coordinates in this dataset.</p>
+    `;
+    return;
+  }
+
+  ui.weather.innerHTML = `
+    <span>Capital weather</span>
+    <strong>Loading ${escapeHtml(record.capital || record.name)}...</strong>
+    <p>Fetching live weather from Open-Meteo.</p>
+  `;
+
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat.toFixed(4)}&longitude=${coords.lon.toFixed(4)}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto`;
+  fetchJson(url)
+    .then((data) => {
+      if (requestId !== weatherRequestId) return;
+      const current = data.current;
+      if (!current) throw new Error("Missing weather");
+      record.timeZone = data.timezone || record.timeZone || "";
+      updateCapitalClock();
+      const description = describeWeather(current.weather_code);
+      ui.weather.innerHTML = `
+        <span>Capital weather</span>
+        <strong>${escapeHtml(record.capital || record.name)}: ${Math.round(current.temperature_2m)} C</strong>
+        <p>${escapeHtml(description)}. Humidity ${Math.round(current.relative_humidity_2m)}%, wind ${Math.round(current.wind_speed_10m)} km/h.</p>
+      `;
+    })
+    .catch(() => {
+      if (requestId !== weatherRequestId) return;
+      ui.weather.innerHTML = `
+        <span>Capital weather</span>
+        <strong>Weather unavailable</strong>
+        <p>Open-Meteo did not return live weather for this capital right now.</p>
+      `;
+    });
+}
+
+function getWeatherCoords(record) {
+  if (record.capitalCoords) return record.capitalCoords;
+  const city = record.cities.find((item) => Number.isFinite(item.lat) && Number.isFinite(item.lon));
+  return city ? { lat: city.lat, lon: city.lon } : null;
+}
+
+function renderCapitalTime(record) {
+  if (!record) {
+    ui.capitalTime.innerHTML = `
+      <span>Capital time</span>
+      <strong>-</strong>
+      <p>Select a country to show the local time.</p>
+    `;
+    return;
+  }
+
+  ui.capitalTime.innerHTML = `
+    <span>Capital time</span>
+    <strong>${record.timeZone ? formatLocalTime(record.timeZone) : "Loading..."}</strong>
+    <p>${escapeHtml(record.timeZone || "Timezone is loading from the weather service.")}</p>
+  `;
+}
+
+function updateCapitalClock() {
+  if (!selectedRecord || !selectedRecord.timeZone) return;
+  ui.capitalTime.innerHTML = `
+    <span>Capital time</span>
+    <strong>${formatLocalTime(selectedRecord.timeZone)}</strong>
+    <p>${escapeHtml(selectedRecord.capital || selectedRecord.name)} local time, ${escapeHtml(selectedRecord.timeZone)}</p>
+  `;
+}
+
+function formatLocalTime(timeZone) {
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      weekday: "short",
+    }).format(new Date());
+  } catch {
+    return "-";
+  }
 }
 
 function selectCountry(record, flyTo = false) {
@@ -832,9 +1361,79 @@ function selectCountry(record, flyTo = false) {
   }
 }
 
+function toggleFavorite() {
+  if (!selectedRecord) return;
+  if (favoriteKeys.has(selectedRecord.key)) {
+    favoriteKeys.delete(selectedRecord.key);
+  } else {
+    favoriteKeys.add(selectedRecord.key);
+  }
+  saveFavorites();
+  updateFavoriteButton(selectedRecord);
+  renderFavorites();
+}
+
+function updateFavoriteButton(record) {
+  const saved = favoriteKeys.has(record.key);
+  ui.favoriteToggle.textContent = saved ? "Saved" : "Save";
+  ui.favoriteToggle.classList.toggle("is-saved", saved);
+  ui.favoriteToggle.setAttribute("aria-pressed", String(saved));
+}
+
+function renderFavorites() {
+  const records = [...favoriteKeys].map((key) => recordByKey.get(key)).filter(Boolean);
+  ui.favoritesBlock.hidden = records.length === 0;
+  ui.favoritesList.replaceChildren(
+    ...records.map((record) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "favorite-chip";
+      button.textContent = record.name;
+      button.addEventListener("click", () => selectCountry(record, true));
+      return button;
+    }),
+  );
+}
+
+function loadFavorites() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem("airi-globe-favorites") || "[]"));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFavorites() {
+  localStorage.setItem("airi-globe-favorites", JSON.stringify([...favoriteKeys]));
+}
+
+function updateCapitalMarkers() {
+  capitalMarkersGroup.clear();
+  const dotGeometry = new THREE.SphereGeometry(0.012, 10, 8);
+  const dotMaterial = new THREE.MeshBasicMaterial({
+    color: 0x67ecff,
+    transparent: true,
+    opacity: 0.78,
+  });
+
+  countryRecords.forEach((record) => {
+    const coords = getWeatherCoords(record);
+    if (!coords) return;
+    const dot = new THREE.Mesh(dotGeometry, dotMaterial);
+    dot.position.copy(latLonToVector3(coords.lat, coords.lon, RADIUS * 1.012));
+    capitalMarkersGroup.add(dot);
+  });
+}
+
 function updateCityMarkers(record) {
   markersGroup.clear();
+  flagPinsGroup.clear();
   if (!record?.cities?.length) return;
+
+  const capitalCoords = getWeatherCoords(record);
+  if (capitalCoords && record.flagPng) {
+    addFlagPin(record, capitalCoords);
+  }
 
   record.cities.slice(0, 6).forEach((item) => {
     if (!Number.isFinite(item.lat) || !Number.isFinite(item.lon)) return;
@@ -853,6 +1452,35 @@ function updateCityMarkers(record) {
     marker.add(label);
     markersGroup.add(marker);
   });
+}
+
+function addFlagPin(record, coords) {
+  const pin = new THREE.Group();
+  const base = latLonToVector3(coords.lat, coords.lon, RADIUS * 1.02);
+  const top = latLonToVector3(coords.lat, coords.lon, RADIUS * 1.24);
+  const pole = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints([base, top]),
+    new THREE.LineBasicMaterial({
+      color: 0xf6ffe0,
+      transparent: true,
+      opacity: 0.72,
+    }),
+  );
+  pin.add(pole);
+
+  const texture = new THREE.TextureLoader().load(record.flagPng);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+    }),
+  );
+  sprite.position.copy(latLonToVector3(coords.lat, coords.lon, RADIUS * 1.29));
+  sprite.scale.set(0.22, 0.14, 1);
+  pin.add(sprite);
+  flagPinsGroup.add(pin);
 }
 
 function makeLabelSprite(text) {
@@ -887,7 +1515,7 @@ function makeLabelSprite(text) {
       depthWrite: false,
     }),
   );
-  sprite.scale.set(canvas.width / 680, canvas.height / 680, 1);
+  sprite.scale.set(canvas.width / 860, canvas.height / 860, 1);
   return sprite;
 }
 
@@ -932,7 +1560,7 @@ function clearHover() {
 function onGlobeClick(event) {
   const result = pickCountry(event);
   if (result?.record) {
-    selectCountry(result.record, false);
+    selectCountry(result.record, true);
   }
 }
 
@@ -990,6 +1618,7 @@ function resetView() {
   selectedRecord = null;
   hoverRecord = null;
   updateCityMarkers(null);
+  flagPinsGroup.clear();
   renderPanel(null);
   renderCountryList(ui.search.value);
   setStatus("Globe ready");
@@ -1007,6 +1636,21 @@ function toggleAutoRotate() {
   ui.autoRotate.classList.toggle("is-active", controls.autoRotate);
 }
 
+function toggleDayNight() {
+  isNightMode = !isNightMode;
+  ui.shell.classList.toggle("is-night", isNightMode);
+  ui.dayNight.classList.toggle("is-active", isNightMode);
+  ui.dayNight.textContent = isNightMode ? "Day" : "Night";
+  ambientLight.intensity = isNightMode ? 0.62 : 1.55;
+  keyLight.intensity = isNightMode ? 1.05 : 2.4;
+  rimLight.intensity = isNightMode ? 2.15 : 1.25;
+  atmosphereMesh.material.opacity = isNightMode ? 0.34 : 0.22;
+  outerGlowMesh.material.opacity = isNightMode ? 0.18 : 0.105;
+  cloudMesh.material.opacity = isNightMode ? 0.16 : 0.24;
+  earthMesh.material.roughness = isNightMode ? 0.92 : 0.82;
+  drawEarthTexture();
+}
+
 function animate(now = performance.now()) {
   requestAnimationFrame(animate);
 
@@ -1021,6 +1665,12 @@ function animate(now = performance.now()) {
     }
   }
 
+  if (cloudMesh) {
+    cloudMesh.rotation.y += 0.00045;
+    cloudMesh.rotation.x = Math.sin(now * 0.00008) * 0.015;
+  }
+  updateTerminatorLine(now);
+  animateFlightArcs(now);
   controls.update();
   renderer.render(scene, camera);
 }
@@ -1080,6 +1730,169 @@ function makeStars(count) {
   );
 }
 
+function makeCloudTexture() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 2048;
+  canvas.height = 1024;
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < 170; i += 1) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const width = 80 + Math.random() * 220;
+    const height = 18 + Math.random() * 55;
+    const alpha = 0.08 + Math.random() * 0.18;
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, width);
+    gradient.addColorStop(0, `rgba(255,255,255,${alpha})`);
+    gradient.addColorStop(0.45, `rgba(255,255,255,${alpha * 0.55})`);
+    gradient.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = gradient;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate((Math.random() - 0.5) * 0.35);
+    ctx.scale(1, height / width);
+    ctx.beginPath();
+    ctx.arc(0, 0, width, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  return texture;
+}
+
+function makeTerminatorLine() {
+  const geometry = new THREE.BufferGeometry();
+  const material = new THREE.LineBasicMaterial({
+    color: 0xffe7a3,
+    transparent: true,
+    opacity: 0.82,
+    blending: THREE.AdditiveBlending,
+  });
+  const line = new THREE.LineLoop(geometry, material);
+  updateTerminatorLine(performance.now(), line);
+  return line;
+}
+
+function updateTerminatorLine(now, line = terminatorLine) {
+  if (!line) return;
+  const sunLon = ((now * 0.0015) % (Math.PI * 2)) - Math.PI;
+  const sunLat = THREE.MathUtils.degToRad(8 * Math.sin(now * 0.00008));
+  const sunDirection = new THREE.Vector3(
+    Math.cos(sunLat) * Math.cos(sunLon),
+    Math.sin(sunLat),
+    Math.cos(sunLat) * Math.sin(sunLon),
+  ).normalize();
+  const basisA = new THREE.Vector3(0, 1, 0).cross(sunDirection);
+  if (basisA.lengthSq() < 0.0001) basisA.set(1, 0, 0);
+  basisA.normalize();
+  const basisB = sunDirection.clone().cross(basisA).normalize();
+  const points = [];
+  for (let i = 0; i < 160; i += 1) {
+    const angle = (i / 160) * Math.PI * 2;
+    points.push(
+      basisA
+        .clone()
+        .multiplyScalar(Math.cos(angle))
+        .add(basisB.clone().multiplyScalar(Math.sin(angle)))
+        .multiplyScalar(RADIUS * 1.064),
+    );
+  }
+  line.geometry.setFromPoints(points);
+}
+
+function buildMountainLabels() {
+  mountainLabelsGroup.clear();
+  MOUNTAIN_LABELS.forEach((label) => {
+    const sprite = makeMapLabelSprite(label.name, {
+      fill: "rgba(24, 20, 16, 0.72)",
+      stroke: "rgba(255, 225, 160, 0.72)",
+      text: "#ffe6b0",
+    });
+    sprite.position.copy(latLonToVector3(label.lat, label.lon, RADIUS * 1.075));
+    mountainLabelsGroup.add(sprite);
+  });
+}
+
+function buildFlightArcs() {
+  flightArcsGroup.clear();
+  flightArcAnimations = [];
+  AIRLINE_ROUTES.features.forEach((feature, index) => {
+    const points = feature.geometry.coordinates.map(([lon, lat], pointIndex, list) => {
+      const t = pointIndex / Math.max(1, list.length - 1);
+      const lift = Math.sin(Math.PI * t) * 0.16;
+      return latLonToVector3(lat, lon, RADIUS * (1.035 + lift));
+    });
+    const curve = new THREE.CatmullRomCurve3(points);
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(96)),
+      new THREE.LineBasicMaterial({
+        color: 0x5df4ff,
+        transparent: true,
+        opacity: 0.5,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    const marker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.017, 12, 8),
+      new THREE.MeshBasicMaterial({ color: 0xfff4a8 }),
+    );
+    flightArcsGroup.add(line, marker);
+    flightArcAnimations.push({ curve, marker, offset: index / AIRLINE_ROUTES.features.length });
+  });
+  updateLayerVisibility();
+}
+
+function animateFlightArcs(now) {
+  flightArcAnimations.forEach((item) => {
+    const t = (now * 0.00009 + item.offset) % 1;
+    item.marker.position.copy(item.curve.getPointAt(t));
+  });
+}
+
+function updateLayerVisibility() {
+  if (flightArcsGroup) flightArcsGroup.visible = layerState.flights;
+}
+
+function makeMapLabelSprite(text, options = {}) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  const fontSize = 30;
+  const paddingX = 22;
+  ctx.font = `900 ${fontSize}px Segoe UI, Arial, sans-serif`;
+  const width = Math.ceil(ctx.measureText(text).width + paddingX * 2);
+  canvas.width = Math.max(150, width);
+  canvas.height = 62;
+
+  ctx.font = `900 ${fontSize}px Segoe UI, Arial, sans-serif`;
+  ctx.fillStyle = options.fill || "rgba(5, 10, 18, 0.78)";
+  roundRect(ctx, 0, 0, canvas.width, canvas.height, 18);
+  ctx.fill();
+  ctx.strokeStyle = options.stroke || "rgba(236, 255, 143, 0.75)";
+  ctx.lineWidth = 3;
+  roundRect(ctx, 1.5, 1.5, canvas.width - 3, canvas.height - 3, 16);
+  ctx.stroke();
+  ctx.fillStyle = options.text || "#f6ffe0";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, paddingX, canvas.height / 2 + 1);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+    }),
+  );
+  sprite.scale.set(canvas.width / 940, canvas.height / 940, 1);
+  return sprite;
+}
+
 function fetchJson(url) {
   return fetch(url).then((response) => {
     if (!response.ok) {
@@ -1117,6 +1930,36 @@ function route(name, coordinates) {
   };
 }
 
+function greatCircleRoute(name, from, to, steps = 64) {
+  const interpolator = window.d3 ? window.d3.geoInterpolate(from, to) : null;
+  const coordinates = interpolator
+    ? Array.from({ length: steps + 1 }, (_, index) => interpolator(index / steps))
+    : [from, to];
+  return {
+    type: "Feature",
+    properties: { name, from, to },
+    geometry: {
+      type: "LineString",
+      coordinates,
+    },
+  };
+}
+
+function terrainLine(name, coordinates) {
+  return route(name, coordinates);
+}
+
+function terrainPolygon(name, coordinates) {
+  return {
+    type: "Feature",
+    properties: { name },
+    geometry: {
+      type: "Polygon",
+      coordinates: [coordinates],
+    },
+  };
+}
+
 function buildFallbackCities(capital, coords) {
   if (!capital) {
     return [city("Main cities", Number.NaN, Number.NaN, "Explore the country's largest urban and cultural centers")];
@@ -1147,9 +1990,47 @@ function formatNumber(value) {
   return new Intl.NumberFormat("en-US").format(Math.round(value));
 }
 
+function formatCallingCode(idd) {
+  if (!idd?.root) return "";
+  const suffix = Array.isArray(idd.suffixes) && idd.suffixes.length ? idd.suffixes[0] : "";
+  return `${idd.root}${suffix}`;
+}
+
+function getCityPhotoUrl(cityRecord, countryRecord) {
+  const query = encodeURIComponent(`${cityRecord.name} ${countryRecord.name} city landmark`);
+  return `https://source.unsplash.com/featured/480x300/?${query}`;
+}
+
 function formatCoord(value, type) {
   const direction = type === "lat" ? (value >= 0 ? "N" : "S") : value >= 0 ? "E" : "W";
   return `${Math.abs(value).toFixed(2)} ${direction}`;
+}
+
+function describeWeather(code) {
+  const weather = {
+    0: "Clear sky",
+    1: "Mostly clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Rime fog",
+    51: "Light drizzle",
+    53: "Drizzle",
+    55: "Dense drizzle",
+    61: "Light rain",
+    63: "Rain",
+    65: "Heavy rain",
+    71: "Light snow",
+    73: "Snow",
+    75: "Heavy snow",
+    80: "Rain showers",
+    81: "Rain showers",
+    82: "Heavy showers",
+    95: "Thunderstorm",
+    96: "Thunderstorm with hail",
+    99: "Severe thunderstorm",
+  };
+  return weather[code] || "Changing weather";
 }
 
 function normalizeLon(lon) {

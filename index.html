@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Globe Explorer</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="icon/icon.png" />
     <script type="importmap">
       {
         "imports": {
@@ -41,6 +42,11 @@
           <button class="icon-button" id="satellite-view" type="button" title="Toggle satellite style">Satellite</button>
           <button class="icon-button" id="cinema-mode" type="button" title="Hide panels">Cinema</button>
           <button class="icon-button" id="download-card" type="button" title="Download selected country card">Card</button>
+          <button class="icon-button" id="download-view" type="button" title="Download current globe screenshot">Shot</button>
+          <button class="icon-button" id="gyro-toggle" type="button" title="Use phone tilt controls">Gyro</button>
+          <button class="icon-button" id="arctic-view" type="button" title="Top-down Arctic view">Arctic</button>
+          <button class="icon-button" id="antarctic-view" type="button" title="Top-down Antarctic view">Antarctic</button>
+          <button class="icon-button" id="scale-planets" type="button" title="Show planet scale comparison">Scale</button>
         </div>
       </header>
 
@@ -97,6 +103,50 @@
           <input type="checkbox" data-layer="measureGrid" />
           Grid
         </label>
+        <label>
+          <input type="checkbox" data-layer="hurricanes" />
+          Storm zones
+        </label>
+        <label>
+          <input type="checkbox" data-layer="lights" checked />
+          Night lights
+        </label>
+        <label>
+          <input type="checkbox" data-layer="constellations" checked />
+          Stars
+        </label>
+        <label>
+          <input type="checkbox" data-layer="bases" />
+          Bases
+        </label>
+        <label>
+          <input type="checkbox" data-layer="spaceports" />
+          Spaceports
+        </label>
+        <label>
+          <input type="checkbox" data-layer="launches" />
+          Launches
+        </label>
+        <label>
+          <input type="checkbox" data-layer="migration" />
+          Migration
+        </label>
+        <label>
+          <input type="checkbox" data-layer="currents" checked />
+          Currents
+        </label>
+        <label>
+          <input type="checkbox" data-layer="streetMap" />
+          Street
+        </label>
+        <label>
+          <input type="checkbox" data-layer="csvPins" checked />
+          CSV
+        </label>
+        <label class="file-layer">
+          <input id="csv-import" type="file" accept=".csv,text/csv" />
+          Import CSV
+        </label>
       </section>
 
       <section class="timeline-control" id="timeline-control" aria-label="Historical year control">
@@ -108,6 +158,14 @@
       <section class="mini-map" aria-label="2D overview map">
         <canvas id="mini-map" width="220" height="120"></canvas>
         <span id="mini-map-label">Earth overview</span>
+      </section>
+
+      <section class="street-detail" id="street-detail" aria-label="Street detail map" hidden>
+        <canvas id="street-canvas" width="320" height="320"></canvas>
+        <div>
+          <strong id="street-title">Street detail</strong>
+          <span id="street-caption">Select a country and enable Street.</span>
+        </div>
       </section>
 
       <aside class="country-panel" aria-label="Country information">
@@ -152,6 +210,25 @@
           <input id="country-search" type="search" placeholder="Search country" autocomplete="off" />
         </div>
 
+        <div class="passport-card" id="passport-card">
+          <span>Visa checker</span>
+          <label>
+            Passport
+            <select id="passport-select">
+              <option value="USA">United States</option>
+              <option value="UKR">Ukraine</option>
+              <option value="EU">European Union</option>
+              <option value="GBR">United Kingdom</option>
+              <option value="CAN">Canada</option>
+              <option value="AUS">Australia</option>
+              <option value="BRA">Brazil</option>
+              <option value="IND">India</option>
+            </select>
+          </label>
+          <strong id="visa-status">Choose a country</strong>
+          <p id="visa-note">Entry estimate appears here after selecting a country.</p>
+        </div>
+
         <div class="weather-card" id="weather-card">
           <span>Capital weather</span>
           <strong>Choose a country</strong>
@@ -192,6 +269,15 @@
         <span><i class="snow"></i>Snow</span>
       </div>
       <div class="map-tooltip" id="map-tooltip" hidden></div>
+      <div class="onboarding" id="onboarding" hidden>
+        <div class="onboarding-card">
+          <p class="eyebrow">Quick tour</p>
+          <h2>Explore the globe</h2>
+          <p id="tour-copy">Choose a country, switch layers, zoom, and use Shot/Card to save what you see.</p>
+          <button class="icon-button is-active" id="tour-next" type="button">Next</button>
+          <button class="icon-button" id="tour-skip" type="button">Close</button>
+        </div>
+      </div>
     </main>
   </body>
 </html>

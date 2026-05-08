@@ -22,35 +22,111 @@
     <main class="app-shell">
       <canvas id="globe-canvas" aria-label="Interactive 3D world globe"></canvas>
 
+      <div class="space-vignette" aria-hidden="true"></div>
+
       <header class="hud">
-        <div>
-          <p class="eyebrow">3D World Map</p>
-          <h1>Global Explorer</h1>
-        </div>
+        <button class="brand-mark" id="nav-home" type="button" title="Home">
+          <span class="orbit-logo" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+          <span>
+            <b>Global Explorer</b>
+            <small>3D solar atlas</small>
+          </span>
+        </button>
+        <nav class="space-nav" aria-label="Primary navigation">
+          <button class="nav-link is-active" id="nav-model" type="button">3D Model</button>
+          <button class="nav-link" id="nav-objects" type="button">Solar System Objects</button>
+          <button class="nav-link" id="nav-earth" type="button">Earth Map</button>
+        </nav>
         <div class="hud-actions" aria-label="Globe controls">
           <select class="body-select" id="body-select" title="Choose celestial body">
+            <option value="solar" selected>Solar System</option>
             <option value="earth">Earth</option>
+            <option value="mercury">Mercury</option>
             <option value="moon">Moon</option>
             <option value="venus">Venus</option>
             <option value="mars">Mars</option>
             <option value="jupiter">Jupiter</option>
             <option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+            <option value="neptune">Neptune</option>
           </select>
           <button class="icon-button" id="reset-view" type="button" title="Reset view">Reset</button>
           <button class="icon-button is-active" id="auto-rotate" type="button" title="Toggle auto rotate">Auto</button>
           <button class="icon-button" id="day-night" type="button" title="Toggle day and night mode">Night</button>
           <button class="icon-button" id="satellite-view" type="button" title="Toggle satellite style">Satellite</button>
           <button class="icon-button" id="cinema-mode" type="button" title="Hide panels">Cinema</button>
+          <button class="icon-button" id="tour-mode" type="button" title="Start cinematic tour">Tour</button>
+          <button class="icon-button" id="voice-narrator" type="button" title="Narrate selected facts">Voice</button>
           <button class="icon-button" id="download-card" type="button" title="Download selected country card">Card</button>
+          <button class="icon-button" id="download-pdf" type="button" title="Export mini report PDF">PDF</button>
           <button class="icon-button" id="download-view" type="button" title="Download current globe screenshot">Shot</button>
+          <button class="icon-button" id="save-view" type="button" title="Save current camera view">Save view</button>
+          <button class="icon-button" id="command-open" type="button" title="Open command menu">Ctrl K</button>
           <button class="icon-button" id="gyro-toggle" type="button" title="Use phone tilt controls">Gyro</button>
           <button class="icon-button" id="arctic-view" type="button" title="Top-down Arctic view">Arctic</button>
           <button class="icon-button" id="antarctic-view" type="button" title="Top-down Antarctic view">Antarctic</button>
           <button class="icon-button" id="scale-planets" type="button" title="Show planet scale comparison">Scale</button>
+          <button class="icon-button" id="universe-zoom" type="button" title="Zoom Earth to universe scale">Universe</button>
         </div>
       </header>
 
+      <section class="cinematic-intro" id="cinematic-intro" aria-label="Intro">
+        <button class="slide-arrow slide-arrow-left" id="intro-prev" type="button" aria-label="Previous slide"></button>
+        <div class="intro-copy">
+          <p class="eyebrow">Live 3D Atlas</p>
+          <h2>Solar System 3D Online</h2>
+          <p>
+            Explore Earth countries, satellites, orbits, planet facts, routes, disasters, climate layers, and
+            celestial objects in one interactive Three.js scene.
+          </p>
+          <button class="hero-button" id="intro-explore" type="button">Explore the model</button>
+        </div>
+        <button class="slide-arrow slide-arrow-right" id="intro-next" type="button" aria-label="Next slide"></button>
+        <div class="intro-scroll">
+          <span>Model overview</span>
+          <i></i>
+        </div>
+      </section>
+
+      <section class="story-rail" id="story-rail" aria-label="Featured space stories">
+        <p>Featured Stories and Events</p>
+        <button class="story-card" type="button" data-body-jump="mars">
+          <strong>Mars gravity assist</strong>
+          <span>Flyby path and red-planet landmarks</span>
+        </button>
+        <button class="story-card" type="button" data-body-jump="moon">
+          <strong>Artemis lunar route</strong>
+          <span>Moon research points and orbit trails</span>
+        </button>
+        <button class="story-card" type="button" data-body-jump="jupiter">
+          <strong>Jupiter flyby</strong>
+          <span>Gas giant scale and storm markers</span>
+        </button>
+        <button class="story-card" type="button" data-body-jump="earth">
+          <strong>Earth live layers</strong>
+          <span>Countries, weather, routes, and news</span>
+        </button>
+      </section>
+
+      <aside class="mission-help" aria-label="Controls help">
+        <h2>Mouse control:</h2>
+        <p>+ / - scroll wheel</p>
+        <p>Drag to rotate the scene</p>
+        <p>Click a country or planet to open details</p>
+        <h2>Keyboard control:</h2>
+        <p>Use WASD-style orbit navigation</p>
+        <strong>Live sound: off</strong>
+      </aside>
+
       <section class="layer-bar" aria-label="Map layers">
+        <div class="layer-title">
+          <strong>Layers</strong>
+          <button class="layer-close" id="layers-toggle" type="button" title="Show or hide layers">›</button>
+        </div>
         <label>
           <input type="checkbox" data-layer="borders" checked />
           Borders
@@ -83,6 +159,10 @@
           <input type="checkbox" data-layer="quakes" checked />
           Quakes
         </label>
+        <label class="range-layer">
+          <span>Magnitude <b id="quake-mag-value">4.5+</b></span>
+          <input id="quake-mag" type="range" min="3" max="7" step="0.5" value="4.5" />
+        </label>
         <label>
           <input type="checkbox" data-layer="volcanoes" checked />
           Volcanoes
@@ -112,8 +192,40 @@
           Night lights
         </label>
         <label>
+          <input type="checkbox" data-layer="sunLighting" checked />
+          Live sun
+        </label>
+        <label>
+          <input type="checkbox" data-layer="clouds" checked />
+          Clouds
+        </label>
+        <label>
+          <input type="checkbox" data-layer="winds" checked />
+          Winds
+        </label>
+        <label>
+          <input type="checkbox" data-layer="aurora" checked />
+          Aurora
+        </label>
+        <label>
+          <input type="checkbox" data-layer="meteors" checked />
+          Meteors
+        </label>
+        <label>
+          <input type="checkbox" data-layer="debris" checked />
+          Debris
+        </label>
+        <label>
+          <input type="checkbox" data-layer="population" checked />
+          Population
+        </label>
+        <label>
           <input type="checkbox" data-layer="constellations" checked />
           Stars
+        </label>
+        <label>
+          <input type="checkbox" data-layer="satelliteTracker" checked />
+          Satellites
         </label>
         <label>
           <input type="checkbox" data-layer="bases" />
@@ -150,14 +262,65 @@
       </section>
 
       <section class="timeline-control" id="timeline-control" aria-label="Historical year control">
-        <span>Historical year</span>
+        <span>Time controls</span>
         <input id="year-slider" type="range" min="1492" max="2026" step="1" value="2026" />
         <strong id="year-label">2026</strong>
+        <button class="timeline-button" id="time-replay" type="button">Replay</button>
+      </section>
+
+      <section class="time-console" aria-label="Simulation status">
+        <span class="live-dot">LIVE</span>
+        <strong id="sim-date">MAY 06, 2026</strong>
+        <button class="sim-play" id="sim-play" type="button" title="Pause or play simulation">REAL RATE</button>
+        <em id="sim-time">--:--:--</em>
       </section>
 
       <section class="mini-map" aria-label="2D overview map">
         <canvas id="mini-map" width="220" height="120"></canvas>
         <span id="mini-map-label">Earth overview</span>
+      </section>
+
+      <section class="iss-hud" id="iss-hud" aria-label="ISS live position">
+        <span>ISS live</span>
+        <strong id="iss-position">Loading...</strong>
+        <em id="iss-velocity">Orbit tracker</em>
+      </section>
+
+      <section class="compass-hud" id="compass-hud" aria-label="3D compass and scale">
+        <div class="compass-dial">
+          <i id="compass-needle"></i>
+          <span>N</span>
+        </div>
+        <div class="scale-ruler">
+          <b id="scale-value">Scale 1,000 km</b>
+          <em></em>
+        </div>
+      </section>
+
+      <section class="saved-view-strip" id="view-strip" aria-label="Saved camera views" hidden>
+        <span>Saved views</span>
+        <div id="saved-views"></div>
+      </section>
+
+      <section class="screenshot-gallery" id="screenshot-gallery" aria-label="Screenshot gallery" hidden>
+        <span>Screenshot gallery</span>
+        <div id="shot-gallery-list"></div>
+      </section>
+
+      <section class="achievements-hud" id="achievements-hud" aria-label="Exploration achievements">
+        <span>Achievements</span>
+        <div id="achievement-list"></div>
+      </section>
+
+      <section class="command-menu" id="command-menu" aria-label="Command menu" hidden>
+        <div class="command-box">
+          <div class="command-topline">
+            <strong>Command menu</strong>
+            <button class="panel-close" id="command-close" type="button" aria-label="Close command menu"></button>
+          </div>
+          <input id="command-input" type="search" placeholder="Search country, planet, layer, or mode..." autocomplete="off" />
+          <div class="command-results" id="command-results"></div>
+        </div>
       </section>
 
       <section class="street-detail" id="street-detail" aria-label="Street detail map" hidden>
@@ -170,6 +333,7 @@
 
       <aside class="country-panel" aria-label="Country information">
         <div class="panel-header">
+          <button class="panel-close" id="panel-close" type="button" aria-label="Close details"></button>
           <p class="eyebrow" id="panel-kicker">Country</p>
           <h2 id="country-title">Choose a territory</h2>
           <p class="status-line" id="status-line">Loading map data...</p>

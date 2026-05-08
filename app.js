@@ -5,6 +5,7 @@ const WORLD_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.jso
 const RIVERS_URL =
   "https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_rivers_lake_centerlines.geojson";
 const EARTHQUAKE_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson";
+const ISS_URL = "https://api.wheretheiss.at/v1/satellites/25544";
 const REST_COUNTRIES_MAIN_URL =
   "https://restcountries.com/v3.1/all?fields=name,cca3,ccn3,capital,capitalInfo,region,subregion,continents,population,area";
 const REST_COUNTRIES_EXTRA_URL =
@@ -877,6 +878,182 @@ const CONSTELLATIONS = [
       [1, 3],
     ],
   },
+  {
+    name: "Cassiopeia",
+    stars: [
+      [-7.8, 4.2, -9],
+      [-7.0, 4.8, -9],
+      [-6.1, 4.25, -9],
+      [-5.2, 4.85, -9],
+      [-4.2, 4.35, -9],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+    ],
+  },
+  {
+    name: "Cygnus",
+    stars: [
+      [1.2, 5.0, -8.6],
+      [1.8, 4.0, -8.6],
+      [2.35, 3.0, -8.6],
+      [0.6, 3.4, -8.6],
+      [3.65, 3.45, -8.6],
+      [2.35, 1.95, -8.6],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 5],
+      [3, 2],
+      [2, 4],
+    ],
+  },
+  {
+    name: "Lyra",
+    stars: [
+      [4.2, 5.5, -8.2],
+      [4.75, 4.7, -8.2],
+      [5.45, 4.85, -8.2],
+      [5.25, 4.05, -8.2],
+      [4.55, 3.9, -8.2],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 1],
+    ],
+  },
+  {
+    name: "Scorpius",
+    stars: [
+      [-8.6, -1.0, -8.4],
+      [-7.6, -1.55, -8.4],
+      [-6.5, -2.0, -8.4],
+      [-5.4, -2.75, -8.4],
+      [-4.75, -3.75, -8.4],
+      [-3.9, -4.55, -8.4],
+      [-2.9, -4.2, -8.4],
+      [-2.45, -3.35, -8.4],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 5],
+      [5, 6],
+      [6, 7],
+    ],
+  },
+  {
+    name: "Taurus",
+    stars: [
+      [-1.0, 4.2, -7.6],
+      [-0.25, 3.45, -7.6],
+      [0.7, 3.95, -7.6],
+      [1.65, 4.55, -7.6],
+      [0.4, 2.85, -7.6],
+      [1.25, 2.35, -7.6],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [1, 4],
+      [4, 5],
+    ],
+  },
+  {
+    name: "Pegasus",
+    stars: [
+      [6.2, -0.25, -8.8],
+      [7.45, -0.2, -8.8],
+      [7.55, -1.45, -8.8],
+      [6.15, -1.5, -8.8],
+      [8.25, -2.2, -8.8],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 0],
+      [2, 4],
+    ],
+  },
+  {
+    name: "Andromeda",
+    stars: [
+      [7.9, 0.85, -8.5],
+      [8.75, 1.25, -8.5],
+      [9.55, 1.65, -8.5],
+      [10.45, 2.15, -8.5],
+      [9.25, 0.55, -8.5],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [2, 4],
+    ],
+  },
+  {
+    name: "Canis Major",
+    stars: [
+      [-0.9, -4.25, -7.2],
+      [-0.1, -3.65, -7.2],
+      [0.75, -4.2, -7.2],
+      [1.55, -5.0, -7.2],
+      [-0.55, -5.45, -7.2],
+      [0.4, -6.15, -7.2],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [0, 4],
+      [4, 5],
+      [2, 5],
+    ],
+  },
+  {
+    name: "Aquila",
+    stars: [
+      [3.1, -2.4, -7.9],
+      [3.7, -1.6, -7.9],
+      [4.45, -2.35, -7.9],
+      [3.85, -3.05, -7.9],
+      [4.95, -3.55, -7.9],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 0],
+      [3, 4],
+    ],
+  },
+  {
+    name: "Corona Borealis",
+    stars: [
+      [-4.1, 1.65, -8.9],
+      [-3.5, 2.15, -8.9],
+      [-2.75, 2.28, -8.9],
+      [-2.0, 2.05, -8.9],
+      [-1.45, 1.55, -8.9],
+    ],
+    links: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+    ],
+  },
 ];
 
 const FOOD_HIGHLIGHTS = {
@@ -933,6 +1110,316 @@ const PASSPORT_LABELS = {
   IND: "India",
 };
 
+const CURRENCY_HINTS = {
+  "united states dollar": { code: "USD", rate: 1 },
+  euro: { code: "EUR", rate: 1.08 },
+  "ukrainian hryvnia": { code: "UAH", rate: 0.025 },
+  "brazilian real": { code: "BRL", rate: 0.19 },
+  "indonesian rupiah": { code: "IDR", rate: 0.000061 },
+  yen: { code: "JPY", rate: 0.0064 },
+  "pound sterling": { code: "GBP", rate: 1.26 },
+  "canadian dollar": { code: "CAD", rate: 0.73 },
+  "australian dollar": { code: "AUD", rate: 0.66 },
+  rupee: { code: "INR", rate: 0.012 },
+  "mexican peso": { code: "MXN", rate: 0.059 },
+  yuan: { code: "CNY", rate: 0.14 },
+  "swiss franc": { code: "CHF", rate: 1.11 },
+};
+
+const TARGET_CURRENCY_RATES = {
+  USD: 1,
+  EUR: 1.08,
+  UAH: 0.025,
+};
+
+const EU_MEMBERS = new Set([
+  "AUT",
+  "BEL",
+  "BGR",
+  "HRV",
+  "CYP",
+  "CZE",
+  "DNK",
+  "EST",
+  "FIN",
+  "FRA",
+  "DEU",
+  "GRC",
+  "HUN",
+  "IRL",
+  "ITA",
+  "LVA",
+  "LTU",
+  "LUX",
+  "MLT",
+  "NLD",
+  "POL",
+  "PRT",
+  "ROU",
+  "SVK",
+  "SVN",
+  "ESP",
+  "SWE",
+]);
+
+const NATO_MEMBERS = new Set([
+  "USA",
+  "CAN",
+  "GBR",
+  "FRA",
+  "DEU",
+  "ITA",
+  "ESP",
+  "POL",
+  "TUR",
+  "NOR",
+  "DNK",
+  "NLD",
+  "BEL",
+  "PRT",
+  "GRC",
+  "CZE",
+  "HUN",
+  "ROU",
+  "BGR",
+  "SVK",
+  "SVN",
+  "HRV",
+  "ALB",
+  "MNE",
+  "MKD",
+  "FIN",
+  "SWE",
+]);
+
+const BRICS_MEMBERS = new Set(["BRA", "RUS", "IND", "CHN", "ZAF", "EGY", "ETH", "IRN", "ARE"]);
+
+const NAME_ORIGINS = {
+  USA: "America is named after Amerigo Vespucci; the federal country name describes the union of states.",
+  BRA: "Brazil comes from pau-brasil, the red brazilwood traded from the Atlantic coast.",
+  UKR: "Ukraine is linked to an old Slavic word for frontier or borderland, later becoming a national name.",
+  JPN: "Japan comes from Nihon or Nippon, meaning origin of the sun.",
+  IDN: "Indonesia combines Indos and nesos, meaning Indian islands.",
+  FRA: "France is named after the Franks, a Germanic people who ruled parts of Western Europe.",
+  ITA: "Italy comes from Italia, an ancient name first used for southern parts of the peninsula.",
+  IND: "India is named from the Indus River through Greek and Persian forms.",
+  DEU: "Germany's English name comes from Latin Germania; Deutschland comes from a word for the people.",
+  ATA: "Antarctica means opposite the Arctic, from Greek words referring to the far southern polar region.",
+};
+
+const FAMOUS_PEOPLE = {
+  USA: [
+    ["Katherine Johnson", "Mathematician behind early NASA flight calculations"],
+    ["Martin Luther King Jr.", "Civil rights leader"],
+    ["Thomas Edison", "Inventor and industrial researcher"],
+  ],
+  BRA: [
+    ["Oscar Niemeyer", "Architect of Brasilia landmarks"],
+    ["Marta", "Football icon"],
+    ["Santos Dumont", "Aviation pioneer"],
+  ],
+  UKR: [
+    ["Sergei Korolev", "Rocket engineer and space program leader"],
+    ["Lesya Ukrainka", "Poet and writer"],
+    ["Igor Sikorsky", "Aviation designer"],
+  ],
+  JPN: [
+    ["Hayao Miyazaki", "Animation director"],
+    ["Marie Kondo", "Author and media personality"],
+    ["Shinya Yamanaka", "Nobel-winning stem-cell researcher"],
+  ],
+  IDN: [
+    ["B. J. Habibie", "Engineer and president"],
+    ["Raden Ajeng Kartini", "Education and women's rights figure"],
+    ["Pramoedya Ananta Toer", "Novelist"],
+  ],
+  ATA: [
+    ["Ernest Shackleton", "Polar explorer"],
+    ["Roald Amundsen", "First confirmed expedition to the South Pole"],
+    ["Ann Bancroft", "Polar explorer"],
+  ],
+};
+
+const NATIONAL_SYMBOLS = {
+  USA: ["Bald eagle", "Rose", "The Star-Spangled Banner"],
+  BRA: ["Rufous-bellied thrush", "Ipe-amarelo tree", "Hino Nacional Brasileiro"],
+  UKR: ["Tryzub coat of arms", "Sunflower", "Shche ne vmerla Ukrainy"],
+  JPN: ["Chrysanthemum seal", "Cherry blossom", "Kimigayo"],
+  IDN: ["Garuda Pancasila", "Jasmine", "Indonesia Raya"],
+  FRA: ["Gallic rooster", "Iris", "La Marseillaise"],
+  ITA: ["Stella d'Italia", "Strawberry tree", "Il Canto degli Italiani"],
+  IND: ["Bengal tiger", "Lotus", "Jana Gana Mana"],
+  ATA: ["Antarctic Treaty emblem", "Emperor penguin symbol", "No national anthem"],
+};
+
+const LICENSE_PLATE_EXAMPLES = {
+  USA: "ABC 1234 / state-based plates",
+  BRA: "ABC1D23 Mercosur style",
+  UKR: "AA 1234 BB",
+  JPN: "Shinagawa 300 A 12-34",
+  IDN: "B 1234 XYZ",
+  FRA: "AB-123-CD",
+  ITA: "AB 123 CD",
+  IND: "DL 01 AB 1234",
+  ATA: "Research stations use national vehicle systems",
+};
+
+const SCIENCE_ACHIEVEMENTS = {
+  USA: ["Apollo Moon landings", "Hubble Space Telescope", "GPS satellite system"],
+  BRA: ["Embraer aerospace engineering", "Amazon research networks", "Deep offshore energy research"],
+  UKR: ["R-7 and Energia rocket engineering heritage", "Antonov heavy aircraft", "Electric welding research"],
+  JPN: ["Hayabusa asteroid sample return", "Shinkansen engineering", "Advanced robotics"],
+  IDN: ["B. J. Habibie aviation work", "Tropical biodiversity research", "Volcanology monitoring"],
+  FRA: ["Ariane rockets", "Pasteur microbiology legacy", "TGV high-speed rail"],
+  ITA: ["Galileo's astronomy", "Fermi nuclear physics", "Leonardo engineering notebooks"],
+  IND: ["Chandrayaan lunar missions", "Mars Orbiter Mission", "Green Revolution research"],
+  ATA: ["Ice-core climate science", "Ozone hole discovery", "South Pole astronomy"],
+};
+
+const FAMOUS_INVENTIONS = {
+  USA: [["Internet backbone", "ARPANET and computing networks"], ["Airplane industry", "Powered flight development"], ["Electric light systems", "Mass electrical infrastructure"]],
+  BRA: [["Wristwatch aviation use", "Associated with Santos Dumont"], ["Flex-fuel cars", "Large ethanol vehicle ecosystem"], ["Bina caller ID", "Brazilian telecom innovation"]],
+  UKR: [["Helicopter design", "Sikorsky's aviation legacy"], ["Piezoelectric research", "Early crystal electronics work"], ["Large cargo aircraft", "Antonov engineering"]],
+  JPN: [["QR code", "Created by Denso Wave"], ["Walkman", "Portable music culture"], ["Bullet train", "Modern high-speed rail"]],
+  IDN: [["Habibie factor", "Aircraft crack propagation theory"], ["Batik technology heritage", "Textile craft and design systems"], ["Volcano early warning systems", "Ring of Fire monitoring"]],
+  FRA: [["Braille", "Tactile reading system"], ["Photography", "Daguerreotype process"], ["Pasteurization", "Food safety method"]],
+  ITA: [["Radio engineering", "Marconi's wireless work"], ["Battery", "Volta's electric pile"], ["Barometer", "Torricelli's instrument"]],
+  IND: [["Zero numeral heritage", "Mathematical notation"], ["USB contributions", "Ajay Bhatt's computing work"], ["Yoga knowledge systems", "Global wellness culture"]],
+};
+
+const COUNTRY_ECONOMY_EXTRAS = {
+  USA: { wage: "$7.25 federal hourly", salary: "$5,900 monthly", fuel: "$0.95/L", business: 84, tax: "Federal 10-37%, state varies" },
+  BRA: { wage: "R$1,412 monthly", salary: "R$3,100 monthly", fuel: "$1.12/L", business: 62, tax: "Income 0-27.5%, VAT-style ICMS varies" },
+  UKR: { wage: "UAH 8,000 monthly", salary: "UAH 21,000 monthly", fuel: "$1.35/L", business: 70, tax: "Income 18%, military levy 1.5%" },
+  JPN: { wage: "JP¥1,055 hourly avg.", salary: "JP¥330,000 monthly", fuel: "$1.14/L", business: 78, tax: "Income 5-45%, consumption tax 10%" },
+  IDN: { wage: "Provincial minimum wage", salary: "Rp5.2M monthly", fuel: "$0.88/L", business: 69, tax: "Income 5-35%, VAT 11%" },
+  FRA: { wage: "EUR 1,766 monthly", salary: "EUR 3,300 monthly", fuel: "$1.95/L", business: 76, tax: "Income 0-45%, VAT 20%" },
+  ITA: { wage: "Sector contracts", salary: "EUR 2,500 monthly", fuel: "$1.92/L", business: 73, tax: "Income 23-43%, VAT 22%" },
+  IND: { wage: "State and sector based", salary: "INR 32,000 monthly", fuel: "$1.20/L", business: 71, tax: "Income 0-30%, GST slabs" },
+  DEU: { wage: "EUR 12.41 hourly", salary: "EUR 4,100 monthly", fuel: "$1.86/L", business: 79, tax: "Income 14-45%, VAT 19%" },
+  ATA: { wage: "Research contracts", salary: "Station role based", fuel: "Logistics only", business: 0, tax: "No civilian tax system" },
+};
+
+const ALPHABET_PREVIEWS = {
+  USA: "A B C D E F G H I J K",
+  BRA: "A B C D E F G H I J K",
+  UKR: "А Б В Г Ґ Д Е Є Ж З И І",
+  JPN: "あ い う え お / ア イ ウ エ オ",
+  IDN: "A B C D E F G H I J K",
+  FRA: "A B C D E F G H I J K",
+  ITA: "A B C D E F G H I J K",
+  IND: "अ आ इ ई उ ऊ ए ऐ ओ औ",
+  CHN: "一 二 三 四 五 六 七 八 九 十",
+  KOR: "ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ ㅇ ㅈ",
+  RUS: "А Б В Г Д Е Ё Ж З И Й К",
+  GRC: "Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ",
+};
+
+const NATIONAL_COSTUMES = {
+  USA: [["Cowboy wear", "Western frontier icon"], ["Powwow regalia", "Indigenous ceremonial dress"]],
+  BRA: [["Baiana dress", "Afro-Brazilian cultural dress"], ["Carnival costume", "Festival performance clothing"]],
+  UKR: [["Vyshyvanka", "Embroidered national shirt"], ["Vinok", "Traditional floral headpiece"]],
+  JPN: [["Kimono", "Formal robe with obi"], ["Yukata", "Light summer robe"]],
+  IDN: [["Batik", "Wax-resist textile heritage"], ["Kebaya", "Traditional blouse and dress set"]],
+  FRA: [["Breton costume", "Regional coastal dress"], ["Alsace dress", "Regional folk outfit"]],
+  ITA: [["Sardinian costume", "Island folk dress"], ["Venetian carnival", "Historic mask culture"]],
+  IND: [["Sari", "Draped traditional garment"], ["Sherwani", "Formal menswear"]],
+};
+
+const ENDANGERED_ANIMALS = {
+  USA: ["Red wolf", "Hawaiian monk seal", "California condor"],
+  BRA: ["Golden lion tamarin", "Hyacinth macaw", "Amazon river dolphin"],
+  UKR: ["European mink", "Saker falcon", "Black stork"],
+  JPN: ["Iriomote cat", "Amami rabbit", "Japanese crane"],
+  IDN: ["Sumatran tiger", "Javan rhino", "Orangutan"],
+  FRA: ["European mink", "Pyrenean desman", "Corsican red deer"],
+  ITA: ["Marsican brown bear", "Apennine chamois", "Egyptian vulture"],
+  IND: ["Bengal tiger", "Asiatic lion", "Ganges river dolphin"],
+  ATA: ["Emperor penguin", "Antarctic blue whale", "Wandering albatross"],
+};
+
+const COST_OF_LIVING_BY_CITY = {
+  USA: [["New York City", "$180/day"], ["Washington, D.C.", "$145/day"], ["Chicago", "$115/day"]],
+  BRA: [["Sao Paulo", "$70/day"], ["Rio de Janeiro", "$82/day"], ["Brasilia", "$66/day"]],
+  UKR: [["Kyiv", "$55/day"], ["Lviv", "$48/day"], ["Odesa", "$52/day"]],
+  JPN: [["Tokyo", "$135/day"], ["Osaka", "$105/day"], ["Kyoto", "$115/day"]],
+  IDN: [["Jakarta", "$54/day"], ["Bali", "$78/day"], ["Surabaya", "$42/day"]],
+  FRA: [["Paris", "$155/day"], ["Lyon", "$105/day"], ["Marseille", "$98/day"]],
+  ITA: [["Rome", "$125/day"], ["Milan", "$140/day"], ["Naples", "$88/day"]],
+  IND: [["New Delhi", "$42/day"], ["Mumbai", "$58/day"], ["Bengaluru", "$48/day"]],
+};
+
+const CONSTELLATION_EXTRAS = [
+  { name: "Orion", stars: [[-6.2, -1.6, -9.8], [-5.45, -1.1, -9.8], [-4.7, -1.55, -9.8], [-5.4, -2.1, -9.8], [-5.0, -2.85, -9.8], [-5.85, -2.88, -9.8]], links: [[0, 1], [1, 2], [1, 3], [3, 4], [3, 5]] },
+  { name: "Cassiopeia", stars: [[4.2, 3.0, -9.4], [4.82, 3.35, -9.4], [5.42, 3.08, -9.4], [6.05, 3.42, -9.4], [6.72, 3.16, -9.4]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Cygnus", stars: [[-1.2, 4.1, -10.4], [-0.62, 3.5, -10.4], [-0.02, 2.9, -10.4], [-0.9, 2.82, -10.4], [0.75, 2.72, -10.4], [-0.1, 4.28, -10.4]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [1, 5]] },
+  { name: "Scorpius", stars: [[5.2, -3.4, -9.7], [5.72, -3.15, -9.7], [6.1, -2.72, -9.7], [6.38, -2.14, -9.7], [6.76, -1.82, -9.7], [7.2, -2.15, -9.7]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
+  { name: "Lyra", stars: [[2.5, 4.2, -8.8], [2.96, 3.86, -8.8], [3.35, 4.08, -8.8], [3.18, 4.58, -8.8], [2.78, 4.72, -8.8]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 1]] },
+];
+
+const WIND_JET_ROUTES = {
+  type: "FeatureCollection",
+  features: [
+    route("Northern jet stream", [[-160, 42], [-95, 50], [-35, 44], [30, 48], [105, 42], [160, 46]]),
+    route("Southern jet stream", [[-145, -38], [-80, -44], [-20, -36], [55, -42], [130, -35], [175, -39]]),
+    route("Tropical trade winds", [[-70, 10], [-20, 4], [35, 12], [90, 7], [145, 13]]),
+    route("Polar vortex stream", [[-150, 64], [-90, 70], [-20, 66], [60, 71], [140, 67]]),
+  ],
+};
+
+const UNIVERSE_LEVELS = [
+  { label: "Earth", body: "earth", position: [-0.48, 0.08, 5.85], target: [-0.55, 0, 0], maxDistance: 8.2 },
+  { label: "Solar System", body: "solar", position: [0, 6.2, 12.5], target: [0, 0, 0], maxDistance: 22 },
+  { label: "Galaxy", body: "solar", position: [0, 18, 34], target: [0, 0, 0], maxDistance: 55 },
+  { label: "Universe", body: "solar", position: [0, 34, 72], target: [0, 0, 0], maxDistance: 95 },
+];
+
+const ACHIEVEMENT_DEFS = [
+  ["first-country", "Country lock", "Select any country"],
+  ["space-mode", "Space jump", "Open a planet or solar mode"],
+  ["narrator", "Voice online", "Enable AI narrator"],
+  ["screenshot", "Scene archived", "Save a PNG angle"],
+  ["seismic-filter", "Quake analyst", "Use magnitude filter"],
+  ["universe-zoom", "Scale breaker", "Zoom out to universe mode"],
+  ["iss-lock", "ISS contact", "Receive live ISS position"],
+];
+
+const CINEMATIC_TOUR_STOPS = [
+  { type: "body", key: "solar", label: "Solar system overview", position: [0, 6.2, 12.5], target: [0, 0, 0] },
+  { type: "body", key: "earth", label: "Earth country layers", position: [-0.35, 0.55, 5.4] },
+  { type: "country", key: "BRA", label: "Brazil rainforest and coast" },
+  { type: "country", key: "JPN", label: "Japan island arc" },
+  { type: "body", key: "moon", label: "Moon mission sites", position: [-0.1, 0.2, 4.8] },
+  { type: "body", key: "mars", label: "Mars rover terrain", position: [0.25, 0.12, 4.9] },
+  { type: "body", key: "jupiter", label: "Jupiter scale and storms", position: [0.35, 0.22, 5.4] },
+];
+
+const COMMAND_STATIC_ACTIONS = [
+  { label: "Toggle cinematic tour", type: "mode", run: () => toggleCinematicTour() },
+  { label: "Toggle voice narrator", type: "mode", run: () => toggleVoiceNarrator() },
+  { label: "Run time travel replay", type: "mode", run: () => toggleTimeReplay() },
+  { label: "Save current camera view", type: "tool", run: () => saveCameraView() },
+  { label: "Export mini report PDF", type: "tool", run: () => downloadMiniReportPdf() },
+  { label: "Download current globe PNG", type: "tool", run: () => downloadGlobeView() },
+  { label: "Cycle universe zoom", type: "mode", run: () => cycleUniverseZoom() },
+];
+
+const SURFACE_MISSIONS = {
+  moon: [
+    point("Apollo 11", 0.674, 23.473, "First crewed Moon landing site"),
+    point("Apollo 15", 26.132, 3.634, "Hadley-Apennine science landing"),
+    point("Chang'e 4", -45.444, 177.599, "Far-side lunar landing"),
+    point("Luna 24", 12.75, 62.2, "Sample return site"),
+  ],
+  mars: [
+    point("Perseverance rover", 18.444, 77.451, "Jezero crater rover mission"),
+    point("Curiosity rover", -4.589, 137.441, "Gale crater rover mission"),
+    point("Viking 1", 22.48, -48.0, "First successful Mars lander"),
+    point("Olympus Mons", 18.65, -133.8, "Largest known volcano in the solar system"),
+    point("Valles Marineris", -14, -59, "Giant canyon system"),
+  ],
+};
+
 const HISTORICAL_ERAS = [
   { year: 1492, label: "Age of ocean exploration", color: "rgba(255, 191, 105, 0.36)" },
   { year: 1776, label: "Revolutionary Atlantic era", color: "rgba(88, 211, 223, 0.28)" },
@@ -943,12 +1430,44 @@ const HISTORICAL_ERAS = [
 ];
 
 const CELESTIAL_BODIES = {
+  solar: {
+    name: "Solar System",
+    kicker: "3D Model",
+    radiusScale: 1,
+    atmosphere: 0xffd36a,
+    summary:
+      "A cinematic model with realistic procedural planets, constellations, satellites, meteor streams, comets, asteroid belts, trails, labels, and clickable planets.",
+    stats: [
+      ["id", "Mode", "Solar"],
+      ["capital", "Objects", "Planets + probes"],
+      ["continent", "Sky", "Stars + meteors"],
+    ],
+    markers: [],
+  },
   earth: {
     name: "Earth",
     kicker: "3D World Map",
     radiusScale: 1,
     atmosphere: 0x6ddcf1,
     markers: [],
+  },
+  mercury: {
+    name: "Mercury",
+    kicker: "Mercury Explorer",
+    radiusScale: 0.88,
+    atmosphere: 0xbfc0bc,
+    summary: "Explore a stylized Mercury with crater fields, scarps, and sun-blasted basin regions.",
+    stats: [
+      ["id", "Body", "Mercury"],
+      ["capital", "Gravity", "3.70 m/s2"],
+      ["continent", "Diameter", "4,879 km"],
+    ],
+    markers: [
+      point("Caloris Basin", 30.5, 162.7, "Huge impact basin"),
+      point("Discovery Rupes", -55, -37, "Long cliff-like scarp"),
+      point("Hokusai Crater", 58, 16, "Bright ray crater"),
+      point("North Polar Ice", 85, 0, "Shadowed polar deposits"),
+    ],
   },
   moon: {
     name: "Moon",
@@ -1040,6 +1559,40 @@ const CELESTIAL_BODIES = {
       point("Ring Plane", 0, -120, "Main ring-system alignment"),
     ],
   },
+  uranus: {
+    name: "Uranus",
+    kicker: "Ice Giant Explorer",
+    radiusScale: 1.02,
+    atmosphere: 0x98f4ff,
+    summary: "Explore a stylized Uranus with tilted-axis labels, pale cloud bands, and ice-giant atmosphere markers.",
+    stats: [
+      ["id", "Body", "Uranus"],
+      ["capital", "Gravity", "8.69 m/s2"],
+      ["continent", "Diameter", "50,724 km"],
+    ],
+    markers: [
+      point("Tilted equator", 0, 0, "Extreme axial tilt reference"),
+      point("North polar hood", 72, 45, "Bright polar cloud region"),
+      point("Ariel orbit zone", -12, 110, "Major moon region"),
+    ],
+  },
+  neptune: {
+    name: "Neptune",
+    kicker: "Ice Giant Explorer",
+    radiusScale: 1.02,
+    atmosphere: 0x7aa5ff,
+    summary: "Explore a stylized Neptune with storm bands, deep blue atmosphere, and outer solar-system markers.",
+    stats: [
+      ["id", "Body", "Neptune"],
+      ["capital", "Gravity", "11.15 m/s2"],
+      ["continent", "Diameter", "49,244 km"],
+    ],
+    markers: [
+      point("Great Dark Spot zone", -22, -60, "Historic storm region"),
+      point("Triton orbit zone", 15, 120, "Largest moon reference"),
+      point("Supersonic winds", 0, 25, "High-speed atmosphere band"),
+    ],
+  },
 };
 
 const ui = {
@@ -1058,17 +1611,40 @@ const ui = {
   dayNight: document.querySelector("#day-night"),
   satelliteView: document.querySelector("#satellite-view"),
   cinemaMode: document.querySelector("#cinema-mode"),
+  tourMode: document.querySelector("#tour-mode"),
+  voiceNarrator: document.querySelector("#voice-narrator"),
   downloadCard: document.querySelector("#download-card"),
+  downloadPdf: document.querySelector("#download-pdf"),
   downloadView: document.querySelector("#download-view"),
+  saveView: document.querySelector("#save-view"),
+  commandOpen: document.querySelector("#command-open"),
   gyroToggle: document.querySelector("#gyro-toggle"),
   arcticView: document.querySelector("#arctic-view"),
   antarcticView: document.querySelector("#antarctic-view"),
   scalePlanets: document.querySelector("#scale-planets"),
+  universeZoom: document.querySelector("#universe-zoom"),
   bodySelect: document.querySelector("#body-select"),
   yearSlider: document.querySelector("#year-slider"),
   yearLabel: document.querySelector("#year-label"),
+  timeReplay: document.querySelector("#time-replay"),
+  quakeMag: document.querySelector("#quake-mag"),
+  quakeMagValue: document.querySelector("#quake-mag-value"),
   miniMap: document.querySelector("#mini-map"),
   miniMapLabel: document.querySelector("#mini-map-label"),
+  issPosition: document.querySelector("#iss-position"),
+  issVelocity: document.querySelector("#iss-velocity"),
+  compassNeedle: document.querySelector("#compass-needle"),
+  scaleValue: document.querySelector("#scale-value"),
+  viewStrip: document.querySelector("#view-strip"),
+  savedViews: document.querySelector("#saved-views"),
+  screenshotGallery: document.querySelector("#screenshot-gallery"),
+  shotGalleryList: document.querySelector("#shot-gallery-list"),
+  achievementsHud: document.querySelector("#achievements-hud"),
+  achievementList: document.querySelector("#achievement-list"),
+  commandMenu: document.querySelector("#command-menu"),
+  commandInput: document.querySelector("#command-input"),
+  commandResults: document.querySelector("#command-results"),
+  commandClose: document.querySelector("#command-close"),
   streetDetail: document.querySelector("#street-detail"),
   streetCanvas: document.querySelector("#street-canvas"),
   streetTitle: document.querySelector("#street-title"),
@@ -1093,6 +1669,20 @@ const ui = {
   tourNext: document.querySelector("#tour-next"),
   tourSkip: document.querySelector("#tour-skip"),
   layers: document.querySelectorAll("[data-layer]"),
+  intro: document.querySelector("#cinematic-intro"),
+  introExplore: document.querySelector("#intro-explore"),
+  introPrev: document.querySelector("#intro-prev"),
+  introNext: document.querySelector("#intro-next"),
+  navHome: document.querySelector("#nav-home"),
+  navModel: document.querySelector("#nav-model"),
+  navObjects: document.querySelector("#nav-objects"),
+  navEarth: document.querySelector("#nav-earth"),
+  panelClose: document.querySelector("#panel-close"),
+  layersToggle: document.querySelector("#layers-toggle"),
+  simDate: document.querySelector("#sim-date"),
+  simTime: document.querySelector("#sim-time"),
+  simPlay: document.querySelector("#sim-play"),
+  storyCards: document.querySelectorAll("[data-body-jump]"),
 };
 
 let renderer;
@@ -1135,16 +1725,29 @@ let spaceportGroup;
 let launchGroup;
 let migrationGroup;
 let currentArrowGroup;
+let windArrowGroup;
 let csvPinsGroup;
 let constellationGroup;
+let starFieldGroup;
 let scalePlanetsGroup;
+let solarSystemGroup;
 let zoomGridGroup;
 let gdpRingGroup;
 let coastGlowGroup;
 let scanGroup;
+let countryExtrusionGroup;
+let populationGlowGroup;
+let satelliteTrackerGroup;
+let auroraGroup;
+let meteorShowerGroup;
+let debrisFieldGroup;
+let sunFlareGroup;
 let celestialMarkersGroup;
 let flightArcAnimations = [];
 let currentAnimations = [];
+let windAnimations = [];
+let meteorAnimations = [];
+let debrisAnimations = [];
 let scanStarted = 0;
 let animationTarget = null;
 let lastPointerEvent = null;
@@ -1154,13 +1757,37 @@ let isNightMode = false;
 let isSatelliteMode = false;
 let isGyroEnabled = false;
 let isScalePlanetsVisible = false;
-let currentBodyKey = "earth";
+let isSimulationPaused = false;
+let currentBodyKey = "solar";
 let historicalYear = 2026;
 let lastStreetKey = "";
 let weatherRequestId = 0;
 let newsRequestId = 0;
 let clockTimer = null;
 let favoriteKeys = loadFavorites();
+let solarSystemObjects = [];
+let solarOrbitAnimations = [];
+let solarDynamicObjects = [];
+let satelliteTrackerAnimations = [];
+let issLiveMarker = null;
+let issLiveData = null;
+let issRefreshTimer = null;
+let latestQuakes = [];
+let quakeMinMagnitude = 4.5;
+let lastSimClockSecond = -1;
+let renderLoopStarted = false;
+let isCinematicTour = false;
+let tourStartedAt = 0;
+let lastTourSegment = -1;
+let isVoiceNarratorEnabled = false;
+let isTimeReplayActive = false;
+let timeReplayStarted = 0;
+let savedCameraViews = loadSavedCameraViews();
+let screenshotGallery = loadScreenshotGallery();
+let achievements = loadAchievements();
+let commandItems = [];
+let commandIndex = 0;
+let universeLevelIndex = 1;
 
 const layerState = {
   borders: true,
@@ -1178,7 +1805,15 @@ const layerState = {
   measureGrid: false,
   hurricanes: false,
   lights: true,
+  sunLighting: true,
+  clouds: true,
+  winds: true,
+  aurora: true,
+  meteors: true,
+  debris: true,
+  population: true,
   constellations: true,
+  satelliteTracker: true,
   bases: false,
   spaceports: false,
   launches: false,
@@ -1197,6 +1832,7 @@ async function init() {
   ensureLibraries();
   setupScene();
   setupEvents();
+  startRenderLoop();
   setStatus("Loading world data...");
 
   const [worldData, restMainData, restExtraData, riverData] = await Promise.all([
@@ -1209,15 +1845,32 @@ async function init() {
   riversGeojson = riverData;
   const restData = mergeRestCountryData(restMainData, restExtraData);
   buildCountries(worldData, restData);
+  buildPopulationDensityGlow();
   updateCapitalMarkers();
   renderFavorites();
+  renderSavedViews();
+  renderScreenshotGallery();
+  buildCommandItems();
   buildEarthTexture();
   drawEarthTexture();
   renderCountryList();
-  renderPanel(null);
+  renderAchievements();
+  if (currentBodyKey === "solar") {
+    renderSolarPanel();
+  } else {
+    renderPanel(null);
+  }
   drawMiniMap();
   loadEarthquakes();
-  setStatus("Globe ready");
+  loadIssPosition();
+  issRefreshTimer = window.setInterval(loadIssPosition, 30000);
+  setStatus(currentBodyKey === "solar" ? "Solar system model ready" : "Globe ready");
+  startRenderLoop();
+}
+
+function startRenderLoop() {
+  if (renderLoopStarted) return;
+  renderLoopStarted = true;
   animate();
 }
 
@@ -1357,6 +2010,8 @@ function setupScene() {
   globeGroup.add(migrationGroup);
   currentArrowGroup = new THREE.Group();
   globeGroup.add(currentArrowGroup);
+  windArrowGroup = new THREE.Group();
+  globeGroup.add(windArrowGroup);
   csvPinsGroup = new THREE.Group();
   globeGroup.add(csvPinsGroup);
   zoomGridGroup = new THREE.Group();
@@ -1367,6 +2022,16 @@ function setupScene() {
   globeGroup.add(coastGlowGroup);
   scanGroup = new THREE.Group();
   globeGroup.add(scanGroup);
+  countryExtrusionGroup = new THREE.Group();
+  globeGroup.add(countryExtrusionGroup);
+  populationGlowGroup = new THREE.Group();
+  globeGroup.add(populationGlowGroup);
+  satelliteTrackerGroup = new THREE.Group();
+  globeGroup.add(satelliteTrackerGroup);
+  auroraGroup = new THREE.Group();
+  globeGroup.add(auroraGroup);
+  debrisFieldGroup = new THREE.Group();
+  globeGroup.add(debrisFieldGroup);
   celestialMarkersGroup = new THREE.Group();
   globeGroup.add(celestialMarkersGroup);
   markersGroup = new THREE.Group();
@@ -1375,13 +2040,36 @@ function setupScene() {
   scene.add(constellationGroup);
   scalePlanetsGroup = new THREE.Group();
   scene.add(scalePlanetsGroup);
+  solarSystemGroup = new THREE.Group();
+  solarSystemGroup.visible = false;
+  scene.add(solarSystemGroup);
+  meteorShowerGroup = new THREE.Group();
+  scene.add(meteorShowerGroup);
+  sunFlareGroup = new THREE.Group();
+  scene.add(sunFlareGroup);
   buildMountainLabels();
   buildFlightArcs();
   buildConstellations();
   buildScalePlanets();
+  buildSolarSystem();
   buildStaticDataLayers();
+  buildSatelliteTrackerLayer();
+  buildAuroraLayer();
+  buildMeteorShower();
+  buildDebrisField();
+  buildSunFlare();
   updateLayerVisibility();
-  scene.add(makeStars(1600));
+  starFieldGroup = makeStars(7200);
+  scene.add(starFieldGroup);
+  globeGroup.visible = currentBodyKey !== "solar";
+  solarSystemGroup.visible = currentBodyKey === "solar";
+  controls.target.set(0, 0, 0);
+  controls.minDistance = 3.2;
+  controls.maxDistance = 22;
+  camera.position.set(0, 6.2, 12.5);
+  ui.shell.classList.add("is-solar-mode");
+  ui.bodySelect.value = currentBodyKey;
+  updateNavState();
   setGlobeLayout();
 }
 
@@ -1400,17 +2088,80 @@ function setupEvents() {
   ui.dayNight.addEventListener("click", toggleDayNight);
   ui.satelliteView.addEventListener("click", toggleSatelliteView);
   ui.cinemaMode.addEventListener("click", toggleCinemaMode);
+  ui.tourMode.addEventListener("click", toggleCinematicTour);
+  ui.voiceNarrator.addEventListener("click", toggleVoiceNarrator);
   ui.downloadCard.addEventListener("click", downloadInfoCard);
+  ui.downloadPdf.addEventListener("click", downloadMiniReportPdf);
   ui.downloadView.addEventListener("click", downloadGlobeView);
+  ui.saveView.addEventListener("click", saveCameraView);
+  ui.commandOpen.addEventListener("click", openCommandMenu);
   ui.gyroToggle.addEventListener("click", toggleGyroControl);
   ui.arcticView.addEventListener("click", () => flyToPolarView("arctic"));
   ui.antarcticView.addEventListener("click", () => flyToPolarView("antarctic"));
   ui.scalePlanets.addEventListener("click", toggleScalePlanets);
-  ui.bodySelect.addEventListener("change", () => switchBody(ui.bodySelect.value));
+  ui.universeZoom?.addEventListener("click", cycleUniverseZoom);
+  ui.bodySelect.addEventListener("change", () => {
+    ui.shell.classList.add("is-exploring");
+    switchBody(ui.bodySelect.value);
+  });
   ui.passportSelect.addEventListener("change", () => renderVisaStatus(selectedRecord));
   ui.csvImport.addEventListener("change", importCsvPins);
+  ui.timeReplay.addEventListener("click", toggleTimeReplay);
+  ui.commandInput.addEventListener("input", () => renderCommandResults(ui.commandInput.value));
+  ui.commandInput.addEventListener("keydown", onCommandInputKeydown);
+  ui.commandClose.addEventListener("click", closeCommandMenu);
+  ui.commandMenu.addEventListener("click", (event) => {
+    if (event.target === ui.commandMenu) closeCommandMenu();
+  });
+  ui.details.addEventListener("input", onDetailsInput);
+  ui.details.addEventListener("change", onDetailsInput);
   ui.tourNext.addEventListener("click", advanceTour);
   ui.tourSkip.addEventListener("click", closeTour);
+  ui.introExplore?.addEventListener("click", () => {
+    ui.shell.classList.add("is-exploring");
+    switchBody("solar");
+  });
+  ui.introPrev?.addEventListener("click", () => switchBody("earth"));
+  ui.introNext?.addEventListener("click", () => switchBody("solar"));
+  ui.navHome?.addEventListener("click", () => {
+    ui.shell.classList.remove("is-exploring");
+    switchBody("solar");
+  });
+  ui.navModel?.addEventListener("click", () => {
+    ui.shell.classList.add("is-exploring");
+    switchBody("earth");
+  });
+  ui.navObjects?.addEventListener("click", () => {
+    ui.shell.classList.add("is-exploring");
+    switchBody("solar");
+  });
+  ui.navEarth?.addEventListener("click", () => {
+    ui.shell.classList.add("is-exploring");
+    switchBody("earth");
+  });
+  ui.panelClose?.addEventListener("click", () => {
+    if (currentBodyKey === "earth") {
+      renderPanel(null);
+    } else {
+      renderSolarPanel();
+    }
+  });
+  ui.layersToggle?.addEventListener("click", () => {
+    ui.shell.classList.toggle("is-layers-closed");
+  });
+  ui.simPlay?.addEventListener("click", () => {
+    isSimulationPaused = !isSimulationPaused;
+    ui.simPlay.textContent = isSimulationPaused ? "PAUSED" : "REAL RATE";
+    ui.simPlay.classList.toggle("is-paused", isSimulationPaused);
+    controls.autoRotate = !isSimulationPaused;
+    ui.autoRotate.classList.toggle("is-active", controls.autoRotate);
+  });
+  ui.storyCards.forEach((button) => {
+    button.addEventListener("click", () => {
+      ui.shell.classList.add("is-exploring");
+      switchBody(button.dataset.bodyJump || "solar");
+    });
+  });
   controls.addEventListener("start", () => {
     isPointerOrbiting = true;
     hoverDisabledUntil = performance.now() + 450;
@@ -1422,11 +2173,19 @@ function setupEvents() {
     }, 250);
   });
   ui.yearSlider.addEventListener("input", () => {
+    isTimeReplayActive = false;
+    ui.timeReplay.classList.remove("is-active");
     historicalYear = Number(ui.yearSlider.value);
     ui.yearLabel.textContent = String(historicalYear);
     drawEarthTexture();
   });
   ui.favoriteToggle.addEventListener("click", toggleFavorite);
+  ui.quakeMag?.addEventListener("input", () => {
+    quakeMinMagnitude = Number(ui.quakeMag.value);
+    ui.quakeMagValue.textContent = `${quakeMinMagnitude.toFixed(1)}+`;
+    renderEarthquakeLayer();
+    unlockAchievement("seismic-filter");
+  });
 
   ui.layers.forEach((input) => {
     input.addEventListener("change", () => {
@@ -1434,10 +2193,12 @@ function setupEvents() {
       drawEarthTexture();
       updateLayerVisibility();
       if (input.dataset.layer === "streetMap") updateStreetDetail(selectedRecord);
+      if (input.dataset.layer === "clouds" && cloudMesh) cloudMesh.visible = input.checked && currentBodyKey === "earth";
     });
   });
 
   clockTimer = window.setInterval(updateCapitalClock, 1000);
+  document.addEventListener("keydown", onGlobalKeydown);
   setupOnboarding();
 }
 
@@ -1560,6 +2321,7 @@ function drawEarthTexture() {
 
   drawOceanDepth(ctx);
   if (layerState.currents) drawOceanCurrents(ctx);
+  if (layerState.winds) drawWindFlowTexture(ctx);
   drawWaterLevel(ctx, path);
   if (isSatelliteMode) drawSatelliteNoise(ctx);
 
@@ -1664,8 +2426,12 @@ function drawEarthTexture() {
     ctx.restore();
   }
 
-  if (isNightMode && layerState.lights) {
-    drawNightOverlay(ctx);
+  if (layerState.sunLighting) {
+    drawRealtimeNightMask(ctx);
+  }
+
+  if ((isNightMode || layerState.sunLighting) && layerState.lights) {
+    drawNightOverlay(ctx, isNightMode ? 0.34 : 0.06);
   }
 
   if (layerState.streetMap && selectedRecord) {
@@ -1713,6 +2479,38 @@ function drawOceanCurrents(ctx) {
       ctx.stroke();
     }
   }
+  ctx.restore();
+}
+
+function drawWindFlowTexture(ctx) {
+  const projection = textureContext.projection;
+  ctx.save();
+  ctx.strokeStyle = isNightMode ? "rgba(236, 255, 143, 0.16)" : "rgba(255, 245, 170, 0.2)";
+  ctx.fillStyle = isNightMode ? "rgba(236, 255, 143, 0.34)" : "rgba(255, 245, 170, 0.38)";
+  ctx.lineWidth = 2.1;
+  ctx.lineCap = "round";
+  WIND_JET_ROUTES.features.forEach((feature) => {
+    const coords = feature.geometry.coordinates;
+    for (let i = 1; i < coords.length; i += 1) {
+      const [x1, y1] = projection(coords[i - 1]);
+      const [x2, y2] = projection(coords[i]);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.quadraticCurveTo((x1 + x2) / 2, (y1 + y2) / 2 - 24, x2, y2);
+      ctx.stroke();
+      if (i % 2 === 1) {
+        const angle = Math.atan2(y2 - y1, x2 - x1);
+        const mx = (x1 + x2) / 2;
+        const my = (y1 + y2) / 2 - 14;
+        ctx.beginPath();
+        ctx.moveTo(mx, my);
+        ctx.lineTo(mx - Math.cos(angle - 0.45) * 16, my - Math.sin(angle - 0.45) * 16);
+        ctx.lineTo(mx - Math.cos(angle + 0.45) * 16, my - Math.sin(angle + 0.45) * 16);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+  });
   ctx.restore();
 }
 
@@ -1794,9 +2592,9 @@ function drawTerrainDetails(ctx, path) {
   ctx.restore();
 }
 
-function drawNightOverlay(ctx) {
+function drawNightOverlay(ctx, alpha = 0.34) {
   ctx.save();
-  ctx.fillStyle = "rgba(0, 8, 18, 0.34)";
+  ctx.fillStyle = `rgba(0, 8, 18, ${alpha})`;
   ctx.fillRect(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
   drawNightLights(ctx);
   ctx.restore();
@@ -1805,20 +2603,43 @@ function drawNightOverlay(ctx) {
 function drawNightLights(ctx) {
   const projection = textureContext.projection;
   const lightCities = countryRecords
-    .flatMap((record) => record.cities.slice(0, 2))
-    .filter((item) => Number.isFinite(item.lat) && Number.isFinite(item.lon));
+    .flatMap((record) => record.cities.slice(0, 4).map((cityRecord, index) => ({ cityRecord, record, index })))
+    .filter(({ cityRecord }) => Number.isFinite(cityRecord.lat) && Number.isFinite(cityRecord.lon));
 
-  lightCities.forEach((item) => {
-    const [x, y] = projection([item.lon, item.lat]);
-    const glow = ctx.createRadialGradient(x, y, 0, x, y, 13);
-    glow.addColorStop(0, "rgba(255, 238, 151, 0.95)");
-    glow.addColorStop(0.42, "rgba(255, 190, 90, 0.32)");
+  lightCities.forEach(({ cityRecord, record, index }) => {
+    const [x, y] = projection([cityRecord.lon, cityRecord.lat]);
+    const densityHeat = THREE.MathUtils.clamp((record.signals?.density || 30) / 520, 0.2, 1.25);
+    const radius = THREE.MathUtils.clamp((index === 0 ? 19 : 12) * densityHeat + (record.population || 0) / 90000000, 10, 32);
+    const glow = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    glow.addColorStop(0, "rgba(255, 244, 177, 0.98)");
+    glow.addColorStop(0.32, "rgba(255, 199, 91, 0.48)");
+    glow.addColorStop(0.68, "rgba(88, 211, 223, 0.15)");
     glow.addColorStop(1, "rgba(255, 190, 90, 0)");
     ctx.fillStyle = glow;
     ctx.beginPath();
-    ctx.arc(x, y, 13, 0, Math.PI * 2);
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
     ctx.fill();
   });
+}
+
+function drawRealtimeNightMask(ctx) {
+  const { lon: sunLon } = getRealtimeSunInfo();
+  const nightCenter = normalizeLon(sunLon + 180);
+  const xCenter = ((nightCenter + 180) / 360) * TEXTURE_WIDTH;
+  ctx.save();
+  ctx.globalCompositeOperation = "multiply";
+  for (let wrap = -1; wrap <= 1; wrap += 1) {
+    const x = xCenter + wrap * TEXTURE_WIDTH;
+    const gradient = ctx.createLinearGradient(x - TEXTURE_WIDTH * 0.38, 0, x + TEXTURE_WIDTH * 0.38, 0);
+    gradient.addColorStop(0, "rgba(255,255,255,1)");
+    gradient.addColorStop(0.34, "rgba(42,55,88,0.62)");
+    gradient.addColorStop(0.5, "rgba(3,8,20,0.34)");
+    gradient.addColorStop(0.66, "rgba(42,55,88,0.62)");
+    gradient.addColorStop(1, "rgba(255,255,255,1)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(x - TEXTURE_WIDTH * 0.42, 0, TEXTURE_WIDTH * 0.84, TEXTURE_HEIGHT);
+  }
+  ctx.restore();
 }
 
 function getTerrainColor(record, feature) {
@@ -2008,55 +2829,17 @@ function drawZoomMeasurementGrid(ctx) {
 function drawCelestialTexture(ctx, body) {
   const key = currentBodyKey;
   const base = {
+    solar: ["#fff4a4", "#ffd24f", "#ff8d1d"],
+    mercury: ["#514f4b", "#bdb6a8", "#2f2f31"],
     moon: ["#6d737c", "#b6bdc4", "#3c4148"],
     venus: ["#8b6330", "#e5b56a", "#4c351c"],
     mars: ["#6c2c1f", "#c06834", "#351812"],
     jupiter: ["#8b5d3d", "#f0c28b", "#58351f"],
     saturn: ["#806143", "#e8c58d", "#5b422a"],
+    uranus: ["#143f4f", "#77e3ef", "#d1fbff"],
+    neptune: ["#112f7c", "#245bd8", "#86a9ff"],
   }[key] || ["#075ea9", "#1288c4", "#03547d"];
-  const gradient = ctx.createLinearGradient(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
-  gradient.addColorStop(0, base[0]);
-  gradient.addColorStop(0.5, base[1]);
-  gradient.addColorStop(1, base[2]);
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT);
-
-  if (key === "jupiter" || key === "saturn") {
-    for (let y = 80; y < TEXTURE_HEIGHT; y += 120) {
-      ctx.fillStyle = y % 240 === 80 ? "rgba(255, 235, 186, 0.24)" : "rgba(87, 43, 22, 0.25)";
-      ctx.fillRect(0, y, TEXTURE_WIDTH, 58 + Math.sin(y) * 18);
-    }
-    if (key === "jupiter") {
-      const spot = textureContext.projection([-55, -22]);
-      ctx.fillStyle = "rgba(178, 58, 42, 0.78)";
-      ctx.beginPath();
-      ctx.ellipse(spot[0], spot[1], 170, 72, -0.15, 0, Math.PI * 2);
-      ctx.fill();
-    } else {
-      ctx.strokeStyle = "rgba(255, 236, 190, 0.82)";
-      ctx.lineWidth = 26;
-      ctx.beginPath();
-      ctx.ellipse(TEXTURE_WIDTH / 2, TEXTURE_HEIGHT / 2, 900, 120, -0.12, 0, Math.PI * 2);
-      ctx.stroke();
-    }
-  } else {
-    for (let i = 0; i < 170; i += 1) {
-      const x = Math.random() * TEXTURE_WIDTH;
-      const y = Math.random() * TEXTURE_HEIGHT;
-      const r = 7 + Math.random() * (key === "moon" ? 42 : 24);
-      ctx.fillStyle = key === "moon" ? "rgba(30, 34, 40, 0.22)" : "rgba(52, 22, 12, 0.22)";
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.strokeStyle = "rgba(255,255,255,0.12)";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    }
-  }
-
-  ctx.fillStyle = "rgba(255,255,255,0.84)";
-  ctx.font = "900 52px Segoe UI, Arial, sans-serif";
-  ctx.fillText(body.name, 90, 110);
+  paintSolarPlanetTexture(ctx, TEXTURE_WIDTH, TEXTURE_HEIGHT, key, base, key === "jupiter" || key === "saturn" || key === "solar");
 }
 
 function getHistoricalEra() {
@@ -2233,6 +3016,7 @@ function renderPanel(record) {
   const disasters = getDisasterHistory(record)
     .map((item) => `<li><strong>${escapeHtml(item.split(" ")[0])}</strong> - ${escapeHtml(item)}</li>`)
     .join("");
+  const extendedSections = makeCountryFeatureSections(record);
 
   ui.details.innerHTML = `
     <p>${escapeHtml(summary)}</p>
@@ -2260,12 +3044,14 @@ function renderPanel(record) {
     </ul>
     <h3>Disaster history</h3>
     <ul>${disasters}</ul>
+    ${extendedSections}
   `;
   renderWeather(record);
   renderCapitalTime(record);
   renderMetrics(record);
   renderNews(record);
   renderVisaStatus(record);
+  if (isVoiceNarratorEnabled) speakCurrentSelection();
 }
 
 function makeStatCards(stats) {
@@ -2476,6 +3262,27 @@ function updateCapitalClock() {
   `;
 }
 
+function updateSimulationClock() {
+  if (!ui.simDate || !ui.simTime) return;
+  const now = new Date();
+  const second = Math.floor(now.getTime() / 1000);
+  if (second === lastSimClockSecond) return;
+  lastSimClockSecond = second;
+  ui.simDate.textContent = new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  })
+    .format(now)
+    .toUpperCase();
+  ui.simTime.textContent = new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  }).format(now);
+}
+
 function formatLocalTime(timeZone) {
   try {
     return new Intl.DateTimeFormat("en-US", {
@@ -2505,11 +3312,33 @@ function formatIsoTime(value, timeZone) {
   }
 }
 
+function getMoonPhaseInfo(date = new Date()) {
+  const synodicMonth = 29.530588853;
+  const knownNewMoon = Date.UTC(2000, 0, 6, 18, 14);
+  const days = (date.getTime() - knownNewMoon) / 86400000;
+  const age = ((days % synodicMonth) + synodicMonth) % synodicMonth;
+  const illumination = Math.round((1 - Math.cos((age / synodicMonth) * Math.PI * 2)) * 50);
+  const phases = [
+    [1.84, "New Moon"],
+    [5.54, "Waxing crescent"],
+    [9.23, "First quarter"],
+    [12.92, "Waxing gibbous"],
+    [16.61, "Full Moon"],
+    [20.3, "Waning gibbous"],
+    [23.99, "Last quarter"],
+    [27.68, "Waning crescent"],
+    [29.54, "New Moon"],
+  ];
+  return { age, illumination, name: phases.find(([limit]) => age <= limit)?.[1] || "New Moon" };
+}
+
 function selectCountry(record, flyTo = false) {
   if (currentBodyKey !== "earth") return;
+  ui.shell.classList.add("is-exploring");
   selectedRecord = record;
   hoverRecord = record;
   setStatus(`${record.name} selected`);
+  unlockAchievement("first-country");
   renderPanel(record);
   renderCountryList(ui.search.value);
   drawEarthTexture();
@@ -2689,6 +3518,19 @@ function onPointerMove(event) {
   lastPointerEvent = event;
   requestAnimationFrame(() => {
     if (!lastPointerEvent) return;
+    if (currentBodyKey === "solar") {
+      const solarHit = pickSolarObject(lastPointerEvent);
+      if (solarHit) {
+        ui.coordinates.textContent = solarHit.name;
+        ui.tooltip.hidden = false;
+        ui.tooltip.textContent = `Open ${solarHit.name}`;
+        ui.tooltip.style.transform = `translate(${lastPointerEvent.clientX + 14}px, ${lastPointerEvent.clientY + 14}px)`;
+      } else {
+        ui.coordinates.textContent = "Solar system";
+        ui.tooltip.hidden = true;
+      }
+      return;
+    }
     const result = pickCountry(lastPointerEvent);
     if (!result) {
       clearHover();
@@ -2724,10 +3566,37 @@ function clearHover() {
 }
 
 function onGlobeClick(event) {
+  if (currentBodyKey === "solar") {
+    const solarHit = pickSolarObject(event);
+    if (solarHit?.bodyKey) {
+      ui.shell.classList.add("is-exploring");
+      switchBody(solarHit.bodyKey);
+    }
+    return;
+  }
   const result = pickCountry(event);
   if (result?.record) {
     selectCountry(result.record, true);
   }
+}
+
+function pickSolarObject(event) {
+  if (!solarSystemObjects.length || !solarSystemGroup?.visible) return null;
+  const rect = renderer.domElement.getBoundingClientRect();
+  const pointer = new THREE.Vector2(
+    ((event.clientX - rect.left) / rect.width) * 2 - 1,
+    -(((event.clientY - rect.top) / rect.height) * 2 - 1),
+  );
+  const raycaster = new THREE.Raycaster();
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(solarSystemObjects, true);
+  const hit = hits.find((item) => item.object.userData?.bodyKey || item.object.parent?.userData?.bodyKey);
+  if (!hit) return null;
+  const source = hit.object.userData?.bodyKey ? hit.object : hit.object.parent;
+  return {
+    bodyKey: source.userData.bodyKey,
+    name: source.userData.name || CELESTIAL_BODIES[source.userData.bodyKey]?.name || "Object",
+  };
 }
 
 function pickCountry(event) {
@@ -2796,7 +3665,10 @@ function resetView() {
   updateCountryAnalysisLayers(null);
   updateStreetDetail(null);
   flagPinsGroup.clear();
-  if (currentBodyKey === "earth") {
+  if (currentBodyKey === "solar") {
+    renderSolarPanel();
+    setStatus("Solar system model ready");
+  } else if (currentBodyKey === "earth") {
     renderPanel(null);
     renderCountryList(ui.search.value);
     setStatus("Globe ready");
@@ -2806,7 +3678,8 @@ function resetView() {
   drawEarthTexture();
   animationTarget = {
     start: camera.position.clone(),
-    end: getGlobeCenter().add(new THREE.Vector3(0.07, 0.08, 5.85)),
+    end: currentBodyKey === "solar" ? new THREE.Vector3(0, 6.2, 12.5) : getGlobeCenter().add(new THREE.Vector3(0.07, 0.08, 5.85)),
+    lookAt: getFocusCenter(),
     started: performance.now(),
     duration: 900,
   };
@@ -2848,6 +3721,7 @@ function toggleCinemaMode() {
 
 function switchBody(bodyKey) {
   currentBodyKey = CELESTIAL_BODIES[bodyKey] ? bodyKey : "earth";
+  if (currentBodyKey !== "earth") unlockAchievement("space-mode");
   const body = CELESTIAL_BODIES[currentBodyKey];
   selectedRecord = null;
   hoverRecord = null;
@@ -2857,15 +3731,32 @@ function switchBody(bodyKey) {
   celestialMarkersGroup.clear();
   isSatelliteMode = false;
   ui.satelliteView.classList.remove("is-active");
+  ui.bodySelect.value = currentBodyKey;
   ui.shell.classList.toggle("is-celestial", currentBodyKey !== "earth");
+  ui.shell.classList.toggle("is-solar-mode", currentBodyKey === "solar");
+  updateNavState();
   atmosphereMesh.material.color.setHex(body.atmosphere || 0x6ddcf1);
   earthMesh.scale.setScalar(body.radiusScale || 1);
-  controls.minDistance = currentBodyKey === "earth" ? 2.4 : 2.25;
-  controls.maxDistance = currentBodyKey === "earth" ? 8.2 : 7.4;
+  globeGroup.visible = currentBodyKey !== "solar";
+  solarSystemGroup.visible = currentBodyKey === "solar";
+  controls.minDistance = currentBodyKey === "solar" ? 3.2 : currentBodyKey === "earth" ? 2.4 : 2.25;
+  controls.maxDistance = currentBodyKey === "solar" ? 22 : currentBodyKey === "earth" ? 8.2 : 7.4;
 
-  if (currentBodyKey === "earth") {
-    cloudMesh.visible = true;
-    terminatorLine.visible = true;
+  if (currentBodyKey === "solar") {
+    renderSolarPanel();
+    updateLayerVisibility();
+    setStatus("Solar system model ready");
+    animationTarget = {
+      start: camera.position.clone(),
+      end: new THREE.Vector3(0, 6.2, 12.5),
+      lookAt: new THREE.Vector3(0, 0, 0),
+      started: performance.now(),
+      duration: 1050,
+    };
+    controls.target.set(0, 0, 0);
+  } else if (currentBodyKey === "earth") {
+    cloudMesh.visible = layerState.clouds;
+    terminatorLine.visible = layerState.sunLighting;
     capitalMarkersGroup.visible = true;
     mountainLabelsGroup.visible = true;
     renderPanel(null);
@@ -2881,14 +3772,66 @@ function switchBody(bodyKey) {
     buildCelestialMarkers(body);
     updateLayerVisibility();
     setStatus(`${body.name} explorer ready`);
+    animationTarget = {
+      start: camera.position.clone(),
+      end: getGlobeCenter().add(new THREE.Vector3(0.2, 0.1, 5.25)),
+      lookAt: getGlobeCenter(),
+      started: performance.now(),
+      duration: 780,
+    };
+    controls.target.copy(getGlobeCenter());
   }
 
   drawEarthTexture();
   drawMiniMap();
 }
 
+function updateNavState() {
+  ui.navModel?.classList.toggle("is-active", currentBodyKey !== "solar");
+  ui.navObjects?.classList.toggle("is-active", currentBodyKey === "solar");
+  ui.navEarth?.classList.toggle("is-active", currentBodyKey === "earth");
+}
+
+function renderSolarPanel() {
+  const moonPhase = getMoonPhaseInfo();
+  ui.search.value = "";
+  ui.panelKicker.textContent = "Solar system";
+  ui.title.textContent = "Solar Objects";
+  applyCountryTheme(null);
+  ui.hero.hidden = true;
+  ui.favoriteToggle.hidden = true;
+  ui.quickStats.innerHTML = makeStatCards([
+    ["id", "Mode", "3D"],
+    ["capital", "Objects", "Sun + 8 planets"],
+    ["continent", "Layers", "Orbits / labels / trails"],
+  ]);
+  ui.weather.innerHTML = "";
+  ui.capitalTime.innerHTML = "";
+  ui.metrics.innerHTML = "";
+  ui.news.innerHTML = "";
+  ui.details.hidden = false;
+  ui.details.innerHTML = `
+    <p>Click any planet to open its explorer view. Orbit rings, labels, asteroid points, spacecraft-style trails, and constellation lines stay visible like a space simulator.</p>
+    <section class="feature-card">
+      <h4>Live universe stack</h4>
+      <p>Use Universe to zoom Earth -> Solar System -> Galaxy -> Universe. Stars, meteors, debris trails, and solar flare layers stay active.</p>
+      <p><strong>Moon phase now:</strong> ${escapeHtml(moonPhase.name)} (${moonPhase.illumination}% illuminated).</p>
+    </section>
+    <h3>Objects</h3>
+    <ul>
+      <li><strong>Sun</strong> - glowing central star with stylized light halo.</li>
+      <li><strong>Earth</strong> - switches back to the full country map with weather, news, and layers.</li>
+      <li><strong>Moon, Venus, Mars, Jupiter, Saturn</strong> - open surface-marker explorer modes.</li>
+      <li><strong>Uranus and Neptune</strong> - shown in the solar scene as outer planet targets.</li>
+    </ul>
+  `;
+  ui.list.replaceChildren();
+  if (isVoiceNarratorEnabled) speakCurrentSelection();
+}
+
 function renderBodyPanel() {
   const body = CELESTIAL_BODIES[currentBodyKey];
+  const moonPhase = currentBodyKey === "moon" ? getMoonPhaseInfo() : null;
   ui.search.value = "";
   ui.panelKicker.textContent = body.kicker || "Celestial body";
   ui.title.textContent = body.name;
@@ -2920,14 +3863,22 @@ function renderBodyPanel() {
     <p>Switch back to Earth to load country headlines.</p>
   `;
   ui.details.hidden = false;
+  const missionCards = makePlanetMissionCards(currentBodyKey);
   ui.details.innerHTML = `
     <p>${escapeHtml(body.summary || "Explore this world with orbit controls and surface markers.")}</p>
+    <section class="feature-card">
+      <h4>HD surface system</h4>
+      <p>Procedural high-detail material with roughness, bump texture, rim light, and live space layers around the selected body.</p>
+      ${moonPhase ? `<p><strong>Current Moon phase:</strong> ${escapeHtml(moonPhase.name)} / ${moonPhase.illumination}% illuminated.</p>` : ""}
+    </section>
     <h3>Marked regions</h3>
     <ul>
       ${body.markers.map((item) => `<li><strong>${escapeHtml(item.name)}</strong> - ${escapeHtml(item.note)}</li>`).join("")}
     </ul>
+    ${missionCards}
   `;
   ui.list.replaceChildren();
+  if (isVoiceNarratorEnabled) speakCurrentSelection();
 }
 
 function downloadInfoCard() {
@@ -3001,6 +3952,44 @@ function downloadInfoCard() {
   link.click();
 }
 
+function downloadMiniReportPdf() {
+  const record = selectedRecord;
+  const body = CELESTIAL_BODIES[currentBodyKey];
+  const title = record?.name || body?.name || "Global Explorer";
+  const lines = record
+    ? [
+        `Country: ${record.name}`,
+        `Official name: ${record.officialName || record.name}`,
+        `Capital: ${record.capital || "-"}`,
+        `Region: ${joinCompact([record.region, record.subregion], " / ") || "-"}`,
+        `Population: ${formatNumber(record.population)}`,
+        `Area: ${record.area ? `${formatNumber(record.area)} km2` : "-"}`,
+        `Languages: ${record.languages || "-"}`,
+        `Currency: ${record.currency || "-"}`,
+        `Climate and biome: ${record.climate} / ${record.biome}`,
+        `Internet: ${record.signals.internet}% / ${record.signals.speed} Mbps`,
+        `Trip estimate: ${makeTripCost(record).total} USD per day`,
+        `Organizations: ${getOrganizationBadges(record).join(", ")}`,
+        `Name origin: ${getNameOrigin(record)}`,
+        `National symbols: ${getNationalSymbols(record).join(", ")}`,
+        `Scientific achievements: ${getScienceAchievements(record).join("; ")}`,
+        `Famous inventions: ${getInventions(record).map((item) => item[0]).join(", ")}`,
+      ]
+    : [
+        `Object: ${title}`,
+        `Mode: ${body?.kicker || "Celestial explorer"}`,
+        body?.summary || "Interactive solar system object.",
+        `Markers: ${(body?.markers || []).map((item) => item.name).join(", ")}`,
+      ];
+  const pdf = makeSimplePdf(`${title} Mini Report`, lines);
+  const link = document.createElement("a");
+  link.download = `${slugify(title)}-mini-report.pdf`;
+  link.href = URL.createObjectURL(pdf);
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  setStatus("Mini report PDF exported");
+}
+
 function downloadGlobeView() {
   renderer.render(scene, camera);
   const link = document.createElement("a");
@@ -3008,7 +3997,9 @@ function downloadGlobeView() {
   link.download = `${slugify(label)}-globe-view.png`;
   link.href = renderer.domElement.toDataURL("image/png");
   link.click();
+  addScreenshotToGallery(label, makeScreenshotThumbnail());
   setStatus("Current globe view saved as PNG");
+  unlockAchievement("screenshot");
 }
 
 function toggleGyroControl() {
@@ -3061,6 +4052,428 @@ function toggleScalePlanets() {
   setStatus(isScalePlanetsVisible ? "Scale planet comparison enabled" : "Scale planet comparison hidden");
 }
 
+function cycleUniverseZoom() {
+  universeLevelIndex = (universeLevelIndex + 1) % UNIVERSE_LEVELS.length;
+  const level = UNIVERSE_LEVELS[universeLevelIndex];
+  ui.shell.classList.add("is-exploring");
+  switchBody(level.body);
+  const target = new THREE.Vector3(...level.target);
+  controls.maxDistance = level.maxDistance;
+  controls.target.copy(target);
+  animationTarget = {
+    start: camera.position.clone(),
+    end: new THREE.Vector3(...level.position),
+    lookAt: target,
+    started: performance.now(),
+    duration: 1350,
+  };
+  ui.universeZoom?.classList.add("is-active");
+  window.setTimeout(() => ui.universeZoom?.classList.remove("is-active"), 900);
+  setStatus(`Universe zoom: ${level.label}`);
+  unlockAchievement("universe-zoom");
+}
+
+function toggleCinematicTour() {
+  isCinematicTour = !isCinematicTour;
+  ui.tourMode.classList.toggle("is-active", isCinematicTour);
+  ui.tourMode.textContent = isCinematicTour ? "Stop tour" : "Tour";
+  controls.autoRotate = !isCinematicTour;
+  ui.autoRotate.classList.toggle("is-active", controls.autoRotate);
+  if (isCinematicTour) {
+    tourStartedAt = performance.now();
+    lastTourSegment = -1;
+    ui.shell.classList.add("is-exploring");
+    setStatus("Cinematic tour started");
+  } else {
+    setStatus("Cinematic tour stopped");
+  }
+}
+
+function updateCinematicTour(now) {
+  if (!isCinematicTour || !CINEMATIC_TOUR_STOPS.length) return;
+  const segmentMs = 5600;
+  const index = Math.floor((now - tourStartedAt) / segmentMs) % CINEMATIC_TOUR_STOPS.length;
+  if (index === lastTourSegment) return;
+  lastTourSegment = index;
+  runCinematicStop(CINEMATIC_TOUR_STOPS[index]);
+}
+
+function runCinematicStop(stop) {
+  setStatus(stop.label || "Cinematic flyby");
+  if (stop.type === "country") {
+    const record = getRecordByCca(stop.key);
+    if (!record) return;
+    if (currentBodyKey !== "earth") switchBody("earth");
+    selectCountry(record, true);
+    return;
+  }
+
+  switchBody(stop.key);
+  const target = stop.target ? new THREE.Vector3(...stop.target) : getFocusCenter();
+  const end = stop.position
+    ? (stop.key === "solar" ? new THREE.Vector3(...stop.position) : getGlobeCenter().add(new THREE.Vector3(...stop.position)))
+    : camera.position.clone();
+  animationTarget = {
+    start: camera.position.clone(),
+    end,
+    lookAt: target,
+    started: performance.now(),
+    duration: 1600,
+  };
+}
+
+function toggleVoiceNarrator() {
+  isVoiceNarratorEnabled = !isVoiceNarratorEnabled;
+  ui.voiceNarrator.classList.toggle("is-active", isVoiceNarratorEnabled);
+  ui.voiceNarrator.textContent = isVoiceNarratorEnabled ? "Mute" : "Voice";
+  if (isVoiceNarratorEnabled) {
+    unlockAchievement("narrator");
+    speakCurrentSelection();
+    setStatus("Voice narrator enabled");
+  } else {
+    window.speechSynthesis?.cancel();
+    setStatus("Voice narrator disabled");
+  }
+}
+
+function speakCurrentSelection() {
+  if (!isVoiceNarratorEnabled || !("speechSynthesis" in window)) return;
+  const text = makeNarrationText();
+  if (!text) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-US";
+  utterance.rate = 0.92;
+  utterance.pitch = 0.98;
+  window.speechSynthesis.speak(utterance);
+}
+
+function makeNarrationText() {
+  if (selectedRecord && currentBodyKey === "earth") {
+    const record = selectedRecord;
+    return `${record.name}. Capital: ${record.capital || "not listed"}. ${record.summary || ""} Population around ${formatNumber(record.population)}. Climate: ${record.climate}. Biome: ${record.biome}.`;
+  }
+  const body = CELESTIAL_BODIES[currentBodyKey];
+  if (!body) return "";
+  const markerText = (body.markers || []).slice(0, 3).map((item) => item.name).join(", ");
+  return `${body.name}. ${body.summary || "Celestial explorer mode."} Key marked regions include ${markerText}.`;
+}
+
+function toggleTimeReplay() {
+  isTimeReplayActive = !isTimeReplayActive;
+  ui.timeReplay.classList.toggle("is-active", isTimeReplayActive);
+  if (isTimeReplayActive) {
+    if (currentBodyKey !== "earth") switchBody("earth");
+    timeReplayStarted = performance.now();
+    setStatus("Time travel replay started");
+  } else {
+    setStatus("Time travel replay paused");
+  }
+}
+
+function updateTimeReplay(now) {
+  if (!isTimeReplayActive || currentBodyKey !== "earth") return;
+  const span = 18000;
+  const progress = ((now - timeReplayStarted) % span) / span;
+  const nextYear = Math.round(1492 + progress * (2026 - 1492));
+  if (nextYear === historicalYear) return;
+  historicalYear = nextYear;
+  ui.yearSlider.value = String(historicalYear);
+  ui.yearLabel.textContent = String(historicalYear);
+  drawEarthTexture();
+}
+
+function saveCameraView() {
+  const label = selectedRecord?.name || CELESTIAL_BODIES[currentBodyKey]?.name || "View";
+  const view = {
+    id: `${Date.now()}-${Math.round(Math.random() * 999)}`,
+    name: `${label} ${savedCameraViews.length + 1}`,
+    bodyKey: currentBodyKey,
+    selectedCca3: selectedRecord?.cca3 || "",
+    camera: camera.position.toArray(),
+    target: controls.target.toArray(),
+  };
+  savedCameraViews = [view, ...savedCameraViews].slice(0, 8);
+  localStorage.setItem("airi-saved-camera-views", JSON.stringify(savedCameraViews));
+  renderSavedViews();
+  setStatus("Camera view saved");
+}
+
+function loadSavedCameraViews() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem("airi-saved-camera-views") || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function renderSavedViews() {
+  if (!ui.savedViews || !ui.viewStrip) return;
+  ui.viewStrip.hidden = savedCameraViews.length === 0;
+  ui.savedViews.replaceChildren(
+    ...savedCameraViews.map((view) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "view-chip";
+      button.textContent = view.name;
+      button.title = "Load saved camera view";
+      button.addEventListener("click", () => loadCameraView(view));
+      return button;
+    }),
+  );
+}
+
+function loadCameraView(view) {
+  if (!view) return;
+  switchBody(view.bodyKey || "earth");
+  if (view.selectedCca3) {
+    const record = getRecordByCca(view.selectedCca3);
+    if (record && currentBodyKey === "earth") {
+      selectedRecord = record;
+      renderPanel(record);
+      updateCityMarkers(record);
+      updateCountryAnalysisLayers(record);
+      drawEarthTexture();
+    }
+  }
+  const end = new THREE.Vector3().fromArray(view.camera || [0, 0, 5]);
+  const lookAt = new THREE.Vector3().fromArray(view.target || [0, 0, 0]);
+  animationTarget = {
+    start: camera.position.clone(),
+    end,
+    lookAt,
+    started: performance.now(),
+    duration: 950,
+  };
+  controls.target.copy(lookAt);
+  setStatus(`Loaded view: ${view.name}`);
+}
+
+function loadScreenshotGallery() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem("airi-screenshot-gallery") || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function loadAchievements() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem("airi-achievements") || "[]");
+    return new Set(Array.isArray(parsed) ? parsed : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveAchievements() {
+  localStorage.setItem("airi-achievements", JSON.stringify([...achievements]));
+}
+
+function unlockAchievement(id) {
+  if (!id || achievements.has(id)) return;
+  achievements.add(id);
+  saveAchievements();
+  renderAchievements();
+}
+
+function renderAchievements() {
+  if (!ui.achievementList || !ui.achievementsHud) return;
+  ui.achievementList.replaceChildren(
+    ...ACHIEVEMENT_DEFS.map(([id, label, note]) => {
+      const item = document.createElement("span");
+      item.className = `achievement-pill${achievements.has(id) ? " is-unlocked" : ""}`;
+      item.title = note;
+      item.textContent = label;
+      return item;
+    }),
+  );
+}
+
+function addScreenshotToGallery(label, dataUrl) {
+  const item = {
+    id: `${Date.now()}-${Math.round(Math.random() * 999)}`,
+    label,
+    dataUrl,
+  };
+  screenshotGallery = [item, ...screenshotGallery].slice(0, 6);
+  try {
+    localStorage.setItem("airi-screenshot-gallery", JSON.stringify(screenshotGallery));
+  } catch {
+    screenshotGallery = screenshotGallery.slice(0, 3);
+    localStorage.setItem("airi-screenshot-gallery", JSON.stringify(screenshotGallery));
+  }
+  renderScreenshotGallery();
+}
+
+function makeScreenshotThumbnail() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 360;
+  canvas.height = 210;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#03050a";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(renderer.domElement, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL("image/jpeg", 0.68);
+}
+
+function renderScreenshotGallery() {
+  if (!ui.screenshotGallery || !ui.shotGalleryList) return;
+  ui.screenshotGallery.hidden = screenshotGallery.length === 0;
+  ui.shotGalleryList.replaceChildren(
+    ...screenshotGallery.map((shot) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "shot-thumb";
+      button.title = shot.label;
+      button.innerHTML = `<img src="${escapeHtml(shot.dataUrl)}" alt="${escapeHtml(shot.label)} screenshot" />`;
+      button.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.download = `${slugify(shot.label)}-saved-shot.png`;
+        link.href = shot.dataUrl;
+        link.click();
+      });
+      return button;
+    }),
+  );
+}
+
+function openCommandMenu() {
+  buildCommandItems();
+  ui.commandMenu.hidden = false;
+  ui.commandInput.value = "";
+  commandIndex = 0;
+  renderCommandResults("");
+  requestAnimationFrame(() => ui.commandInput.focus());
+}
+
+function closeCommandMenu() {
+  ui.commandMenu.hidden = true;
+}
+
+function buildCommandItems() {
+  const bodyItems = Object.entries(CELESTIAL_BODIES).map(([key, body]) => ({
+    label: body.name,
+    type: "planet",
+    detail: body.kicker || "Celestial body",
+    run: () => switchBody(key),
+  }));
+  const countryItems = countryRecords.map((record) => ({
+    label: record.name,
+    type: "country",
+    detail: record.capital || record.continent,
+    run: () => {
+      switchBody("earth");
+      selectCountry(record, true);
+    },
+  }));
+  const layerItems = [...ui.layers].map((input) => ({
+    label: `Toggle ${input.closest("label")?.textContent?.trim() || input.dataset.layer}`,
+    type: "layer",
+    detail: input.checked ? "On" : "Off",
+    run: () => {
+      input.checked = !input.checked;
+      layerState[input.dataset.layer] = input.checked;
+      drawEarthTexture();
+      updateLayerVisibility();
+      buildCommandItems();
+    },
+  }));
+  commandItems = [...COMMAND_STATIC_ACTIONS.map((item) => ({ ...item, detail: "Action" })), ...bodyItems, ...countryItems, ...layerItems];
+}
+
+function renderCommandResults(query = "") {
+  const needle = query.trim().toLowerCase();
+  const results = commandItems
+    .filter((item) => !needle || `${item.label} ${item.type} ${item.detail || ""}`.toLowerCase().includes(needle))
+    .slice(0, 32);
+  commandIndex = Math.min(commandIndex, Math.max(0, results.length - 1));
+  ui.commandResults.replaceChildren(
+    ...results.map((item, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `command-item${index === commandIndex ? " is-active" : ""}`;
+      button.innerHTML = `<strong>${escapeHtml(item.label)}</strong><span>${escapeHtml(item.type)}</span>`;
+      button.addEventListener("click", () => executeCommandItem(item));
+      button.dataset.commandIndex = String(index);
+      return button;
+    }),
+  );
+  ui.commandResults.dataset.resultCount = String(results.length);
+}
+
+function onCommandInputKeydown(event) {
+  const buttons = [...ui.commandResults.querySelectorAll(".command-item")];
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+    commandIndex = Math.min(buttons.length - 1, commandIndex + 1);
+    renderCommandResults(ui.commandInput.value);
+  } else if (event.key === "ArrowUp") {
+    event.preventDefault();
+    commandIndex = Math.max(0, commandIndex - 1);
+    renderCommandResults(ui.commandInput.value);
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    const filtered = commandItems
+      .filter((item) => !ui.commandInput.value.trim() || `${item.label} ${item.type} ${item.detail || ""}`.toLowerCase().includes(ui.commandInput.value.trim().toLowerCase()))
+      .slice(0, 32);
+    executeCommandItem(filtered[commandIndex]);
+  } else if (event.key === "Escape") {
+    closeCommandMenu();
+  }
+}
+
+function executeCommandItem(item) {
+  if (!item) return;
+  closeCommandMenu();
+  item.run();
+}
+
+function onGlobalKeydown(event) {
+  const key = event.key.toLowerCase();
+  if ((event.ctrlKey || event.metaKey) && key === "k") {
+    event.preventDefault();
+    if (ui.commandMenu.hidden) openCommandMenu();
+    else closeCommandMenu();
+    return;
+  }
+  if (event.key === "Escape" && !ui.commandMenu.hidden) {
+    closeCommandMenu();
+  }
+}
+
+function updateCompassHud() {
+  if (!ui.compassNeedle || !ui.scaleValue) return;
+  const target = controls.target || getFocusCenter();
+  const direction = camera.position.clone().sub(target);
+  const angle = Math.atan2(direction.x, direction.z);
+  ui.compassNeedle.style.transform = `rotate(${angle}rad)`;
+  const distance = Math.max(1, direction.length());
+  const km = currentBodyKey === "earth" ? Math.round(distance * 360) : Math.round(distance * 120000);
+  ui.scaleValue.textContent = currentBodyKey === "earth" ? `Scale ${formatNumber(km)} km` : `Scale ${formatNumber(km)} km`;
+}
+
+function onDetailsInput(event) {
+  if (!event.target.closest?.(".currency-converter")) return;
+  updateCurrencyConverter();
+}
+
+function updateCurrencyConverter() {
+  if (!selectedRecord) return;
+  const amount = Number(document.querySelector("#converter-amount")?.value || 0);
+  const target = document.querySelector("#converter-target")?.value || "USD";
+  const output = document.querySelector("#converter-output");
+  const currency = inferCurrency(selectedRecord);
+  const targetRate = TARGET_CURRENCY_RATES[target] || 1;
+  const usd = amount * currency.rate;
+  const converted = usd / targetRate;
+  if (output) {
+    output.innerHTML = `<strong>${formatNumber(Math.round(converted * 100) / 100)} ${escapeHtml(target)}</strong><span>${escapeHtml(currency.code)} to ${escapeHtml(target)}, demo rate</span>`;
+  }
+}
+
 function setupOnboarding() {
   if (localStorage.getItem("airi-globe-tour-seen") === "yes") return;
   ui.onboarding.hidden = false;
@@ -3091,12 +4504,15 @@ function closeTour() {
 function animate(now = performance.now()) {
   requestAnimationFrame(animate);
 
+  updateCinematicTour(now);
+  updateTimeReplay(now);
+
   if (animationTarget) {
     const elapsed = now - animationTarget.started;
     const t = Math.min(elapsed / animationTarget.duration, 1);
     const eased = 1 - Math.pow(1 - t, 3);
     camera.position.copy(animationTarget.start).lerp(animationTarget.end, eased);
-    camera.lookAt(globeGroup.position);
+    camera.lookAt(animationTarget.lookAt || getFocusCenter());
     if (t >= 1) {
       animationTarget = null;
     }
@@ -3107,9 +4523,17 @@ function animate(now = performance.now()) {
     cloudMesh.rotation.x = Math.sin(now * 0.00008) * 0.015;
   }
   updateTerminatorLine(now);
+  updateRealtimeSunLighting();
   animateFlightArcs(now);
   animateOceanCurrentArrows(now);
+  animateWindFlow(now);
+  animateMeteorShower(now);
+  animateDebrisField(now);
+  animateSolarSystem(now);
+  animateSatelliteTracker(now);
   animateScanLine(now);
+  updateSimulationClock();
+  updateCompassHud();
   updateZoomGridVisibility();
   if (Math.floor(now / 600) !== Math.floor((now - 16) / 600)) drawMiniMap();
   controls.update();
@@ -3128,6 +4552,10 @@ function resizeRenderer() {
 
 function setGlobeLayout() {
   if (!globeGroup || !controls) return;
+  if (currentBodyKey === "solar") {
+    controls.target.set(0, 0, 0);
+    return;
+  }
   const isCompact = window.innerWidth <= 980;
   const x = isCompact ? 0 : -0.55;
   globeGroup.position.set(x, 0, 0);
@@ -3136,6 +4564,10 @@ function setGlobeLayout() {
 
 function getGlobeCenter() {
   return globeGroup ? globeGroup.position.clone() : new THREE.Vector3(0, 0, 0);
+}
+
+function getFocusCenter() {
+  return currentBodyKey === "solar" ? new THREE.Vector3(0, 0, 0) : getGlobeCenter();
 }
 
 function latLonToVector3(lat, lon, radius) {
@@ -3149,32 +4581,63 @@ function latLonToVector3(lat, lon, radius) {
 }
 
 function makeStars(count) {
-  const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(count * 3);
-  for (let i = 0; i < count; i += 1) {
-    const radius = THREE.MathUtils.randFloat(14, 42);
-    const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
-    const phi = Math.acos(THREE.MathUtils.randFloatSpread(2));
-    positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-    positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-    positions[i * 3 + 2] = radius * Math.cos(phi);
-  }
-  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-  return new THREE.Points(
-    geometry,
-    new THREE.PointsMaterial({
-      color: 0xcfe5ff,
-      size: 0.018,
-      transparent: true,
-      opacity: 0.8,
-      sizeAttenuation: true,
-    }),
-  );
+  const group = new THREE.Group();
+  const makeLayer = (layerCount, size, radiusMin, radiusMax, opacity, bright = false) => {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(layerCount * 3);
+    const colors = new Float32Array(layerCount * 3);
+    const palette = bright
+      ? [
+          new THREE.Color("#fff8de"),
+          new THREE.Color("#d7e8ff"),
+          new THREE.Color("#ffe1a8"),
+        ]
+      : [
+          new THREE.Color("#8fb8ff"),
+          new THREE.Color("#d8e8ff"),
+          new THREE.Color("#fff0c8"),
+          new THREE.Color("#b6fff1"),
+        ];
+    for (let i = 0; i < layerCount; i += 1) {
+      const radius = THREE.MathUtils.randFloat(radiusMin, radiusMax);
+      const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
+      const phi = Math.acos(THREE.MathUtils.randFloatSpread(2));
+      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = radius * Math.cos(phi);
+      const color = palette[Math.floor(Math.random() * palette.length)].clone();
+      const intensity = bright ? THREE.MathUtils.randFloat(0.78, 1.0) : THREE.MathUtils.randFloat(0.38, 0.88);
+      color.multiplyScalar(intensity);
+      colors[i * 3] = color.r;
+      colors[i * 3 + 1] = color.g;
+      colors[i * 3 + 2] = color.b;
+    }
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    group.add(
+      new THREE.Points(
+        geometry,
+        new THREE.PointsMaterial({
+          size,
+          transparent: true,
+          opacity,
+          sizeAttenuation: true,
+          vertexColors: true,
+          depthWrite: false,
+        }),
+      ),
+    );
+  };
+
+  makeLayer(Math.floor(count * 0.72), 0.012, 18, 54, 0.72, false);
+  makeLayer(Math.floor(count * 0.22), 0.024, 16, 46, 0.9, false);
+  makeLayer(Math.floor(count * 0.06), 0.052, 14, 34, 0.96, true);
+  return group;
 }
 
 function buildConstellations() {
   constellationGroup.clear();
-  CONSTELLATIONS.forEach((constellation) => {
+  [...CONSTELLATIONS, ...CONSTELLATION_EXTRAS].forEach((constellation) => {
     const starVectors = constellation.stars.map(([x, y, z]) => new THREE.Vector3(x, y, z));
     constellation.links.forEach(([from, to]) => {
       constellationGroup.add(
@@ -3235,6 +4698,697 @@ function buildScalePlanets() {
   scalePlanetsGroup.visible = false;
 }
 
+function buildSolarSystem() {
+  solarSystemGroup.clear();
+  solarSystemObjects = [];
+  solarOrbitAnimations = [];
+  solarDynamicObjects = [];
+  solarSystemGroup.rotation.x = -0.18;
+  solarSystemGroup.rotation.z = -0.08;
+
+  const sunLight = new THREE.PointLight(0xffd36a, 3.2, 28);
+  solarSystemGroup.add(sunLight);
+
+  const sun = new THREE.Mesh(
+    new THREE.SphereGeometry(0.42, 64, 48),
+    new THREE.MeshBasicMaterial({
+      map: makeSolarTexture(["#fff4a4", "#ffd24f", "#ff8d1d"], true, "sun"),
+    }),
+  );
+  sun.userData = { bodyKey: "solar", name: "Sun" };
+  solarSystemGroup.add(sun);
+  solarSystemObjects.push(sun);
+
+  const glow = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: makeGlowTexture("#ffd76b"),
+      color: 0xffd36a,
+      transparent: true,
+      opacity: 0.84,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  glow.scale.set(2.4, 2.4, 1);
+  solarSystemGroup.add(glow);
+
+  const halo = new THREE.Mesh(
+    new THREE.RingGeometry(0.58, 0.64, 128),
+    new THREE.MeshBasicMaterial({
+      color: 0xffe28f,
+      transparent: true,
+      opacity: 0.28,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  halo.rotation.x = Math.PI / 2;
+  solarSystemGroup.add(halo);
+
+  const planets = [
+    { key: "mercury", label: "Mercury", orbit: 0.9, radius: 0.055, speed: 0.00072, colors: ["#6a655d", "#d6c8a9", "#403b37"], angle: 0.2 },
+    { key: "venus", label: "Venus", orbit: 1.22, radius: 0.11, speed: 0.00056, colors: ["#5c3b1c", "#d49b55", "#f1d08a"], angle: 2.2 },
+    { key: "earth", label: "Earth", orbit: 1.58, radius: 0.12, speed: 0.00046, colors: ["#12396d", "#2e7c52", "#d8f0ff"], angle: 4.2 },
+    { key: "mars", label: "Mars", orbit: 1.98, radius: 0.086, speed: 0.00036, colors: ["#401612", "#a94a2a", "#e09c63"], angle: 0.9 },
+    { key: "jupiter", label: "Jupiter", orbit: 3.02, radius: 0.28, speed: 0.00018, colors: ["#593820", "#c78c55", "#f6d3a3"], angle: 3.1, moons: true },
+    { key: "saturn", label: "Saturn", orbit: 4.05, radius: 0.23, speed: 0.00013, colors: ["#6d5737", "#d7bc83", "#f4e0a8"], angle: 5.1, ring: true },
+    { key: "uranus", label: "Uranus", orbit: 5.18, radius: 0.17, speed: 0.00009, colors: ["#1c697d", "#72d7e5", "#c4f3ff"], angle: 1.7 },
+    { key: "neptune", label: "Neptune", orbit: 6.35, radius: 0.17, speed: 0.00007, colors: ["#14378c", "#285bd6", "#77a4ff"], angle: 4.8 },
+  ];
+
+  planets.forEach((planet, index) => {
+    solarSystemGroup.add(makeSolarOrbitLine(planet.orbit, index % 2 ? 0xffffff : 0x6de8ff, index % 2 ? 0.32 : 0.44));
+    const pivot = new THREE.Group();
+    pivot.rotation.y = planet.angle;
+    solarSystemGroup.add(pivot);
+
+    const bodyGroup = new THREE.Group();
+    bodyGroup.position.set(planet.orbit, 0, 0);
+    bodyGroup.userData = { bodyKey: CELESTIAL_BODIES[planet.key] ? planet.key : "solar", name: planet.label };
+
+    const materialOptions = {
+      map: makeSolarTexture(planet.colors, planet.key === "jupiter" || planet.key === "saturn", planet.key),
+      roughness: planet.key === "earth" ? 0.58 : 0.76,
+      metalness: 0.01,
+    };
+    if (["mercury", "moon", "mars"].includes(planet.key)) {
+      materialOptions.bumpMap = makePlanetBumpTexture(planet.key);
+      materialOptions.bumpScale = planet.radius * 0.16;
+    }
+    const sphere = new THREE.Mesh(new THREE.SphereGeometry(planet.radius, 64, 48), new THREE.MeshStandardMaterial(materialOptions));
+    sphere.userData = bodyGroup.userData;
+    bodyGroup.add(sphere);
+    solarSystemObjects.push(sphere);
+
+    if (planet.ring) {
+      const ring = new THREE.Mesh(
+        new THREE.RingGeometry(planet.radius * 1.42, planet.radius * 2.25, 96),
+        new THREE.MeshBasicMaterial({
+          color: 0xeed9aa,
+          transparent: true,
+          opacity: 0.72,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        }),
+      );
+      ring.rotation.x = Math.PI / 2.45;
+      ring.rotation.y = 0.25;
+      bodyGroup.add(ring);
+    }
+
+    if (planet.moons) {
+      [0.42, 0.55, 0.68, 0.82].forEach((moonOrbit, moonIndex) => {
+        const moonPivot = new THREE.Group();
+        const moon = new THREE.Mesh(
+          new THREE.SphereGeometry(0.025 - moonIndex * 0.003, 16, 12),
+          new THREE.MeshBasicMaterial({ color: 0xbfc6cc }),
+        );
+        moon.position.set(moonOrbit, 0, 0);
+        moonPivot.add(moon);
+        bodyGroup.add(moonPivot);
+        solarOrbitAnimations.push({ pivot: moonPivot, speed: 0.0016 + moonIndex * 0.00035, spin: moon });
+      });
+    }
+
+    if (planet.key === "earth") buildPlanetSatelliteSwarm(bodyGroup, planet.radius, "earth");
+    if (planet.key === "mars") buildPlanetSatelliteSwarm(bodyGroup, planet.radius, "mars");
+
+    const label = makeMapLabelSprite(planet.label.toUpperCase(), {
+      fill: "rgba(0,0,0,0.2)",
+      stroke: "rgba(255,255,255,0)",
+      text: planet.key === "jupiter" || planet.key === "saturn" ? "#ffe4a8" : "#dfeaff",
+    });
+    label.position.set(0, planet.radius + 0.22, 0);
+    label.scale.multiplyScalar(0.62);
+    bodyGroup.add(label);
+
+    pivot.add(bodyGroup);
+    solarOrbitAnimations.push({ pivot, speed: planet.speed, spin: sphere, bodyGroup });
+  });
+
+  buildAsteroidBelt();
+  buildSpacecraftTrails();
+  buildMeteorAndCometField();
+}
+
+function buildPlanetSatelliteSwarm(bodyGroup, planetRadius, planetKey) {
+  const specs =
+    planetKey === "earth"
+      ? [
+          { name: "ISS", orbit: planetRadius * 2.45, speed: 0.0038, tilt: 0.72, twist: 0.2, color: 0xffffff },
+          { name: "Hubble", orbit: planetRadius * 2.95, speed: 0.0031, tilt: 1.15, twist: -0.45, color: 0xbfd4ff },
+          { name: "Starlink train", orbit: planetRadius * 3.35, speed: 0.0046, tilt: 0.38, twist: 0.9, color: 0x9fe8ff, train: true },
+          { name: "GPS ring", orbit: planetRadius * 4.15, speed: 0.0018, tilt: 0.95, twist: -0.2, color: 0x78a7ff },
+        ]
+      : [
+          { name: "MRO", orbit: planetRadius * 2.65, speed: 0.0025, tilt: 0.65, twist: 0.35, color: 0xffc58a },
+          { name: "MAVEN", orbit: planetRadius * 3.15, speed: 0.0021, tilt: 1.05, twist: -0.35, color: 0xffe1b4 },
+        ];
+
+  specs.forEach((spec, specIndex) => {
+    const orbitGroup = new THREE.Group();
+    orbitGroup.rotation.x = spec.tilt;
+    orbitGroup.rotation.z = spec.twist;
+    const orbitLine = makeSolarOrbitLine(spec.orbit, spec.color, 0.28);
+    orbitLine.material.opacity = spec.train ? 0.36 : 0.24;
+    orbitGroup.add(orbitLine);
+    bodyGroup.add(orbitGroup);
+
+    const pivot = new THREE.Group();
+    pivot.rotation.x = spec.tilt;
+    pivot.rotation.z = spec.twist;
+    const satelliteCount = spec.train ? 7 : 1;
+    for (let i = 0; i < satelliteCount; i += 1) {
+      const sat = makeSatelliteMesh(spec.color);
+      const angle = (i / satelliteCount) * Math.PI * 2 + specIndex * 0.55;
+      sat.position.set(Math.cos(angle) * spec.orbit, Math.sin(angle) * 0.02, Math.sin(angle) * spec.orbit);
+      sat.scale.setScalar(spec.train ? 0.62 : 0.82);
+      sat.userData = { bodyKey: "solar", name: spec.name };
+      pivot.add(sat);
+      solarSystemObjects.push(sat);
+    }
+    bodyGroup.add(pivot);
+    solarOrbitAnimations.push({ pivot, speed: spec.speed });
+  });
+}
+
+function makeSatelliteMesh(color) {
+  const group = new THREE.Group();
+  const bus = new THREE.Mesh(
+    new THREE.BoxGeometry(0.035, 0.026, 0.026),
+    new THREE.MeshStandardMaterial({ color: 0xe8edf2, roughness: 0.35, metalness: 0.5 }),
+  );
+  group.add(bus);
+  const panelMaterial = new THREE.MeshBasicMaterial({
+    color,
+    transparent: true,
+    opacity: 0.82,
+    side: THREE.DoubleSide,
+  });
+  const leftPanel = new THREE.Mesh(new THREE.PlaneGeometry(0.08, 0.032), panelMaterial);
+  leftPanel.position.x = -0.064;
+  leftPanel.rotation.y = Math.PI / 2;
+  group.add(leftPanel);
+  const rightPanel = leftPanel.clone();
+  rightPanel.position.x = 0.064;
+  group.add(rightPanel);
+  const antenna = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.003, 0.003, 0.085, 8),
+    new THREE.MeshBasicMaterial({ color: 0xf5fbff }),
+  );
+  antenna.rotation.z = Math.PI / 2;
+  antenna.position.z = 0.032;
+  group.add(antenna);
+  return group;
+}
+
+function buildMeteorAndCometField() {
+  const rockMaterial = new THREE.MeshStandardMaterial({
+    color: 0x8d8272,
+    roughness: 0.92,
+    metalness: 0.03,
+  });
+  for (let i = 0; i < 42; i += 1) {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = THREE.MathUtils.randFloat(2.22, 2.92);
+    const rock = new THREE.Mesh(new THREE.DodecahedronGeometry(THREE.MathUtils.randFloat(0.012, 0.035), 0), rockMaterial.clone());
+    rock.position.set(Math.cos(angle) * radius, THREE.MathUtils.randFloatSpread(0.16), Math.sin(angle) * radius);
+    rock.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+    rock.userData = { bodyKey: "solar", name: "Meteoroid" };
+    solarSystemGroup.add(rock);
+    solarSystemObjects.push(rock);
+    solarDynamicObjects.push({ object: rock, spin: new THREE.Vector3(Math.random() * 0.01, Math.random() * 0.012, Math.random() * 0.008) });
+  }
+
+  const comets = [
+    { name: "Comet Atlas", orbit: 5.75, angle: 0.9, color: 0x74f0ff, speed: 0.00016 },
+    { name: "Halley path", orbit: 6.95, angle: 3.8, color: 0xbfd4ff, speed: 0.00011 },
+  ];
+  comets.forEach((comet) => {
+    const pivot = new THREE.Group();
+    pivot.rotation.y = comet.angle;
+    pivot.rotation.x = 0.42;
+    const cometGroup = new THREE.Group();
+    cometGroup.position.set(comet.orbit, 0.18, 0);
+    const nucleus = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(0.045, 1),
+      new THREE.MeshStandardMaterial({ color: 0xdad7c8, roughness: 0.85, emissive: comet.color, emissiveIntensity: 0.08 }),
+    );
+    nucleus.userData = { bodyKey: "solar", name: comet.name };
+    cometGroup.add(nucleus);
+    solarSystemObjects.push(nucleus);
+    const tail = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(-0.02, 0, 0),
+        new THREE.Vector3(-0.38, 0.04, -0.08),
+        new THREE.Vector3(-0.74, 0.08, -0.18),
+      ]),
+      new THREE.LineBasicMaterial({
+        color: comet.color,
+        transparent: true,
+        opacity: 0.72,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    );
+    cometGroup.add(tail);
+    const glow = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeGlowTexture("#9eefff"),
+        color: comet.color,
+        transparent: true,
+        opacity: 0.34,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    glow.scale.set(0.36, 0.36, 1);
+    cometGroup.add(glow);
+    const label = makeMapLabelSprite(comet.name, {
+      fill: "rgba(0,0,0,0.18)",
+      stroke: "rgba(116,240,255,0.24)",
+      text: "#dffbff",
+    });
+    label.position.set(-0.14, 0.22, 0);
+    label.scale.multiplyScalar(0.46);
+    cometGroup.add(label);
+    pivot.add(cometGroup);
+    solarSystemGroup.add(pivot);
+    solarOrbitAnimations.push({ pivot, speed: comet.speed, spin: nucleus });
+  });
+
+  for (let i = 0; i < 20; i += 1) {
+    const start = new THREE.Vector3(THREE.MathUtils.randFloat(-6.8, 7.2), THREE.MathUtils.randFloat(1.1, 4.2), THREE.MathUtils.randFloat(-4.4, 3.2));
+    const drift = new THREE.Vector3(THREE.MathUtils.randFloat(-1.2, -0.35), THREE.MathUtils.randFloat(-0.34, 0.04), THREE.MathUtils.randFloat(0.18, 0.7));
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), drift.clone().multiplyScalar(-0.42)]),
+      new THREE.LineBasicMaterial({
+        color: i % 3 === 0 ? 0xffc46b : 0xa5eaff,
+        transparent: true,
+        opacity: 0.55,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    );
+    line.position.copy(start);
+    solarSystemGroup.add(line);
+    solarDynamicObjects.push({
+      object: line,
+      start,
+      drift,
+      phase: Math.random(),
+      speed: THREE.MathUtils.randFloat(0.00008, 0.00018),
+    });
+  }
+}
+
+function makeSolarOrbitLine(radius, color, opacity) {
+  const points = [];
+  for (let i = 0; i <= 240; i += 1) {
+    const angle = (i / 240) * Math.PI * 2;
+    points.push(new THREE.Vector3(Math.cos(angle) * radius, 0, Math.sin(angle) * radius));
+  }
+  const line = new THREE.LineLoop(
+    new THREE.BufferGeometry().setFromPoints(points),
+    new THREE.LineBasicMaterial({
+      color,
+      transparent: true,
+      opacity,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  return line;
+}
+
+function buildAsteroidBelt() {
+  const count = 520;
+  const positions = new Float32Array(count * 3);
+  for (let i = 0; i < count; i += 1) {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = THREE.MathUtils.randFloat(2.36, 2.72);
+    positions[i * 3] = Math.cos(angle) * radius;
+    positions[i * 3 + 1] = THREE.MathUtils.randFloatSpread(0.06);
+    positions[i * 3 + 2] = Math.sin(angle) * radius;
+  }
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  solarSystemGroup.add(
+    new THREE.Points(
+      geometry,
+      new THREE.PointsMaterial({
+        color: 0xd9d3bf,
+        size: 0.012,
+        transparent: true,
+        opacity: 0.45,
+        sizeAttenuation: true,
+      }),
+    ),
+  );
+}
+
+function buildSpacecraftTrails() {
+  const trails = [
+    { name: "Voyager 1", color: 0x90eaff, points: [[-0.2, 0.05, 0.1], [2.2, 0.14, -1.2], [4.9, 0.32, -2.3], [7.8, 0.55, -4.2]] },
+    { name: "Voyager 2", color: 0xffffff, points: [[0.1, -0.04, -0.2], [-1.7, 0.12, 1.4], [-4.6, 0.22, 2.3], [-7.2, 0.38, 3.8]] },
+    { name: "Pioneer 10", color: 0x777777, points: [[0.2, 0.02, 0.1], [1.6, -0.08, 1.1], [3.7, -0.2, 2.8], [6.6, -0.38, 5.1]] },
+  ];
+
+  trails.forEach((trail) => {
+    const curve = new THREE.CatmullRomCurve3(trail.points.map(([x, y, z]) => new THREE.Vector3(x, y, z)));
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(90)),
+      new THREE.LineBasicMaterial({
+        color: trail.color,
+        transparent: true,
+        opacity: 0.34,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    solarSystemGroup.add(line);
+    const label = makeMapLabelSprite(trail.name, {
+      fill: "rgba(0,0,0,0.2)",
+      stroke: "rgba(255,255,255,0)",
+      text: "#aab0b8",
+    });
+    label.position.copy(curve.getPoint(0.72));
+    label.scale.multiplyScalar(0.48);
+    solarSystemGroup.add(label);
+  });
+}
+
+function makeSolarTexture(colors, banded = false, key = "generic") {
+  const canvas = document.createElement("canvas");
+  canvas.width = key === "sun" ? 1024 : 2048;
+  canvas.height = key === "sun" ? 512 : 1024;
+  const ctx = canvas.getContext("2d");
+  paintSolarPlanetTexture(ctx, canvas.width, canvas.height, key, colors, banded);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = renderer?.capabilities?.getMaxAnisotropy?.() || 1;
+  return texture;
+}
+
+function paintSolarPlanetTexture(ctx, width, height, key, colors, banded = false) {
+  if (key === "sun" || key === "solar") {
+    drawSunTexture(ctx, width, height, colors);
+    return;
+  }
+  if (key === "earth") {
+    drawEarthSolarTexture(ctx, width, height);
+    return;
+  }
+  if (key === "jupiter" || key === "saturn") {
+    drawGasGiantTexture(ctx, width, height, key, colors);
+    return;
+  }
+  if (key === "uranus" || key === "neptune") {
+    drawIceGiantTexture(ctx, width, height, key, colors);
+    return;
+  }
+  if (key === "venus") {
+    drawVenusTexture(ctx, width, height, colors);
+    return;
+  }
+  drawRockyPlanetTexture(ctx, width, height, key, colors, banded);
+}
+
+function fillPlanetGradient(ctx, width, height, colors) {
+  const gradient = ctx.createLinearGradient(0, 0, width, height);
+  colors.forEach((color, index) => gradient.addColorStop(index / Math.max(colors.length - 1, 1), color));
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, width, height);
+}
+
+function addFineNoise(ctx, width, height, count, alpha = 0.07, warm = false) {
+  for (let i = 0; i < count; i += 1) {
+    const shade = warm ? 180 + Math.random() * 70 : 170 + Math.random() * 85;
+    ctx.fillStyle = `rgba(${shade},${warm ? shade * 0.82 : shade},${warm ? shade * 0.48 : shade + 10},${Math.random() * alpha})`;
+    ctx.fillRect(Math.random() * width, Math.random() * height, 1.4, 1.4);
+  }
+}
+
+function drawSunTexture(ctx, width, height, colors) {
+  const gradient = ctx.createRadialGradient(width * 0.48, height * 0.5, 8, width * 0.5, height * 0.5, width * 0.72);
+  gradient.addColorStop(0, "#fff7bc");
+  gradient.addColorStop(0.22, colors[0]);
+  gradient.addColorStop(0.52, colors[1]);
+  gradient.addColorStop(1, colors[2]);
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, width, height);
+  for (let i = 0; i < 95; i += 1) {
+    const y = Math.random() * height;
+    const x = Math.random() * width;
+    const length = 50 + Math.random() * 170;
+    ctx.strokeStyle = `rgba(255, ${150 + Math.random() * 90}, 40, ${0.12 + Math.random() * 0.28})`;
+    ctx.lineWidth = 2 + Math.random() * 7;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.bezierCurveTo(x + length * 0.25, y - 24, x + length * 0.55, y + 28, x + length, y + Math.random() * 34 - 17);
+    ctx.stroke();
+  }
+  addFineNoise(ctx, width, height, 1800, 0.18, true);
+}
+
+function drawEarthSolarTexture(ctx, width, height) {
+  const ocean = ctx.createLinearGradient(0, 0, width, height);
+  ocean.addColorStop(0, "#0d315e");
+  ocean.addColorStop(0.38, "#0b5790");
+  ocean.addColorStop(0.72, "#08265a");
+  ocean.addColorStop(1, "#031126");
+  ctx.fillStyle = ocean;
+  ctx.fillRect(0, 0, width, height);
+
+  const landColors = ["#2e774d", "#4e8b4d", "#9a8052", "#6f7e54", "#d1c6a2"];
+  for (let i = 0; i < 38; i += 1) {
+    const x = Math.random() * width;
+    const y = height * 0.2 + Math.random() * height * 0.62;
+    const rx = 22 + Math.random() * 78;
+    const ry = 10 + Math.random() * 34;
+    ctx.fillStyle = landColors[Math.floor(Math.random() * landColors.length)];
+    ctx.globalAlpha = 0.5 + Math.random() * 0.32;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate((Math.random() - 0.5) * 1.2);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "rgba(245,250,255,0.92)";
+  ctx.fillRect(0, 0, width, height * 0.075);
+  ctx.fillRect(0, height * 0.925, width, height * 0.075);
+  for (let i = 0; i < 34; i += 1) {
+    const y = Math.random() * height;
+    const x = Math.random() * width;
+    const w = 54 + Math.random() * 150;
+    const h = 8 + Math.random() * 24;
+    const cloud = ctx.createRadialGradient(x, y, 0, x, y, w);
+    cloud.addColorStop(0, "rgba(255,255,255,0.34)");
+    cloud.addColorStop(0.52, "rgba(255,255,255,0.16)");
+    cloud.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = cloud;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(1, h / w);
+    ctx.beginPath();
+    ctx.arc(0, 0, w, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+  addFineNoise(ctx, width, height, 950, 0.05);
+}
+
+function drawRockyPlanetTexture(ctx, width, height, key, colors, banded) {
+  fillPlanetGradient(ctx, width, height, colors);
+  const craterCount = key === "moon" || key === "mercury" ? 170 : 80;
+  const warm = key === "mars";
+  for (let i = 0; i < craterCount; i += 1) {
+    const x = Math.random() * width;
+    const y = Math.random() * height;
+    const r = 3 + Math.random() * (key === "mars" ? 15 : 28);
+    drawCrater(ctx, x, y, r, warm);
+  }
+  if (key === "mars") {
+    ctx.fillStyle = "rgba(242, 236, 210, 0.78)";
+    ctx.fillRect(0, 0, width, height * 0.07);
+    ctx.fillRect(0, height * 0.93, width, height * 0.07);
+    for (let i = 0; i < 26; i += 1) {
+      ctx.strokeStyle = "rgba(239, 168, 98, 0.18)";
+      ctx.lineWidth = 6 + Math.random() * 12;
+      ctx.beginPath();
+      const y = Math.random() * height;
+      ctx.moveTo(0, y);
+      ctx.bezierCurveTo(width * 0.28, y - 28, width * 0.63, y + 30, width, y + Math.random() * 46 - 23);
+      ctx.stroke();
+    }
+  }
+  if (banded) {
+    for (let y = 0; y < height; y += 18) {
+      ctx.fillStyle = y % 36 === 0 ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
+      ctx.fillRect(0, y + Math.sin(y) * 3, width, 7);
+    }
+  }
+  addFineNoise(ctx, width, height, 1200, key === "moon" ? 0.08 : 0.06, warm);
+}
+
+function drawCrater(ctx, x, y, r, warm = false) {
+  const fill = warm ? "rgba(63, 25, 18, 0.22)" : "rgba(19, 22, 26, 0.25)";
+  const rim = warm ? "rgba(255, 201, 142, 0.2)" : "rgba(255, 255, 255, 0.18)";
+  ctx.fillStyle = fill;
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = rim;
+  ctx.lineWidth = Math.max(1, r * 0.08);
+  ctx.stroke();
+  ctx.fillStyle = warm ? "rgba(255, 190, 120, 0.06)" : "rgba(255, 255, 255, 0.06)";
+  ctx.beginPath();
+  ctx.arc(x - r * 0.25, y - r * 0.22, r * 0.42, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function drawGasGiantTexture(ctx, width, height, key, colors) {
+  fillPlanetGradient(ctx, width, height, colors);
+  const bandPalette =
+    key === "jupiter"
+      ? ["rgba(255,235,197,0.34)", "rgba(150,84,43,0.32)", "rgba(244,183,112,0.27)", "rgba(70,38,25,0.2)"]
+      : ["rgba(255,234,184,0.28)", "rgba(151,118,78,0.22)", "rgba(245,210,144,0.22)", "rgba(87,65,44,0.14)"];
+  for (let y = -20; y < height + 24; y += 14) {
+    const bandHeight = 7 + Math.random() * 16;
+    ctx.fillStyle = bandPalette[Math.floor(Math.random() * bandPalette.length)];
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x <= width; x += 24) {
+      ctx.lineTo(x, y + Math.sin(x * 0.025 + y * 0.08) * 5);
+    }
+    ctx.lineTo(width, y + bandHeight);
+    ctx.lineTo(0, y + bandHeight);
+    ctx.closePath();
+    ctx.fill();
+  }
+  if (key === "jupiter") {
+    ctx.fillStyle = "rgba(178, 69, 45, 0.82)";
+    ctx.beginPath();
+    ctx.ellipse(width * 0.62, height * 0.58, width * 0.1, height * 0.08, -0.08, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,220,170,0.45)";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  }
+  addFineNoise(ctx, width, height, 900, 0.08, true);
+}
+
+function drawIceGiantTexture(ctx, width, height, key, colors) {
+  fillPlanetGradient(ctx, width, height, colors);
+  for (let y = 12; y < height; y += 22) {
+    ctx.strokeStyle = key === "neptune" ? "rgba(190,220,255,0.18)" : "rgba(230,255,255,0.16)";
+    ctx.lineWidth = 2 + Math.random() * 6;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.bezierCurveTo(width * 0.28, y - 14, width * 0.62, y + 18, width, y + Math.random() * 22 - 11);
+    ctx.stroke();
+  }
+  if (key === "neptune") {
+    ctx.fillStyle = "rgba(12, 30, 103, 0.42)";
+    ctx.beginPath();
+    ctx.ellipse(width * 0.66, height * 0.48, width * 0.075, height * 0.045, -0.15, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  addFineNoise(ctx, width, height, 620, 0.045);
+}
+
+function drawVenusTexture(ctx, width, height, colors) {
+  fillPlanetGradient(ctx, width, height, colors);
+  for (let i = 0; i < 58; i += 1) {
+    const y = Math.random() * height;
+    ctx.strokeStyle = i % 2 ? "rgba(255,224,157,0.22)" : "rgba(111,72,36,0.18)";
+    ctx.lineWidth = 8 + Math.random() * 18;
+    ctx.beginPath();
+    ctx.moveTo(-20, y);
+    ctx.bezierCurveTo(width * 0.22, y - 44, width * 0.6, y + 38, width + 20, y + Math.random() * 80 - 40);
+    ctx.stroke();
+  }
+  addFineNoise(ctx, width, height, 1100, 0.075, true);
+}
+
+function makePlanetBumpTexture(key) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 256;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#777";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  const count = key === "mars" ? 95 : 180;
+  for (let i = 0; i < count; i += 1) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const r = 3 + Math.random() * (key === "mars" ? 18 : 30);
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
+    gradient.addColorStop(0, "#555");
+    gradient.addColorStop(0.72, "#737373");
+    gradient.addColorStop(1, "#9a9a9a");
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+
+function makeGlowTexture(color) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext("2d");
+  const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 126);
+  gradient.addColorStop(0, color);
+  gradient.addColorStop(0.22, color);
+  gradient.addColorStop(0.48, "rgba(255,190,60,0.35)");
+  gradient.addColorStop(1, "rgba(255,190,60,0)");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+
+function animateSolarSystem(now) {
+  if (!solarSystemGroup?.visible || isSimulationPaused) return;
+  solarSystemGroup.rotation.y += 0.000045;
+  solarOrbitAnimations.forEach((item) => {
+    if (item.pivot) item.pivot.rotation.y += item.speed * (currentBodyKey === "solar" ? 1 : 0.24);
+    if (item.spin) item.spin.rotation.y += item.speed * 4.5;
+    if (item.bodyGroup) item.bodyGroup.position.y = Math.sin(now * item.speed + item.pivot.rotation.y) * 0.035;
+  });
+  solarDynamicObjects.forEach((item) => {
+    if (item.spin) {
+      item.object.rotation.x += item.spin.x;
+      item.object.rotation.y += item.spin.y;
+      item.object.rotation.z += item.spin.z;
+    }
+    if (item.start && item.drift) {
+      const t = (now * item.speed + item.phase) % 1;
+      item.object.position.copy(item.start).addScaledVector(item.drift, t * 3.4);
+      if (item.object.material) item.object.material.opacity = 0.08 + Math.sin(t * Math.PI) * 0.62;
+    }
+  });
+}
+
+function animateSatelliteTracker(now) {
+  updateIssMarker();
+  if (!satelliteTrackerGroup?.visible || isSimulationPaused) return;
+  satelliteTrackerAnimations.forEach((item) => {
+    const t = (now * item.speed + item.offset) % 1;
+    const next = (t + 0.004) % 1;
+    item.object.position.copy(item.curve.getPointAt(t));
+    item.object.lookAt(item.curve.getPointAt(next));
+  });
+}
+
 function makeCloudTexture() {
   const canvas = document.createElement("canvas");
   canvas.width = 2048;
@@ -3285,13 +5439,7 @@ function makeTerminatorLine() {
 
 function updateTerminatorLine(now, line = terminatorLine) {
   if (!line) return;
-  const sunLon = ((now * 0.0015) % (Math.PI * 2)) - Math.PI;
-  const sunLat = THREE.MathUtils.degToRad(8 * Math.sin(now * 0.00008));
-  const sunDirection = new THREE.Vector3(
-    Math.cos(sunLat) * Math.cos(sunLon),
-    Math.sin(sunLat),
-    Math.cos(sunLat) * Math.sin(sunLon),
-  ).normalize();
+  const sunDirection = getRealtimeSunInfo().direction;
   const basisA = new THREE.Vector3(0, 1, 0).cross(sunDirection);
   if (basisA.lengthSq() < 0.0001) basisA.set(1, 0, 0);
   basisA.normalize();
@@ -3308,6 +5456,19 @@ function updateTerminatorLine(now, line = terminatorLine) {
     );
   }
   line.geometry.setFromPoints(points);
+}
+
+function getRealtimeSunInfo(date = new Date()) {
+  const startOfYear = Date.UTC(date.getUTCFullYear(), 0, 0);
+  const day = Math.floor((date.getTime() - startOfYear) / 86400000);
+  const utcHours = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+  const declination = -23.44 * Math.cos((Math.PI * 2 * (day + 10)) / 365);
+  const lon = normalizeLon(180 - utcHours * 15);
+  return {
+    lat: declination,
+    lon,
+    direction: latLonToVector3(declination, lon, 1).normalize(),
+  };
 }
 
 function buildMountainLabels() {
@@ -3363,7 +5524,124 @@ function buildStaticDataLayers() {
   addPointGroup(baseGroup, MILITARY_BASE_POINTS, 0xff6f91, 0.022, 1.062);
   addPointGroup(spaceportGroup, SPACEPORT_POINTS, 0xffbf69, 0.024, 1.075);
   buildOceanCurrentArrows();
+  buildWindFlowLayer();
   buildZoomGrid();
+}
+
+function buildPopulationDensityGlow() {
+  if (!populationGlowGroup || !countryRecords.length) return;
+  populationGlowGroup.clear();
+  countryRecords.forEach((record) => {
+    const centroid = window.d3.geoCentroid(record.feature);
+    const lon = Number.isFinite(centroid[0]) ? centroid[0] : record.cities?.[0]?.lon || 0;
+    const lat = Number.isFinite(centroid[1]) ? centroid[1] : record.cities?.[0]?.lat || 0;
+    const density = record.signals?.density || 0;
+    const heat = THREE.MathUtils.clamp(density / 650, 0.15, 1);
+    const color = heat > 0.62 ? "#ffbf69" : heat > 0.32 ? "#ecff8f" : "#58d3df";
+    const sprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeGlowTexture(color),
+        color: new THREE.Color(color),
+        transparent: true,
+        opacity: 0.14 + heat * 0.32,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    const size = THREE.MathUtils.clamp(0.08 + Math.sqrt(Math.max(1, density)) / 34, 0.12, 0.52);
+    sprite.position.copy(latLonToVector3(lat, lon, RADIUS * 1.018));
+    sprite.scale.set(size, size, 1);
+    sprite.userData = { density, country: record.name };
+    populationGlowGroup.add(sprite);
+  });
+  updateLayerVisibility();
+}
+
+function buildSatelliteTrackerLayer() {
+  if (!satelliteTrackerGroup) return;
+  satelliteTrackerGroup.clear();
+  satelliteTrackerAnimations = [];
+  const satellites = [
+    { name: "ISS", radius: RADIUS * 1.42, tilt: 51.6, yaw: -24, speed: 0.00016, color: 0xffffff },
+    { name: "GPS III", radius: RADIUS * 1.78, tilt: 55, yaw: 58, speed: 0.00007, color: 0x98a6ff },
+    { name: "Starlink train", radius: RADIUS * 1.34, tilt: 38, yaw: 112, speed: 0.00022, color: 0x58d3df },
+    { name: "Weather sat", radius: RADIUS * 1.62, tilt: 98, yaw: -78, speed: 0.0001, color: 0xecff8f },
+  ];
+  satellites.forEach((sat, index) => {
+    const curve = makeOrbitalCurve(sat.radius, sat.tilt, sat.yaw);
+    const orbit = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(180)),
+      new THREE.LineBasicMaterial({
+        color: sat.color,
+        transparent: true,
+        opacity: 0.32,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    satelliteTrackerGroup.add(orbit);
+
+    const tracker = new THREE.Group();
+    const body = new THREE.Mesh(
+      new THREE.BoxGeometry(0.035, 0.018, 0.018),
+      new THREE.MeshBasicMaterial({ color: sat.color, transparent: true, opacity: 0.92 }),
+    );
+    const panel = new THREE.Mesh(
+      new THREE.BoxGeometry(0.078, 0.006, 0.025),
+      new THREE.MeshBasicMaterial({ color: 0x9ba9bd, transparent: true, opacity: 0.76 }),
+    );
+    panel.position.x = 0.058;
+    const panelTwo = panel.clone();
+    panelTwo.position.x = -0.058;
+    tracker.add(body, panel, panelTwo);
+    const label = makeMapLabelSprite(sat.name, {
+      fill: "rgba(5,10,18,0.62)",
+      stroke: "rgba(255,255,255,0.44)",
+      text: "#eef5ff",
+    });
+    label.scale.multiplyScalar(0.43);
+    label.position.set(0.08, 0.05, 0);
+    tracker.add(label);
+    satelliteTrackerGroup.add(tracker);
+    satelliteTrackerAnimations.push({ curve, object: tracker, speed: sat.speed, offset: index / satellites.length });
+  });
+  issLiveMarker = makeTrackedSatelliteSprite("ISS live", 0x9df76d);
+  issLiveMarker.visible = false;
+  satelliteTrackerGroup.add(issLiveMarker);
+}
+
+function makeTrackedSatelliteSprite(name, color) {
+  const tracker = new THREE.Group();
+  const body = new THREE.Mesh(
+    new THREE.BoxGeometry(0.045, 0.024, 0.024),
+    new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.96 }),
+  );
+  const panel = new THREE.Mesh(
+    new THREE.BoxGeometry(0.092, 0.006, 0.032),
+    new THREE.MeshBasicMaterial({ color: 0xe8f2ff, transparent: true, opacity: 0.72 }),
+  );
+  panel.position.x = 0.07;
+  const panelTwo = panel.clone();
+  panelTwo.position.x = -0.07;
+  tracker.add(body, panel, panelTwo);
+  const label = makeMapLabelSprite(name, {
+    fill: "rgba(5, 10, 18, 0.74)",
+    stroke: "rgba(157,247,109,0.72)",
+    text: "#ecff8f",
+  });
+  label.scale.multiplyScalar(0.45);
+  label.position.set(0.1, 0.06, 0);
+  tracker.add(label);
+  return tracker;
+}
+
+function makeOrbitalCurve(radius, tilt, yaw) {
+  const points = [];
+  const euler = new THREE.Euler(THREE.MathUtils.degToRad(tilt), THREE.MathUtils.degToRad(yaw), 0, "XYZ");
+  for (let i = 0; i <= 240; i += 1) {
+    const t = (i / 240) * Math.PI * 2;
+    points.push(new THREE.Vector3(Math.cos(t) * radius, 0, Math.sin(t) * radius).applyEuler(euler));
+  }
+  return new THREE.CatmullRomCurve3(points, true);
 }
 
 function buildLineLayer(group, featureCollection, color, opacity, radiusScale) {
@@ -3439,44 +5717,265 @@ function makeCurrentArrow() {
   return new THREE.Mesh(geometry, material);
 }
 
+function buildWindFlowLayer() {
+  if (!windArrowGroup) return;
+  windArrowGroup.clear();
+  windAnimations = [];
+  WIND_JET_ROUTES.features.forEach((feature, index) => {
+    const points = feature.geometry.coordinates.map(([lon, lat]) => latLonToVector3(lat, lon, RADIUS * 1.12));
+    const curve = new THREE.CatmullRomCurve3(points);
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(120)),
+      new THREE.LineBasicMaterial({
+        color: 0xecff8f,
+        transparent: true,
+        opacity: 0.22,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    windArrowGroup.add(line);
+    for (let i = 0; i < 5; i += 1) {
+      const arrow = makeWindArrow();
+      windArrowGroup.add(arrow);
+      windAnimations.push({ curve, arrow, offset: (i / 5 + index * 0.17) % 1 });
+    }
+  });
+}
+
+function makeWindArrow() {
+  const arrow = makeCurrentArrow();
+  arrow.material = new THREE.MeshBasicMaterial({
+    color: 0xecff8f,
+    transparent: true,
+    opacity: 0.58,
+    side: THREE.DoubleSide,
+    blending: THREE.AdditiveBlending,
+  });
+  arrow.scale.setScalar(0.76);
+  return arrow;
+}
+
+function buildAuroraLayer() {
+  if (!auroraGroup) return;
+  auroraGroup.clear();
+  [-72, 72].forEach((lat, hemisphereIndex) => {
+    for (let i = 0; i < 4; i += 1) {
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(RADIUS * (0.24 + i * 0.04), 0.006, 8, 160),
+        new THREE.MeshBasicMaterial({
+          color: i % 2 ? 0x58d3df : 0x9df76d,
+          transparent: true,
+          opacity: 0.18 - i * 0.018,
+          side: THREE.DoubleSide,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        }),
+      );
+      const normal = latLonToVector3(lat, i * 42 + hemisphereIndex * 16, 1).normalize();
+      ring.position.copy(latLonToVector3(lat, i * 42, RADIUS * 1.045));
+      ring.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
+      ring.scale.set(1.4 + i * 0.1, 0.52 + i * 0.03, 1);
+      auroraGroup.add(ring);
+    }
+  });
+}
+
+function buildMeteorShower() {
+  if (!meteorShowerGroup) return;
+  meteorShowerGroup.clear();
+  meteorAnimations = [];
+  const materialBase = new THREE.LineBasicMaterial({
+    color: 0xffe2a3,
+    transparent: true,
+    opacity: 0.42,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  for (let i = 0; i < 34; i += 1) {
+    const start = new THREE.Vector3(-8 + Math.random() * 18, 6 + Math.random() * 10, -10 - Math.random() * 20);
+    const end = start.clone().add(new THREE.Vector3(3 + Math.random() * 4, -4 - Math.random() * 5, 1 + Math.random() * 4));
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0.7, -0.48, 0.16)]),
+      materialBase.clone(),
+    );
+    line.position.copy(start);
+    meteorShowerGroup.add(line);
+    meteorAnimations.push({ object: line, start, end, offset: Math.random(), speed: 0.00006 + Math.random() * 0.00004 });
+  }
+}
+
+function buildDebrisField() {
+  if (!debrisFieldGroup) return;
+  debrisFieldGroup.clear();
+  debrisAnimations = [];
+  const pointsGeometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(360 * 3);
+  for (let i = 0; i < 360; i += 1) {
+    const lat = -58 + Math.random() * 116;
+    const lon = -180 + Math.random() * 360;
+    const pointVector = latLonToVector3(lat, lon, RADIUS * (1.31 + Math.random() * 0.46));
+    positions[i * 3] = pointVector.x;
+    positions[i * 3 + 1] = pointVector.y;
+    positions[i * 3 + 2] = pointVector.z;
+  }
+  pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  const points = new THREE.Points(
+    pointsGeometry,
+    new THREE.PointsMaterial({
+      color: 0xd8e5f7,
+      size: 0.009,
+      transparent: true,
+      opacity: 0.44,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  debrisFieldGroup.add(points);
+  debrisAnimations.push({ object: points, speedX: 0.00012, speedY: 0.00022, speedZ: -0.00008 });
+  [
+    { radius: RADIUS * 1.38, tilt: 51.6, yaw: -24, color: 0xffffff },
+    { radius: RADIUS * 1.52, tilt: 74, yaw: 42, color: 0x98a6ff },
+    { radius: RADIUS * 1.68, tilt: 98, yaw: -72, color: 0x58d3df },
+  ].forEach((orbit) => {
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(makeOrbitalCurve(orbit.radius, orbit.tilt, orbit.yaw).getPoints(200)),
+      new THREE.LineBasicMaterial({
+        color: orbit.color,
+        transparent: true,
+        opacity: 0.16,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    debrisFieldGroup.add(line);
+  });
+}
+
+function buildSunFlare() {
+  if (!sunFlareGroup) return;
+  sunFlareGroup.clear();
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: makeGlowTexture("#ffd36a"),
+      color: 0xffd36a,
+      transparent: true,
+      opacity: 0.52,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  sprite.scale.set(7.5, 7.5, 1);
+  sunFlareGroup.add(sprite);
+  for (let i = 0; i < 3; i += 1) {
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(0.72 + i * 0.22, 0.74 + i * 0.22, 128),
+      new THREE.MeshBasicMaterial({
+        color: 0xffbf69,
+        transparent: true,
+        opacity: 0.18 - i * 0.035,
+        side: THREE.DoubleSide,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    );
+    ring.rotation.x = Math.PI / 2;
+    sunFlareGroup.add(ring);
+  }
+}
+
 function loadEarthquakes() {
   fetchJsonWithTimeout(EARTHQUAKE_URL, 9000)
     .then((data) => {
-      const quakes = (data.features || [])
-        .slice(0, 80)
+      latestQuakes = (data.features || [])
         .map((feature) => {
           const [lon, lat, depth] = feature.geometry?.coordinates || [];
-          return point(
-            `M${(feature.properties?.mag || 0).toFixed(1)}`,
-            lat,
-            lon,
-            feature.properties?.place || `Depth ${Math.round(depth || 0)} km`,
-          );
+          const mag = Number(feature.properties?.mag || 0);
+          return {
+            ...point(
+              `M${mag.toFixed(1)}`,
+              lat,
+              lon,
+              feature.properties?.place || `Depth ${Math.round(depth || 0)} km`,
+            ),
+            mag,
+            depth,
+          };
         })
-        .filter((item) => Number.isFinite(item.lat) && Number.isFinite(item.lon));
-      addPointGroup(earthquakeGroup, quakes, 0xff6f91, 0.017, 1.07, false);
+        .filter((item) => Number.isFinite(item.lat) && Number.isFinite(item.lon) && Number.isFinite(item.mag));
+      renderEarthquakeLayer();
       updateLayerVisibility();
     })
     .catch(() => {
-      addPointGroup(
-        earthquakeGroup,
-        [
-          point("M5.1", 38.3, 142.4, "Japan trench sample"),
-          point("M4.9", -20.5, -70.2, "Chile trench sample"),
-          point("M5.4", -6.1, 154.8, "Solomon arc sample"),
-        ],
-        0xff6f91,
-        0.017,
-        1.07,
-        false,
-      );
+      latestQuakes = [
+        { ...point("M5.1", 38.3, 142.4, "Japan trench sample"), mag: 5.1 },
+        { ...point("M4.9", -20.5, -70.2, "Chile trench sample"), mag: 4.9 },
+        { ...point("M5.4", -6.1, 154.8, "Solomon arc sample"), mag: 5.4 },
+      ];
+      renderEarthquakeLayer();
       updateLayerVisibility();
     });
 }
 
+function renderEarthquakeLayer() {
+  if (!earthquakeGroup) return;
+  const quakes = latestQuakes
+    .filter((item) => item.mag >= quakeMinMagnitude)
+    .sort((a, b) => b.mag - a.mag)
+    .slice(0, 90)
+    .map((item) =>
+      point(
+        `M${item.mag.toFixed(1)}`,
+        item.lat,
+        item.lon,
+        item.note || `Magnitude ${item.mag.toFixed(1)}`,
+      ),
+    );
+  addPointGroup(earthquakeGroup, quakes, 0xff6f91, 0.017, 1.07, false);
+}
+
+function loadIssPosition() {
+  fetchJsonWithTimeout(ISS_URL, 9000)
+    .then((data) => {
+      const lat = Number(data.latitude);
+      const lon = Number(data.longitude);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) throw new Error("Invalid ISS position");
+      issLiveData = {
+        lat,
+        lon,
+        velocity: Number(data.velocity),
+        altitude: Number(data.altitude),
+      };
+      updateIssMarker();
+      updateIssHud();
+      unlockAchievement("iss-lock");
+    })
+    .catch(() => {
+      if (!issLiveData) {
+        issLiveData = { lat: 0.18, lon: -42.4, velocity: 27600, altitude: 420 };
+      }
+      updateIssMarker();
+      updateIssHud(true);
+    });
+}
+
+function updateIssMarker() {
+  if (!issLiveMarker || !issLiveData) return;
+  issLiveMarker.visible = currentBodyKey === "earth" && layerState.satelliteTracker;
+  issLiveMarker.position.copy(latLonToVector3(issLiveData.lat, issLiveData.lon, RADIUS * 1.48));
+  issLiveMarker.lookAt(getGlobeCenter());
+}
+
+function updateIssHud(isFallback = false) {
+  if (!ui.issPosition || !ui.issVelocity || !issLiveData) return;
+  ui.issPosition.textContent = `${issLiveData.lat.toFixed(2)}°, ${normalizeLon(issLiveData.lon).toFixed(2)}°`;
+  const speed = Number.isFinite(issLiveData.velocity) ? `${formatNumber(Math.round(issLiveData.velocity))} km/h` : "Orbiting";
+  const altitude = Number.isFinite(issLiveData.altitude) ? `${Math.round(issLiveData.altitude)} km` : "LEO";
+  ui.issVelocity.textContent = `${isFallback ? "Last known" : "Live"} / ${speed} / ${altitude}`;
+}
+
 function buildCelestialMarkers(body) {
   celestialMarkersGroup.clear();
-  addPointGroup(celestialMarkersGroup, body.markers || [], 0xecff8f, 0.026, 1.08);
+  const points = [...(body.markers || []), ...(SURFACE_MISSIONS[currentBodyKey] || [])];
+  addPointGroup(celestialMarkersGroup, points, 0xecff8f, 0.026, 1.08);
 }
 
 function animateFlightArcs(now) {
@@ -3498,8 +5997,64 @@ function animateOceanCurrentArrows(now) {
   });
 }
 
+function animateWindFlow(now) {
+  windAnimations.forEach((item) => {
+    const t = (now * 0.00008 + item.offset) % 1;
+    const next = (t + 0.006) % 1;
+    const pointA = item.curve.getPointAt(t);
+    const pointB = item.curve.getPointAt(next);
+    item.arrow.position.copy(pointA);
+    item.arrow.lookAt(pointB);
+    item.arrow.rotateX(Math.PI / 2);
+    item.arrow.material.opacity = 0.36 + Math.sin(now * 0.003 + item.offset * 12) * 0.12;
+  });
+}
+
+function animateMeteorShower(now) {
+  meteorAnimations.forEach((item) => {
+    const phase = (now * item.speed + item.offset) % 1;
+    item.object.position.copy(item.start).lerp(item.end, phase);
+    item.object.material.opacity = 0.14 + (1 - phase) * 0.56;
+  });
+}
+
+function animateDebrisField(now) {
+  debrisAnimations.forEach((item) => {
+    item.object.rotation.x += item.speedX;
+    item.object.rotation.y += item.speedY;
+    item.object.rotation.z += item.speedZ;
+  });
+}
+
+function updateRealtimeSunLighting() {
+  if (!keyLight || !rimLight || !ambientLight) return;
+  const sun = getRealtimeSunInfo();
+  if (currentBodyKey === "earth" && layerState.sunLighting) {
+    const center = getGlobeCenter();
+    keyLight.position.copy(center.clone().add(sun.direction.clone().multiplyScalar(8)));
+    keyLight.intensity = isNightMode ? 1.45 : 2.55;
+    ambientLight.intensity = isNightMode ? 0.9 : 1.32;
+    rimLight.intensity = 1.05;
+  } else if (currentBodyKey === "solar") {
+    keyLight.position.set(0, 2, 1.5);
+    keyLight.intensity = 2.9;
+    ambientLight.intensity = 1.12;
+    rimLight.intensity = 1.4;
+  } else {
+    keyLight.position.set(4, 3, 6);
+    keyLight.intensity = 2.25;
+    ambientLight.intensity = 1.26;
+    rimLight.intensity = 1.05;
+  }
+  if (sunFlareGroup) {
+    sunFlareGroup.rotation.z += 0.0012;
+    sunFlareGroup.visible = layerState.meteors && currentBodyKey === "solar";
+  }
+}
+
 function updateLayerVisibility() {
   const earthActive = currentBodyKey === "earth";
+  const solarActive = currentBodyKey === "solar";
   if (flightArcsGroup) flightArcsGroup.visible = earthActive && layerState.flights;
   if (seaRoutesGroup) seaRoutesGroup.visible = earthActive && layerState.seaRoutes;
   if (earthquakeGroup) earthquakeGroup.visible = earthActive && layerState.quakes;
@@ -3512,30 +6067,75 @@ function updateLayerVisibility() {
   if (launchGroup) launchGroup.visible = earthActive && layerState.launches;
   if (migrationGroup) migrationGroup.visible = earthActive && layerState.migration;
   if (currentArrowGroup) currentArrowGroup.visible = earthActive && layerState.currents;
+  if (windArrowGroup) windArrowGroup.visible = earthActive && layerState.winds;
   if (csvPinsGroup) csvPinsGroup.visible = earthActive && layerState.csvPins;
+  if (populationGlowGroup) populationGlowGroup.visible = earthActive && layerState.population;
+  if (satelliteTrackerGroup) satelliteTrackerGroup.visible = earthActive && layerState.satelliteTracker;
+  if (auroraGroup) auroraGroup.visible = earthActive && layerState.aurora;
+  if (meteorShowerGroup) meteorShowerGroup.visible = layerState.meteors;
+  if (debrisFieldGroup) debrisFieldGroup.visible = earthActive && layerState.debris;
+  if (sunFlareGroup) sunFlareGroup.visible = solarActive && layerState.meteors;
+  if (cloudMesh) cloudMesh.visible = earthActive && layerState.clouds;
+  if (terminatorLine) terminatorLine.visible = earthActive && layerState.sunLighting;
   if (constellationGroup) constellationGroup.visible = layerState.constellations;
   if (scalePlanetsGroup) scalePlanetsGroup.visible = isScalePlanetsVisible;
+  if (solarSystemGroup) solarSystemGroup.visible = solarActive;
   if (zoomGridGroup) zoomGridGroup.visible = earthActive && layerState.measureGrid && camera.position.distanceTo(getGlobeCenter()) < 4.2;
   if (gdpRingGroup) gdpRingGroup.visible = earthActive;
   if (coastGlowGroup) coastGlowGroup.visible = earthActive;
   if (scanGroup) scanGroup.visible = earthActive;
-  if (celestialMarkersGroup) celestialMarkersGroup.visible = !earthActive;
+  if (countryExtrusionGroup) countryExtrusionGroup.visible = earthActive;
+  if (celestialMarkersGroup) celestialMarkersGroup.visible = !earthActive && !solarActive;
   if (markersGroup) markersGroup.visible = earthActive;
   if (flagPinsGroup) flagPinsGroup.visible = earthActive;
   if (capitalMarkersGroup) capitalMarkersGroup.visible = earthActive;
+  updateIssMarker();
 }
 
 function updateCountryAnalysisLayers(record) {
   gdpRingGroup.clear();
   coastGlowGroup.clear();
   scanGroup.clear();
+  countryExtrusionGroup.clear();
   if (!record) return;
 
   const centroid = window.d3.geoCentroid(record.feature);
   const lon = Number.isFinite(centroid[0]) ? centroid[0] : 0;
   const lat = Number.isFinite(centroid[1]) ? centroid[1] : 0;
   const center = latLonToVector3(lat, lon, RADIUS * 1.16);
-  const normal = center.clone().sub(globeGroup.position).normalize();
+  const normal = center.clone().normalize();
+
+  const extrusionRadius = THREE.MathUtils.clamp(Math.sqrt(record.area || 90000) / 5200, 0.075, 0.24);
+  const extrusionHeight = THREE.MathUtils.clamp(0.07 + (record.signals.gdpPerCapita || 1000) / 180000, 0.08, 0.22);
+  const extrusion = new THREE.Mesh(
+    new THREE.CylinderGeometry(extrusionRadius * 0.72, extrusionRadius, extrusionHeight, 48, 1, true),
+    new THREE.MeshBasicMaterial({
+      color: 0x58d3df,
+      transparent: true,
+      opacity: 0.24,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  extrusion.position.copy(latLonToVector3(lat, lon, RADIUS * 1.06).addScaledVector(normal, extrusionHeight * 0.45));
+  extrusion.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
+  countryExtrusionGroup.add(extrusion);
+
+  const cap = new THREE.Mesh(
+    new THREE.CircleGeometry(extrusionRadius * 0.86, 48),
+    new THREE.MeshBasicMaterial({
+      color: 0x9df76d,
+      transparent: true,
+      opacity: 0.28,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  cap.position.copy(latLonToVector3(lat, lon, RADIUS * 1.06).addScaledVector(normal, extrusionHeight + 0.016));
+  cap.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
+  countryExtrusionGroup.add(cap);
 
   const ringSize = THREE.MathUtils.clamp(0.16 + (record.signals.gdp || 20) / 15000, 0.18, 0.42);
   const ring = new THREE.Mesh(
@@ -4038,6 +6638,325 @@ function getDisasterHistory(record) {
       `${record.name} wildfire, drought, or extreme climate events`,
     ]
   );
+}
+
+function makeCountryFeatureSections(record) {
+  const badges = getOrganizationBadges(record).map((badge) => `<span class="org-badge">${escapeHtml(badge)}</span>`).join("");
+  const people = getFamousPeople(record)
+    .map((person) => `<article class="person-card"><strong>${escapeHtml(person[0])}</strong><span>${escapeHtml(person[1])}</span></article>`)
+    .join("");
+  const symbols = getNationalSymbols(record).map((item) => `<span class="mini-data-chip">${escapeHtml(item)}</span>`).join("");
+  const science = getScienceAchievements(record).map((item) => `<span class="mini-data-chip">${escapeHtml(item)}</span>`).join("");
+  const inventions = getInventions(record)
+    .map((item) => `<article class="invention-card"><strong>${escapeHtml(item[0])}</strong><span>${escapeHtml(item[1])}</span></article>`)
+    .join("");
+  const currency = inferCurrency(record);
+  const trip = makeTripCost(record);
+  const economy = getEconomyExtras(record);
+  const cityCosts = getCostOfLiving(record);
+  const alphabet = getAlphabetPreview(record);
+  const costumes = getNationalCostumes(record);
+  const animals = getEndangeredAnimals(record);
+  const radioUrl = `https://radio.garden/search?q=${encodeURIComponent(record.capital || record.name)}`;
+  const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(record.name.replaceAll(" ", "_"))}`;
+  return `
+    <section class="feature-card">
+      <h4>Organizations</h4>
+      <div class="badge-row">${badges}</div>
+    </section>
+    <section class="feature-card">
+      <h4>Name origin</h4>
+      <p>${escapeHtml(getNameOrigin(record))}</p>
+      <a class="detail-action" href="${escapeHtml(wikiUrl)}" target="_blank" rel="noreferrer">Read more</a>
+      <a class="detail-action" href="${escapeHtml(radioUrl)}" target="_blank" rel="noreferrer">Open local radio</a>
+    </section>
+    <section class="feature-card">
+      <h4>Currency converter</h4>
+      <div class="currency-converter">
+        <div class="converter-grid">
+          <label>Amount <input id="converter-amount" type="number" min="0" value="100" /></label>
+          <label>From <input id="converter-source" type="text" value="${escapeHtml(currency.code)}" readonly /></label>
+          <label>To
+            <select id="converter-target">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="UAH">UAH</option>
+            </select>
+          </label>
+        </div>
+        <div class="converter-output" id="converter-output">
+          <strong>${formatNumber(Math.round(100 * currency.rate * 100) / 100)} USD</strong>
+          <span>${escapeHtml(currency.code)} to USD, demo rate</span>
+        </div>
+      </div>
+    </section>
+    <section class="feature-card">
+      <h4>Trip cost estimator</h4>
+      <div class="trip-grid">
+        <div class="trip-cost"><strong>$${trip.food}</strong><span>Food</span></div>
+        <div class="trip-cost"><strong>$${trip.hotel}</strong><span>Hotel</span></div>
+        <div class="trip-cost"><strong>$${trip.transport}</strong><span>Transport</span></div>
+      </div>
+      <p>Estimated daily total: <strong>$${trip.total}</strong> per traveler.</p>
+    </section>
+    <section class="feature-card">
+      <h4>Salary, fuel, business</h4>
+      <div class="economy-grid">
+        <span><b>${escapeHtml(economy.minimumWage)}</b><em>Minimum wage</em></span>
+        <span><b>${escapeHtml(economy.averageSalary)}</b><em>Average salary</em></span>
+        <span><b>${escapeHtml(economy.fuelPrice)}</b><em>Fuel price</em></span>
+        <span><b>${escapeHtml(economy.businessScore)}</b><em>Business ease</em></span>
+        <span><b>${escapeHtml(economy.taxSummary)}</b><em>Tax summary</em></span>
+      </div>
+    </section>
+    <section class="feature-card">
+      <h4>Cost of living by city</h4>
+      <div class="cost-city-grid">
+        ${cityCosts.map((item) => `<span><b>${escapeHtml(item[0])}</b><em>${escapeHtml(item[1])}</em></span>`).join("")}
+      </div>
+    </section>
+    <section class="feature-card">
+      <h4>Local alphabet preview</h4>
+      <p class="alphabet-preview">${escapeHtml(alphabet.script)}</p>
+      <p>${escapeHtml(alphabet.note)}</p>
+    </section>
+    <section class="feature-card">
+      <h4>National costume cards</h4>
+      <div class="costume-grid">
+        ${costumes.map((item) => `<article class="costume-card"><strong>${escapeHtml(item[0])}</strong><span>${escapeHtml(item[1])}</span></article>`).join("")}
+      </div>
+    </section>
+    <section class="feature-card">
+      <h4>Endangered animals</h4>
+      <div class="mini-card-row">${animals.map((item) => `<span class="mini-data-chip">${escapeHtml(item)}</span>`).join("")}</div>
+    </section>
+    <section class="feature-card">
+      <h4>Famous people</h4>
+      <div class="people-grid">${people}</div>
+    </section>
+    <section class="feature-card">
+      <h4>National symbols</h4>
+      <div class="mini-card-row">${symbols}</div>
+      <p><strong>License plate example:</strong> ${escapeHtml(getLicensePlate(record))}</p>
+    </section>
+    <section class="feature-card">
+      <h4>Scientific achievements</h4>
+      <div class="mini-card-row">${science}</div>
+    </section>
+    <section class="feature-card">
+      <h4>Famous inventions</h4>
+      <div class="invention-grid">${inventions}</div>
+    </section>
+  `;
+}
+
+function getOrganizationBadges(record) {
+  const badges = [];
+  if (record.cca3 !== "ATA") badges.push("UN");
+  if (EU_MEMBERS.has(record.cca3)) badges.push("EU");
+  if (NATO_MEMBERS.has(record.cca3)) badges.push("NATO");
+  if (BRICS_MEMBERS.has(record.cca3)) badges.push("BRICS");
+  if (!badges.length) badges.push("Regional / treaty links");
+  return badges;
+}
+
+function getNameOrigin(record) {
+  return (
+    NAME_ORIGINS[record.cca3] ||
+    `${record.name}'s modern English name is connected to local geography, historic peoples, colonial naming, or the country's own endonym.`
+  );
+}
+
+function getFamousPeople(record) {
+  return (
+    FAMOUS_PEOPLE[record.cca3] || [
+      [`${record.name} artists`, "Cultural figures, writers, musicians, and filmmakers"],
+      [`${record.name} scientists`, "Researchers and engineers connected with national universities"],
+      [`${record.name} athletes`, "Olympic, football, or regional sport figures"],
+    ]
+  );
+}
+
+function getNationalSymbols(record) {
+  return NATIONAL_SYMBOLS[record.cca3] || [`${record.name} flag`, "National coat of arms", "National anthem"];
+}
+
+function getLicensePlate(record) {
+  return LICENSE_PLATE_EXAMPLES[record.cca3] || `${(record.cca2 || record.cca3 || "XX").slice(0, 2)} 1234 AB`;
+}
+
+function getScienceAchievements(record) {
+  return (
+    SCIENCE_ACHIEVEMENTS[record.cca3] || [
+      "National university research",
+      "Public health and climate studies",
+      "Infrastructure and engineering projects",
+    ]
+  );
+}
+
+function getInventions(record) {
+  return (
+    FAMOUS_INVENTIONS[record.cca3] || [
+      [`${record.name} craft technology`, "Local industrial and cultural design"],
+      [`${record.name} agriculture methods`, "Regional farming and food production knowledge"],
+      [`${record.name} engineering projects`, "Infrastructure and applied science work"],
+    ]
+  );
+}
+
+function getEconomyExtras(record) {
+  const known = COUNTRY_ECONOMY_EXTRAS[record.cca3];
+  if (known) {
+    return {
+      minimumWage: known.wage,
+      averageSalary: known.salary,
+      fuelPrice: known.fuel,
+      businessScore: `${known.business}/100`,
+      taxSummary: known.tax,
+    };
+  }
+  const seed = getStableNumber(`${record.cca3}-economy`);
+  const incomeFactor = THREE.MathUtils.clamp((record.signals.gdpPerCapita || 9000) / 18000, 0.34, 2.85);
+  return {
+    minimumWage: `$${Math.round((160 + (seed % 380)) * incomeFactor)}/mo`,
+    averageSalary: `$${Math.round((620 + (seed % 1400)) * incomeFactor)}/mo`,
+    fuelPrice: `$${(0.72 + (seed % 85) / 100).toFixed(2)}/L`,
+    businessScore: `${Math.round(44 + (seed % 46))}/100`,
+    taxSummary: `VAT ${(5 + (seed % 18)).toFixed(0)}%, income ${(10 + (seed % 25)).toFixed(0)}%`,
+  };
+}
+
+function getCostOfLiving(record) {
+  if (COST_OF_LIVING_BY_CITY[record.cca3]) return COST_OF_LIVING_BY_CITY[record.cca3];
+  const trip = makeTripCost(record);
+  return (record.cities?.length ? record.cities : buildFallbackCities(record.capital, getWeatherCoords(record)))
+    .slice(0, 3)
+    .map((item, index) => [item.name, `$${Math.max(28, trip.total - index * 8)}/day`]);
+}
+
+function getAlphabetPreview(record) {
+  if (ALPHABET_PREVIEWS[record.cca3]) {
+    return {
+      script: ALPHABET_PREVIEWS[record.cca3],
+      note: `${record.languages?.split(",")[0] || record.name} script preview.`,
+    };
+  }
+  const language = record.languages?.split(",")[0] || "Local language";
+  return {
+    script: "A B C D E F G H I J K L M N O P",
+    note: `${language} writing preview. Some countries use multiple scripts or regional alphabets.`,
+  };
+}
+
+function getNationalCostumes(record) {
+  return (
+    NATIONAL_COSTUMES[record.cca3] || [
+      [`${record.name} formal wear`, "Traditional ceremonial clothing"],
+      [`${record.name} festival dress`, "Regional textile and holiday styles"],
+    ]
+  );
+}
+
+function getEndangeredAnimals(record) {
+  return ENDANGERED_ANIMALS[record.cca3] || [`${record.name} rare mammals`, "Endangered birds", "Protected marine species"];
+}
+
+function inferCurrency(record) {
+  const value = String(record.currency || "").toLowerCase();
+  const match = Object.entries(CURRENCY_HINTS).find(([hint]) => value.includes(hint));
+  if (match) return match[1];
+  return { code: (record.currency || "LOCAL").slice(0, 3).toUpperCase(), rate: Math.max(0.004, ((getStableNumber(record.cca3) % 210) + 20) / 100) };
+}
+
+function makeTripCost(record) {
+  const seed = getStableNumber(`${record.cca3}-trip`);
+  const incomeFactor = THREE.MathUtils.clamp((record.signals.gdpPerCapita || 9000) / 28000, 0.36, 2.2);
+  const tourismFactor = record.continent === "Europe" ? 1.18 : record.continent === "Oceania" ? 1.26 : 1;
+  const food = Math.round((12 + (seed % 18)) * incomeFactor * tourismFactor);
+  const hotel = Math.round((30 + (seed % 65)) * incomeFactor * tourismFactor);
+  const transport = Math.round((5 + (seed % 20)) * Math.max(0.55, incomeFactor * 0.72));
+  return { food, hotel, transport, total: food + hotel + transport };
+}
+
+function makePlanetMissionCards(bodyKey) {
+  const missions = SURFACE_MISSIONS[bodyKey] || [];
+  if (!missions.length) {
+    return `
+      <h3>Mission mode</h3>
+      <ul>
+        <li><strong>Orbital survey</strong> - Use this planet view to inspect atmosphere, rings, and marker zones.</li>
+      </ul>
+    `;
+  }
+  return `
+    <h3>Surface missions</h3>
+    <ul>
+      ${missions.map((item) => `<li><strong>${escapeHtml(item.name)}</strong> - ${escapeHtml(item.note)}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function getRecordByCca(cca3) {
+  return countryRecords.find((record) => record.cca3 === cca3 || record.cca2 === cca3 || record.id === cca3);
+}
+
+function makeSimplePdf(title, lines) {
+  const safeTitle = pdfEscape(title);
+  const contentLines = [
+    "BT /F1 26 Tf 50 790 Td (" + safeTitle + ") Tj ET",
+    "BT /F1 10 Tf 50 770 Td (Generated by Global Explorer) Tj ET",
+    ...lines.slice(0, 26).flatMap((line, index) => wrapPdfLine(line, 86).map((part, lineIndex) => {
+      const y = 735 - (index * 24 + lineIndex * 12);
+      return `BT /F1 12 Tf 50 ${Math.max(60, y)} Td (${pdfEscape(part)}) Tj ET`;
+    })),
+  ];
+  const stream = contentLines.join("\n");
+  const objects = [
+    "<< /Type /Catalog /Pages 2 0 R >>",
+    "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>",
+    "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    `<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`,
+  ];
+  let pdf = "%PDF-1.4\n";
+  const offsets = [0];
+  objects.forEach((object, index) => {
+    offsets[index + 1] = pdf.length;
+    pdf += `${index + 1} 0 obj\n${object}\nendobj\n`;
+  });
+  const xref = pdf.length;
+  pdf += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (let i = 1; i <= objects.length; i += 1) {
+    pdf += `${String(offsets[i]).padStart(10, "0")} 00000 n \n`;
+  }
+  pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  return new Blob([pdf], { type: "application/pdf" });
+}
+
+function wrapPdfLine(value, maxLength) {
+  const words = String(value ?? "").split(/\s+/);
+  const lines = [];
+  let line = "";
+  words.forEach((word) => {
+    const next = line ? `${line} ${word}` : word;
+    if (next.length > maxLength && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  });
+  if (line) lines.push(line);
+  return lines;
+}
+
+function pdfEscape(value) {
+  return String(value ?? "")
+    .replace(/[^\x20-\x7E]/g, "")
+    .replaceAll("\\", "\\\\")
+    .replaceAll("(", "\\(")
+    .replaceAll(")", "\\)");
 }
 
 function makeCityFallbackImage(cityRecord, countryRecord) {

@@ -19,7 +19,7 @@
     <script type="module" src="./app.js"></script>
   </head>
   <body>
-    <main class="app-shell">
+    <main class="app-shell is-layers-closed">
       <canvas id="globe-canvas" aria-label="Interactive 3D world globe"></canvas>
 
       <div class="space-vignette" aria-hidden="true"></div>
@@ -58,13 +58,13 @@
           <button class="icon-button is-active" id="auto-rotate" type="button" title="Toggle auto rotate">Auto</button>
           <button class="icon-button" id="day-night" type="button" title="Toggle day and night mode">Night</button>
           <button class="icon-button" id="satellite-view" type="button" title="Toggle satellite style">Satellite</button>
+          <button class="icon-button" id="layers-panel-button" type="button" title="Show or hide map layers">Layers</button>
           <button class="icon-button" id="cinema-mode" type="button" title="Hide panels">Cinema</button>
           <button class="icon-button" id="tour-mode" type="button" title="Start cinematic tour">Tour</button>
           <button class="icon-button" id="voice-narrator" type="button" title="Narrate selected facts">Voice</button>
           <button class="icon-button" id="download-card" type="button" title="Download selected country card">Card</button>
           <button class="icon-button" id="download-pdf" type="button" title="Export mini report PDF">PDF</button>
           <button class="icon-button" id="download-view" type="button" title="Download current globe screenshot">Shot</button>
-          <button class="icon-button" id="save-view" type="button" title="Save current camera view">Save view</button>
           <button class="icon-button" id="command-open" type="button" title="Open command menu">Ctrl K</button>
           <button class="icon-button" id="gyro-toggle" type="button" title="Use phone tilt controls">Gyro</button>
           <button class="icon-button" id="arctic-view" type="button" title="Top-down Arctic view">Arctic</button>
@@ -125,7 +125,7 @@
       <section class="layer-bar" aria-label="Map layers">
         <div class="layer-title">
           <strong>Layers</strong>
-          <button class="layer-close" id="layers-toggle" type="button" title="Show or hide layers">›</button>
+          <button class="layer-close" id="layers-toggle" type="button" title="Show or hide layers">Hide</button>
         </div>
         <label>
           <input type="checkbox" data-layer="borders" checked />
@@ -136,35 +136,35 @@
           Rivers
         </label>
         <label>
-          <input type="checkbox" data-layer="routes" checked />
+          <input type="checkbox" data-layer="routes" />
           Routes
         </label>
         <label>
-          <input type="checkbox" data-layer="flights" checked />
+          <input type="checkbox" data-layer="flights" />
           Flights
         </label>
         <label>
-          <input type="checkbox" data-layer="seaRoutes" checked />
+          <input type="checkbox" data-layer="seaRoutes" />
           Sea
         </label>
         <label>
-          <input type="checkbox" data-layer="ports" checked />
+          <input type="checkbox" data-layer="ports" />
           Ports
         </label>
         <label>
-          <input type="checkbox" data-layer="airports" checked />
+          <input type="checkbox" data-layer="airports" />
           Airports
         </label>
         <label>
-          <input type="checkbox" data-layer="quakes" checked />
+          <input type="checkbox" data-layer="quakes" />
           Quakes
         </label>
         <label class="range-layer">
-          <span>Magnitude <b id="quake-mag-value">4.5+</b></span>
-          <input id="quake-mag" type="range" min="3" max="7" step="0.5" value="4.5" />
+          <span>Magnitude <b id="quake-mag-value">3.0+</b></span>
+          <input id="quake-mag" type="range" min="3" max="7" step="0.5" value="3" />
         </label>
         <label>
-          <input type="checkbox" data-layer="volcanoes" checked />
+          <input type="checkbox" data-layer="volcanoes" />
           Volcanoes
         </label>
         <label>
@@ -188,7 +188,7 @@
           Storm zones
         </label>
         <label>
-          <input type="checkbox" data-layer="lights" checked />
+          <input type="checkbox" data-layer="lights" />
           Night lights
         </label>
         <label>
@@ -196,35 +196,35 @@
           Live sun
         </label>
         <label>
-          <input type="checkbox" data-layer="clouds" checked />
+          <input type="checkbox" data-layer="clouds" />
           Clouds
         </label>
         <label>
-          <input type="checkbox" data-layer="winds" checked />
+          <input type="checkbox" data-layer="winds" />
           Winds
         </label>
         <label>
-          <input type="checkbox" data-layer="aurora" checked />
+          <input type="checkbox" data-layer="aurora" />
           Aurora
         </label>
         <label>
-          <input type="checkbox" data-layer="meteors" checked />
+          <input type="checkbox" data-layer="meteors" />
           Meteors
         </label>
         <label>
-          <input type="checkbox" data-layer="debris" checked />
+          <input type="checkbox" data-layer="debris" />
           Debris
         </label>
         <label>
-          <input type="checkbox" data-layer="population" checked />
+          <input type="checkbox" data-layer="population" />
           Population
         </label>
         <label>
-          <input type="checkbox" data-layer="constellations" checked />
+          <input type="checkbox" data-layer="constellations" />
           Stars
         </label>
         <label>
-          <input type="checkbox" data-layer="satelliteTracker" checked />
+          <input type="checkbox" data-layer="satelliteTracker" />
           Satellites
         </label>
         <label>
@@ -297,21 +297,6 @@
         </div>
       </section>
 
-      <section class="saved-view-strip" id="view-strip" aria-label="Saved camera views" hidden>
-        <span>Saved views</span>
-        <div id="saved-views"></div>
-      </section>
-
-      <section class="screenshot-gallery" id="screenshot-gallery" aria-label="Screenshot gallery" hidden>
-        <span>Screenshot gallery</span>
-        <div id="shot-gallery-list"></div>
-      </section>
-
-      <section class="achievements-hud" id="achievements-hud" aria-label="Exploration achievements">
-        <span>Achievements</span>
-        <div id="achievement-list"></div>
-      </section>
-
       <section class="command-menu" id="command-menu" aria-label="Command menu" hidden>
         <div class="command-box">
           <div class="command-topline">
@@ -355,7 +340,15 @@
           <div id="favorites-list"></div>
         </div>
 
-        <div class="stat-grid" id="quick-stats">
+        <div class="country-info-tabs" id="country-info-tabs" aria-label="Country panel sections">
+          <button class="country-info-tab" type="button" data-info-filter="tourism">Tourism</button>
+          <button class="country-info-tab" type="button" data-info-filter="history">History</button>
+          <button class="country-info-tab" type="button" data-info-filter="data">Data</button>
+          <button class="country-info-tab" type="button" data-info-filter="geography">Geography</button>
+          <button class="country-info-tab is-active" type="button" data-info-filter="all">All</button>
+        </div>
+
+        <div class="stat-grid" id="quick-stats" data-country-section="data geography">
           <div class="stat-card">
             <span>ID</span>
             <strong>-</strong>
@@ -374,7 +367,7 @@
           <input id="country-search" type="search" placeholder="Search country" autocomplete="off" />
         </div>
 
-        <div class="passport-card" id="passport-card">
+        <div class="passport-card" id="passport-card" data-country-section="tourism">
           <span>Visa checker</span>
           <label>
             Passport
@@ -393,25 +386,25 @@
           <p id="visa-note">Entry estimate appears here after selecting a country.</p>
         </div>
 
-        <div class="weather-card" id="weather-card">
+        <div class="weather-card" id="weather-card" data-country-section="tourism geography">
           <span>Capital weather</span>
           <strong>Choose a country</strong>
           <p>Live weather appears here when the capital has coordinates.</p>
         </div>
 
-        <div class="time-card" id="time-card">
+        <div class="time-card" id="time-card" data-country-section="tourism data">
           <span>Capital time</span>
           <strong>-</strong>
           <p>Select a country to show the local time.</p>
         </div>
 
-        <div class="metrics-card" id="metrics-card">
+        <div class="metrics-card" id="metrics-card" data-country-section="data geography">
           <span>Country signals</span>
           <strong>Select a country</strong>
           <p>GDP ring, internet, climate, and biome signals appear here.</p>
         </div>
 
-        <div class="news-card" id="news-card">
+        <div class="news-card" id="news-card" data-country-section="data">
           <span>Latest news</span>
           <strong>Choose a country</strong>
           <p>Recent headlines will load from a public news index.</p>

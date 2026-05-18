@@ -1355,6 +1355,49 @@ const CONSTELLATION_EXTRAS = [
   { name: "Cygnus", stars: [[-1.2, 4.1, -10.4], [-0.62, 3.5, -10.4], [-0.02, 2.9, -10.4], [-0.9, 2.82, -10.4], [0.75, 2.72, -10.4], [-0.1, 4.28, -10.4]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [1, 5]] },
   { name: "Scorpius", stars: [[5.2, -3.4, -9.7], [5.72, -3.15, -9.7], [6.1, -2.72, -9.7], [6.38, -2.14, -9.7], [6.76, -1.82, -9.7], [7.2, -2.15, -9.7]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
   { name: "Lyra", stars: [[2.5, 4.2, -8.8], [2.96, 3.86, -8.8], [3.35, 4.08, -8.8], [3.18, 4.58, -8.8], [2.78, 4.72, -8.8]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 1]] },
+  { name: "Pegasus", stars: [[-8.8, 0.8, -11.2], [-7.9, 1.28, -11.2], [-7.1, 0.72, -11.2], [-7.96, 0.18, -11.2], [-6.5, 1.15, -11.2]], links: [[0, 1], [1, 2], [2, 3], [3, 0], [2, 4]] },
+  { name: "Andromeda", stars: [[-6.6, 1.2, -10.8], [-5.85, 1.45, -10.8], [-5.05, 1.25, -10.8], [-4.3, 1.6, -10.8], [-3.7, 1.25, -10.8]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Aquila", stars: [[1.55, 0.95, -9.9], [2.05, 1.34, -9.9], [2.58, 0.95, -9.9], [2.08, 0.44, -9.9], [1.55, 0.1, -9.9]], links: [[0, 1], [1, 2], [1, 3], [3, 4]] },
+  { name: "Taurus", stars: [[-2.4, 2.2, -10.9], [-1.78, 2.55, -10.9], [-1.08, 2.3, -10.9], [-0.55, 2.78, -10.9], [-0.88, 1.74, -10.9], [-1.52, 1.45, -10.9]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5]] },
+  { name: "Leo", stars: [[4.15, 0.62, -10.6], [4.72, 1.08, -10.6], [5.28, 1.02, -10.6], [5.86, 0.66, -10.6], [5.55, 0.02, -10.6], [4.68, -0.12, -10.6]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]] },
+  { name: "Canis Major", stars: [[-3.9, -3.65, -9.6], [-3.25, -3.18, -9.6], [-2.55, -3.42, -9.6], [-2.85, -4.08, -9.6], [-3.62, -4.34, -9.6]], links: [[0, 1], [1, 2], [1, 3], [3, 4]] },
+  { name: "Draco", stars: [[7.2, 4.55, -11.5], [6.48, 4.25, -11.5], [5.82, 4.62, -11.5], [5.18, 4.28, -11.5], [4.62, 4.7, -11.5], [3.95, 4.42, -11.5]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
+  { name: "Carina", stars: [[-8.2, -4.6, -10.1], [-7.54, -4.24, -10.1], [-6.9, -4.75, -10.1], [-6.28, -4.35, -10.1], [-5.8, -4.96, -10.1]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+];
+
+const REAL_CONSTELLATIONS = [
+  { name: "Andromeda", stars: [[5, 29], [13, 32], [25, 35], [34, 42], [20, 25]], links: [[0, 1], [1, 2], [2, 3], [2, 4]] },
+  { name: "Aquila", stars: [[288, 2], [297, 9], [304, 5], [299, -1], [312, -5]], links: [[0, 1], [1, 2], [1, 3], [3, 4]] },
+  { name: "Aquarius", stars: [[310, -6], [322, -8], [335, -3], [345, -11], [355, -8]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Aries", stars: [[28, 20], [34, 23], [42, 19], [48, 21]], links: [[0, 1], [1, 2], [2, 3]] },
+  { name: "Auriga", stars: [[74, 46], [82, 44], [89, 38], [80, 33], [69, 36]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]] },
+  { name: "Bootes", stars: [[210, 19], [218, 27], [225, 35], [233, 29], [221, 15], [215, 8]], links: [[0, 1], [1, 2], [2, 3], [1, 4], [4, 5]] },
+  { name: "Canis Major", stars: [[96, -17], [101, -16], [107, -22], [111, -28], [98, -25], [105, -32]], links: [[0, 1], [1, 2], [2, 3], [0, 4], [4, 5], [2, 5]] },
+  { name: "Capricornus", stars: [[305, -12], [314, -16], [324, -18], [333, -14], [327, -23], [313, -23]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [5, 1]] },
+  { name: "Carina", stars: [[95, -53], [110, -57], [125, -60], [138, -58], [154, -63]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Cassiopeia", stars: [[2, 58], [10, 60], [19, 56], [29, 60], [38, 57]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Centaurus", stars: [[190, -42], [202, -48], [215, -47], [225, -55], [210, -60], [198, -55]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [5, 1]] },
+  { name: "Corona Borealis", stars: [[229, 26], [234, 29], [240, 31], [246, 29], [251, 25]], links: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+  { name: "Crux", stars: [[183, -57], [187, -63], [192, -59], [187, -55]], links: [[0, 1], [1, 2], [1, 3]] },
+  { name: "Cygnus", stars: [[292, 45], [300, 40], [306, 34], [295, 33], [318, 35], [300, 50]], links: [[0, 1], [1, 2], [2, 5], [3, 2], [2, 4]] },
+  { name: "Delphinus", stars: [[309, 11], [312, 15], [316, 14], [318, 10], [313, 8]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]] },
+  { name: "Draco", stars: [[165, 60], [190, 65], [220, 70], [250, 66], [270, 59], [265, 52], [245, 55]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]] },
+  { name: "Eridanus", stars: [[48, -10], [55, -20], [63, -28], [72, -35], [84, -42], [95, -50]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
+  { name: "Gemini", stars: [[102, 25], [110, 28], [118, 22], [112, 18], [104, 16], [96, 20]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
+  { name: "Hercules", stars: [[245, 15], [252, 25], [260, 30], [270, 27], [275, 18], [263, 14]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]] },
+  { name: "Hydra", stars: [[130, 5], [145, -5], [160, -10], [180, -18], [205, -25], [225, -30]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]] },
+  { name: "Leo", stars: [[140, 15], [148, 20], [158, 18], [168, 12], [176, 4], [154, 6]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]] },
+  { name: "Libra", stars: [[222, -16], [229, -9], [238, -14], [245, -22], [234, -26]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]] },
+  { name: "Lyra", stars: [[279, 39], [284, 34], [289, 33], [291, 38], [286, 40]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 1]] },
+  { name: "Orion", stars: [[78, 8], [83, 0], [84, -2], [85, -1], [88, -8], [75, -9], [89, 7]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [3, 6]] },
+  { name: "Pegasus", stars: [[335, 15], [345, 28], [357, 30], [12, 15], [0, 5]], links: [[0, 1], [1, 2], [2, 3], [3, 0], [3, 4]] },
+  { name: "Perseus", stars: [[40, 45], [48, 50], [58, 47], [65, 40], [52, 35]], links: [[0, 1], [1, 2], [2, 3], [2, 4]] },
+  { name: "Pisces", stars: [[350, 5], [0, 8], [15, 10], [30, 8], [22, 18], [6, 20]], links: [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [5, 1]] },
+  { name: "Sagittarius", stars: [[275, -30], [282, -25], [290, -28], [295, -34], [287, -38], [279, -36]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]] },
+  { name: "Scorpius", stars: [[240, -20], [246, -25], [252, -30], [258, -35], [265, -40], [272, -38], [277, -32], [270, -28]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]] },
+  { name: "Taurus", stars: [[58, 16], [66, 18], [75, 15], [83, 22], [68, 10], [78, 8]], links: [[0, 1], [1, 2], [2, 3], [1, 4], [4, 5]] },
+  { name: "Ursa Major", stars: [[165, 62], [170, 57], [178, 54], [185, 56], [194, 60], [205, 58], [215, 54]], links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]] },
+  { name: "Virgo", stars: [[175, 7], [188, 2], [201, -5], [213, -10], [196, 10], [182, 14]], links: [[0, 1], [1, 2], [2, 3], [1, 4], [4, 5]] },
 ];
 
 const WIND_JET_ROUTES = {
@@ -1398,7 +1441,6 @@ const COMMAND_STATIC_ACTIONS = [
   { label: "Toggle cinematic tour", type: "mode", run: () => toggleCinematicTour() },
   { label: "Toggle voice narrator", type: "mode", run: () => toggleVoiceNarrator() },
   { label: "Run time travel replay", type: "mode", run: () => toggleTimeReplay() },
-  { label: "Save current camera view", type: "tool", run: () => saveCameraView() },
   { label: "Export mini report PDF", type: "tool", run: () => downloadMiniReportPdf() },
   { label: "Download current globe PNG", type: "tool", run: () => downloadGlobeView() },
   { label: "Cycle universe zoom", type: "mode", run: () => cycleUniverseZoom() },
@@ -1595,6 +1637,10 @@ const CELESTIAL_BODIES = {
   },
 };
 
+document
+  .querySelectorAll("#save-view, #view-strip, #screenshot-gallery, #achievements-hud")
+  .forEach((element) => element.remove());
+
 const ui = {
   canvas: document.querySelector("#globe-canvas"),
   status: document.querySelector("#status-line"),
@@ -1617,6 +1663,7 @@ const ui = {
   downloadPdf: document.querySelector("#download-pdf"),
   downloadView: document.querySelector("#download-view"),
   saveView: document.querySelector("#save-view"),
+  layersPanelButton: document.querySelector("#layers-panel-button"),
   commandOpen: document.querySelector("#command-open"),
   gyroToggle: document.querySelector("#gyro-toggle"),
   arcticView: document.querySelector("#arctic-view"),
@@ -1650,6 +1697,8 @@ const ui = {
   streetTitle: document.querySelector("#street-title"),
   streetCaption: document.querySelector("#street-caption"),
   shell: document.querySelector(".app-shell"),
+  countryPanel: document.querySelector(".country-panel"),
+  countryInfoTabs: document.querySelectorAll("[data-info-filter]"),
   hero: document.querySelector("#country-hero"),
   flag: document.querySelector("#country-flag"),
   flagLabel: document.querySelector("#country-flag-label"),
@@ -1708,6 +1757,7 @@ let recordByKey = new Map();
 let restByNumeric = new Map();
 let selectedRecord = null;
 let hoverRecord = null;
+let activeInfoFilter = "all";
 let riversGeojson = null;
 let markersGroup;
 let capitalMarkersGroup;
@@ -1773,7 +1823,7 @@ let issLiveMarker = null;
 let issLiveData = null;
 let issRefreshTimer = null;
 let latestQuakes = [];
-let quakeMinMagnitude = 4.5;
+let quakeMinMagnitude = 3;
 let lastSimClockSecond = -1;
 let renderLoopStarted = false;
 let isCinematicTour = false;
@@ -1792,28 +1842,28 @@ let universeLevelIndex = 1;
 const layerState = {
   borders: true,
   rivers: true,
-  routes: true,
-  flights: true,
-  seaRoutes: true,
-  ports: true,
-  airports: true,
-  quakes: true,
-  volcanoes: true,
+  routes: false,
+  flights: false,
+  seaRoutes: false,
+  ports: false,
+  airports: false,
+  quakes: false,
+  volcanoes: false,
   plates: false,
   climate: false,
   biomes: false,
   measureGrid: false,
   hurricanes: false,
-  lights: true,
+  lights: false,
   sunLighting: true,
-  clouds: true,
-  winds: true,
-  aurora: true,
-  meteors: true,
-  debris: true,
-  population: true,
-  constellations: true,
-  satelliteTracker: true,
+  clouds: false,
+  winds: false,
+  aurora: false,
+  meteors: false,
+  debris: false,
+  population: false,
+  constellations: false,
+  satelliteTracker: false,
   bases: false,
   spaceports: false,
   launches: false,
@@ -1891,6 +1941,8 @@ function setupScene() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.08;
 
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -1944,7 +1996,7 @@ function setupScene() {
     new THREE.MeshBasicMaterial({
       map: makeCloudTexture(),
       transparent: true,
-      opacity: 0.24,
+      opacity: 0.31,
       depthWrite: false,
       blending: THREE.NormalBlending,
     }),
@@ -2092,8 +2144,8 @@ function setupEvents() {
   ui.voiceNarrator.addEventListener("click", toggleVoiceNarrator);
   ui.downloadCard.addEventListener("click", downloadInfoCard);
   ui.downloadPdf.addEventListener("click", downloadMiniReportPdf);
-  ui.downloadView.addEventListener("click", downloadGlobeView);
-  ui.saveView.addEventListener("click", saveCameraView);
+  ui.downloadView?.addEventListener("click", downloadGlobeView);
+  ui.saveView?.addEventListener("click", saveCameraView);
   ui.commandOpen.addEventListener("click", openCommandMenu);
   ui.gyroToggle.addEventListener("click", toggleGyroControl);
   ui.arcticView.addEventListener("click", () => flyToPolarView("arctic"));
@@ -2105,6 +2157,12 @@ function setupEvents() {
     switchBody(ui.bodySelect.value);
   });
   ui.passportSelect.addEventListener("change", () => renderVisaStatus(selectedRecord));
+  ui.countryInfoTabs.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeInfoFilter = button.dataset.infoFilter || "all";
+      applyCountryInfoFilter();
+    });
+  });
   ui.csvImport.addEventListener("change", importCsvPins);
   ui.timeReplay.addEventListener("click", toggleTimeReplay);
   ui.commandInput.addEventListener("input", () => renderCommandResults(ui.commandInput.value));
@@ -2146,9 +2204,13 @@ function setupEvents() {
       renderSolarPanel();
     }
   });
-  ui.layersToggle?.addEventListener("click", () => {
-    ui.shell.classList.toggle("is-layers-closed");
-  });
+  const toggleLayersPanel = () => {
+    const isClosed = ui.shell.classList.toggle("is-layers-closed");
+    ui.layersToggle && (ui.layersToggle.textContent = isClosed ? "Layers" : "Hide");
+    ui.layersPanelButton?.classList.toggle("is-active", !isClosed);
+  };
+  ui.layersToggle?.addEventListener("click", toggleLayersPanel);
+  ui.layersPanelButton?.addEventListener("click", toggleLayersPanel);
   ui.simPlay?.addEventListener("click", () => {
     isSimulationPaused = !isSimulationPaused;
     ui.simPlay.textContent = isSimulationPaused ? "PAUSED" : "REAL RATE";
@@ -2180,6 +2242,10 @@ function setupEvents() {
     drawEarthTexture();
   });
   ui.favoriteToggle.addEventListener("click", toggleFavorite);
+  if (ui.quakeMag) {
+    ui.quakeMag.value = String(quakeMinMagnitude);
+    ui.quakeMagValue.textContent = `${quakeMinMagnitude.toFixed(1)}+`;
+  }
   ui.quakeMag?.addEventListener("input", () => {
     quakeMinMagnitude = Number(ui.quakeMag.value);
     ui.quakeMagValue.textContent = `${quakeMinMagnitude.toFixed(1)}+`;
@@ -2188,6 +2254,9 @@ function setupEvents() {
   });
 
   ui.layers.forEach((input) => {
+    if (Object.prototype.hasOwnProperty.call(layerState, input.dataset.layer)) {
+      input.checked = Boolean(layerState[input.dataset.layer]);
+    }
     input.addEventListener("change", () => {
       layerState[input.dataset.layer] = input.checked;
       drawEarthTexture();
@@ -2461,8 +2530,9 @@ function drawEarthTexture() {
 
 function drawOceanCurrents(ctx) {
   ctx.save();
-  ctx.strokeStyle = isNightMode ? "rgba(104, 236, 255, 0.18)" : "rgba(116, 219, 255, 0.18)";
-  ctx.lineWidth = 1.65;
+  ctx.globalCompositeOperation = "screen";
+  ctx.strokeStyle = isNightMode ? "rgba(104, 236, 255, 0.34)" : "rgba(116, 219, 255, 0.3)";
+  ctx.lineWidth = 2.4;
   ctx.lineCap = "round";
   for (let y = 250; y < TEXTURE_HEIGHT - 210; y += 170) {
     for (let x = 90; x < TEXTURE_WIDTH - 90; x += 390) {
@@ -2477,6 +2547,21 @@ function drawOceanCurrents(ctx) {
         y + Math.cos(y * 0.01) * 20,
       );
       ctx.stroke();
+      ctx.strokeStyle = isNightMode ? "rgba(210, 252, 255, 0.18)" : "rgba(220, 252, 255, 0.16)";
+      ctx.lineWidth = 0.9;
+      ctx.stroke();
+      const angle = Math.atan2(Math.cos(y * 0.01) * 20, 240);
+      const mx = x + 170;
+      const my = y + Math.sin(x * 0.01) * 8;
+      ctx.fillStyle = isNightMode ? "rgba(158, 245, 255, 0.42)" : "rgba(82, 211, 223, 0.38)";
+      ctx.beginPath();
+      ctx.moveTo(mx + Math.cos(angle) * 16, my + Math.sin(angle) * 16);
+      ctx.lineTo(mx - Math.cos(angle - 0.55) * 13, my - Math.sin(angle - 0.55) * 13);
+      ctx.lineTo(mx - Math.cos(angle + 0.55) * 13, my - Math.sin(angle + 0.55) * 13);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = isNightMode ? "rgba(104, 236, 255, 0.34)" : "rgba(116, 219, 255, 0.3)";
+      ctx.lineWidth = 2.4;
     }
   }
   ctx.restore();
@@ -2485,9 +2570,10 @@ function drawOceanCurrents(ctx) {
 function drawWindFlowTexture(ctx) {
   const projection = textureContext.projection;
   ctx.save();
-  ctx.strokeStyle = isNightMode ? "rgba(236, 255, 143, 0.16)" : "rgba(255, 245, 170, 0.2)";
-  ctx.fillStyle = isNightMode ? "rgba(236, 255, 143, 0.34)" : "rgba(255, 245, 170, 0.38)";
-  ctx.lineWidth = 2.1;
+  ctx.globalCompositeOperation = "screen";
+  ctx.strokeStyle = isNightMode ? "rgba(236, 255, 143, 0.28)" : "rgba(255, 245, 170, 0.28)";
+  ctx.fillStyle = isNightMode ? "rgba(236, 255, 143, 0.5)" : "rgba(255, 245, 170, 0.52)";
+  ctx.lineWidth = 2.8;
   ctx.lineCap = "round";
   WIND_JET_ROUTES.features.forEach((feature) => {
     const coords = feature.geometry.coordinates;
@@ -2498,6 +2584,11 @@ function drawWindFlowTexture(ctx) {
       ctx.moveTo(x1, y1);
       ctx.quadraticCurveTo((x1 + x2) / 2, (y1 + y2) / 2 - 24, x2, y2);
       ctx.stroke();
+      ctx.strokeStyle = isNightMode ? "rgba(255,255,210,0.12)" : "rgba(255,255,225,0.14)";
+      ctx.lineWidth = 0.9;
+      ctx.stroke();
+      ctx.strokeStyle = isNightMode ? "rgba(236, 255, 143, 0.28)" : "rgba(255, 245, 170, 0.28)";
+      ctx.lineWidth = 2.8;
       if (i % 2 === 1) {
         const angle = Math.atan2(y2 - y1, x2 - x1);
         const mx = (x1 + x2) / 2;
@@ -2518,9 +2609,9 @@ function drawOceanDepth(ctx) {
   ctx.save();
   for (let i = 0; i < 9; i += 1) {
     const y = 170 + i * 210;
-    const alpha = isNightMode ? 0.055 : 0.075;
-    ctx.strokeStyle = `rgba(5, 33, 64, ${alpha})`;
-    ctx.lineWidth = 12 - i * 0.55;
+    const alpha = isNightMode ? 0.085 : 0.105;
+    ctx.strokeStyle = `rgba(2, 21, 54, ${alpha})`;
+    ctx.lineWidth = 18 - i * 0.78;
     ctx.beginPath();
     ctx.moveTo(0, y);
     for (let x = 0; x <= TEXTURE_WIDTH; x += 90) {
@@ -2529,8 +2620,9 @@ function drawOceanDepth(ctx) {
     ctx.stroke();
   }
 
-  ctx.strokeStyle = isNightMode ? "rgba(92, 202, 230, 0.14)" : "rgba(172, 242, 255, 0.2)";
-  ctx.lineWidth = 1;
+  ctx.globalCompositeOperation = "screen";
+  ctx.strokeStyle = isNightMode ? "rgba(92, 202, 230, 0.2)" : "rgba(172, 242, 255, 0.25)";
+  ctx.lineWidth = 1.25;
   for (let y = 90; y < TEXTURE_HEIGHT; y += 115) {
     ctx.beginPath();
     for (let x = 0; x <= TEXTURE_WIDTH; x += 42) {
@@ -2937,6 +3029,18 @@ function renderCountryList(filter = "") {
   ui.list.replaceChildren(fragment);
 }
 
+function applyCountryInfoFilter() {
+  const filter = activeInfoFilter || "all";
+  ui.countryPanel?.setAttribute("data-info-filter", filter);
+  ui.countryInfoTabs.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.infoFilter === filter);
+  });
+  ui.countryPanel?.querySelectorAll("[data-country-section]").forEach((element) => {
+    const categories = (element.dataset.countrySection || "").split(/\s+/).filter(Boolean);
+    element.hidden = filter !== "all" && !categories.includes(filter);
+  });
+}
+
 function renderPanel(record) {
   if (!record) {
     ui.panelKicker.textContent = "Country";
@@ -2961,6 +3065,7 @@ function renderPanel(record) {
     renderNews(null);
     renderVisaStatus(null);
     renderFavorites();
+    applyCountryInfoFilter();
     return;
   }
 
@@ -3019,31 +3124,42 @@ function renderPanel(record) {
   const extendedSections = makeCountryFeatureSections(record);
 
   ui.details.innerHTML = `
-    <p>${escapeHtml(summary)}</p>
-    <ul>
-      <li><strong>Official name:</strong> ${escapeHtml(record.officialName || record.name)}</li>
-      <li><strong>Region:</strong> ${escapeHtml(joinCompact([record.region, record.subregion], " / ") || "-")}</li>
-      <li><strong>Population:</strong> ${escapeHtml(formatNumber(record.population))}</li>
-      <li><strong>Area:</strong> ${escapeHtml(record.area ? `${formatNumber(record.area)} km2` : "-")}</li>
-      <li><strong>Official language:</strong> ${escapeHtml(record.languages || "-")}</li>
-      <li><strong>Currency:</strong> ${escapeHtml(record.currency || "-")} ${mapLink}</li>
-      <li><strong>Internet domain:</strong> ${escapeHtml(record.domain || "-")}</li>
-      <li><strong>Calling code:</strong> ${escapeHtml(record.callingCode || "-")}</li>
-      <li><strong>Climate:</strong> ${escapeHtml(record.climate || "-")}</li>
-      <li><strong>Biome:</strong> ${escapeHtml(record.biome || "-")}</li>
-    </ul>
-    <h3>City photos</h3>
-    <div class="city-photo-grid">${cityCards}</div>
-    <h3>Traditional food</h3>
-    <div class="city-photo-grid">${foodCards}</div>
-    <h3>Interesting cities</h3>
-    <ul>
-      ${record.cities
-        .map((item) => `<li><strong>${escapeHtml(item.name)}</strong> - ${escapeHtml(item.note)}</li>`)
-        .join("")}
-    </ul>
-    <h3>Disaster history</h3>
-    <ul>${disasters}</ul>
+    <section class="info-section" data-country-section="data geography history">
+      <h3>Basic profile</h3>
+      <p>${escapeHtml(summary)}</p>
+      <ul>
+        <li><strong>Official name:</strong> ${escapeHtml(record.officialName || record.name)}</li>
+        <li><strong>Region:</strong> ${escapeHtml(joinCompact([record.region, record.subregion], " / ") || "-")}</li>
+        <li><strong>Population:</strong> ${escapeHtml(formatNumber(record.population))}</li>
+        <li><strong>Area:</strong> ${escapeHtml(record.area ? `${formatNumber(record.area)} km2` : "-")}</li>
+        <li><strong>Official language:</strong> ${escapeHtml(record.languages || "-")}</li>
+        <li><strong>Currency:</strong> ${escapeHtml(record.currency || "-")} ${mapLink}</li>
+        <li><strong>Internet domain:</strong> ${escapeHtml(record.domain || "-")}</li>
+        <li><strong>Calling code:</strong> ${escapeHtml(record.callingCode || "-")}</li>
+        <li><strong>Climate:</strong> ${escapeHtml(record.climate || "-")}</li>
+        <li><strong>Biome:</strong> ${escapeHtml(record.biome || "-")}</li>
+      </ul>
+    </section>
+    <section class="info-section" data-country-section="tourism">
+      <h3>City photos</h3>
+      <div class="city-photo-grid">${cityCards}</div>
+    </section>
+    <section class="info-section" data-country-section="tourism history">
+      <h3>Traditional food</h3>
+      <div class="city-photo-grid">${foodCards}</div>
+    </section>
+    <section class="info-section" data-country-section="tourism geography">
+      <h3>Interesting cities</h3>
+      <ul>
+        ${record.cities
+          .map((item) => `<li><strong>${escapeHtml(item.name)}</strong> - ${escapeHtml(item.note)}</li>`)
+          .join("")}
+      </ul>
+    </section>
+    <section class="info-section" data-country-section="history geography data">
+      <h3>Disaster history</h3>
+      <ul>${disasters}</ul>
+    </section>
     ${extendedSections}
   `;
   renderWeather(record);
@@ -3051,6 +3167,7 @@ function renderPanel(record) {
   renderMetrics(record);
   renderNews(record);
   renderVisaStatus(record);
+  applyCountryInfoFilter();
   if (isVoiceNarratorEnabled) speakCurrentSelection();
 }
 
@@ -3719,6 +3836,29 @@ function toggleCinemaMode() {
   ui.cinemaMode.textContent = enabled ? "Panels" : "Cinema";
 }
 
+function updateBodyVisuals(bodyKey) {
+  const body = CELESTIAL_BODIES[bodyKey] || CELESTIAL_BODIES.earth;
+  const profile = getPlanetVisualProfile(bodyKey);
+  const scale = body.radiusScale || 1;
+  earthMesh.scale.setScalar(scale);
+  atmosphereMesh.scale.setScalar(scale);
+  outerGlowMesh.scale.setScalar(scale);
+
+  earthMesh.material.roughness = profile.roughness;
+  earthMesh.material.metalness = profile.metalness;
+  earthMesh.material.emissive = new THREE.Color(profile.emissive || 0x000000);
+  earthMesh.material.emissiveIntensity = profile.emissiveIntensity || 0;
+  earthMesh.material.bumpMap = profile.bump ? makePlanetBumpTexture(bodyKey) : null;
+  earthMesh.material.bumpScale = profile.bump ? profile.bumpScale : 0;
+  earthMesh.material.needsUpdate = true;
+
+  atmosphereMesh.material.color.setHex(profile.atmosphere || body.atmosphere || 0x6ddcf1);
+  atmosphereMesh.material.opacity = profile.atmosphereOpacity;
+  outerGlowMesh.material.color.setHex(profile.glow || profile.atmosphere || 0x9df76d);
+  outerGlowMesh.material.opacity = profile.glowOpacity;
+  if (cloudMesh?.material) cloudMesh.material.opacity = bodyKey === "earth" ? 0.31 : 0.18;
+}
+
 function switchBody(bodyKey) {
   currentBodyKey = CELESTIAL_BODIES[bodyKey] ? bodyKey : "earth";
   if (currentBodyKey !== "earth") unlockAchievement("space-mode");
@@ -3735,8 +3875,7 @@ function switchBody(bodyKey) {
   ui.shell.classList.toggle("is-celestial", currentBodyKey !== "earth");
   ui.shell.classList.toggle("is-solar-mode", currentBodyKey === "solar");
   updateNavState();
-  atmosphereMesh.material.color.setHex(body.atmosphere || 0x6ddcf1);
-  earthMesh.scale.setScalar(body.radiusScale || 1);
+  updateBodyVisuals(currentBodyKey);
   globeGroup.visible = currentBodyKey !== "solar";
   solarSystemGroup.visible = currentBodyKey === "solar";
   controls.minDistance = currentBodyKey === "solar" ? 3.2 : currentBodyKey === "earth" ? 2.4 : 2.25;
@@ -3997,9 +4136,7 @@ function downloadGlobeView() {
   link.download = `${slugify(label)}-globe-view.png`;
   link.href = renderer.domElement.toDataURL("image/png");
   link.click();
-  addScreenshotToGallery(label, makeScreenshotThumbnail());
-  setStatus("Current globe view saved as PNG");
-  unlockAchievement("screenshot");
+  setStatus("Current globe view downloaded as PNG");
 }
 
 function toggleGyroControl() {
@@ -4273,10 +4410,7 @@ function saveAchievements() {
 }
 
 function unlockAchievement(id) {
-  if (!id || achievements.has(id)) return;
-  achievements.add(id);
-  saveAchievements();
-  renderAchievements();
+  return;
 }
 
 function renderAchievements() {
@@ -4582,6 +4716,7 @@ function latLonToVector3(lat, lon, radius) {
 
 function makeStars(count) {
   const group = new THREE.Group();
+  const rand = makeSeededRandom("deep-starfield");
   const makeLayer = (layerCount, size, radiusMin, radiusMax, opacity, bright = false) => {
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(layerCount * 3);
@@ -4599,14 +4734,14 @@ function makeStars(count) {
           new THREE.Color("#b6fff1"),
         ];
     for (let i = 0; i < layerCount; i += 1) {
-      const radius = THREE.MathUtils.randFloat(radiusMin, radiusMax);
-      const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
-      const phi = Math.acos(THREE.MathUtils.randFloatSpread(2));
+      const radius = randRange(rand, radiusMin, radiusMax);
+      const theta = randRange(rand, 0, Math.PI * 2);
+      const phi = Math.acos(randRange(rand, -1, 1));
       positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
       positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i * 3 + 2] = radius * Math.cos(phi);
-      const color = palette[Math.floor(Math.random() * palette.length)].clone();
-      const intensity = bright ? THREE.MathUtils.randFloat(0.78, 1.0) : THREE.MathUtils.randFloat(0.38, 0.88);
+      const color = palette[Math.floor(rand() * palette.length)].clone();
+      const intensity = bright ? randRange(rand, 0.78, 1.0) : randRange(rand, 0.38, 0.88);
       color.multiplyScalar(intensity);
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
@@ -4635,10 +4770,21 @@ function makeStars(count) {
   return group;
 }
 
+function skyToVector(raDeg, decDeg, radius = 18) {
+  const ra = THREE.MathUtils.degToRad(raDeg - 90);
+  const dec = THREE.MathUtils.degToRad(decDeg);
+  return new THREE.Vector3(
+    Math.cos(dec) * Math.cos(ra) * radius,
+    Math.sin(dec) * radius,
+    Math.cos(dec) * Math.sin(ra) * radius,
+  );
+}
+
 function buildConstellations() {
   constellationGroup.clear();
-  [...CONSTELLATIONS, ...CONSTELLATION_EXTRAS].forEach((constellation) => {
-    const starVectors = constellation.stars.map(([x, y, z]) => new THREE.Vector3(x, y, z));
+  const starGlowTexture = makeGlowTexture("#98a6ff");
+  REAL_CONSTELLATIONS.forEach((constellation) => {
+    const starVectors = constellation.stars.map(([ra, dec]) => skyToVector(ra, dec));
     constellation.links.forEach(([from, to]) => {
       constellationGroup.add(
         new THREE.Line(
@@ -4646,27 +4792,43 @@ function buildConstellations() {
           new THREE.LineBasicMaterial({
             color: 0x98a6ff,
             transparent: true,
-            opacity: 0.32,
+            opacity: 0.42,
             blending: THREE.AdditiveBlending,
           }),
         ),
       );
     });
     starVectors.forEach((position) => {
+      const glow = new THREE.Sprite(
+        new THREE.SpriteMaterial({
+          map: starGlowTexture,
+          color: 0x98a6ff,
+          transparent: true,
+          opacity: 0.24,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      );
+      glow.position.copy(position);
+      glow.scale.set(0.18, 0.18, 1);
       const star = new THREE.Mesh(
         new THREE.SphereGeometry(0.026, 10, 8),
         new THREE.MeshBasicMaterial({ color: 0xf4fbff }),
       );
       star.position.copy(position);
-      constellationGroup.add(star);
+      constellationGroup.add(glow, star);
     });
     const label = makeMapLabelSprite(constellation.name, {
       fill: "rgba(7, 12, 28, 0.62)",
       stroke: "rgba(152,166,255,0.65)",
       text: "#e4e9ff",
     });
-    label.position.copy(starVectors[0].clone().add(new THREE.Vector3(0.12, 0.16, 0)));
-    label.scale.multiplyScalar(1.35);
+    const labelAnchor = starVectors
+      .reduce((sum, vector) => sum.add(vector), new THREE.Vector3())
+      .normalize()
+      .multiplyScalar(18.25);
+    label.position.copy(labelAnchor);
+    label.scale.multiplyScalar(0.82);
     constellationGroup.add(label);
   });
 }
@@ -4767,29 +4929,25 @@ function buildSolarSystem() {
     bodyGroup.position.set(planet.orbit, 0, 0);
     bodyGroup.userData = { bodyKey: CELESTIAL_BODIES[planet.key] ? planet.key : "solar", name: planet.label };
 
-    const materialOptions = {
-      map: makeSolarTexture(planet.colors, planet.key === "jupiter" || planet.key === "saturn", planet.key),
-      roughness: planet.key === "earth" ? 0.58 : 0.76,
-      metalness: 0.01,
-    };
-    if (["mercury", "moon", "mars"].includes(planet.key)) {
-      materialOptions.bumpMap = makePlanetBumpTexture(planet.key);
-      materialOptions.bumpScale = planet.radius * 0.16;
-    }
+    const materialOptions = makePlanetMaterialOptions(planet);
     const sphere = new THREE.Mesh(new THREE.SphereGeometry(planet.radius, 64, 48), new THREE.MeshStandardMaterial(materialOptions));
     sphere.userData = bodyGroup.userData;
     bodyGroup.add(sphere);
     solarSystemObjects.push(sphere);
+    addSolarPlanetAtmosphere(bodyGroup, planet.key, planet.radius);
+    addSolarPlanetCloudShell(bodyGroup, planet.key, planet.radius);
 
     if (planet.ring) {
       const ring = new THREE.Mesh(
         new THREE.RingGeometry(planet.radius * 1.42, planet.radius * 2.25, 96),
         new THREE.MeshBasicMaterial({
-          color: 0xeed9aa,
+          map: makePlanetRingTexture(planet.key),
+          color: 0xffffff,
           transparent: true,
-          opacity: 0.72,
+          opacity: 0.78,
           side: THREE.DoubleSide,
           depthWrite: false,
+          blending: THREE.AdditiveBlending,
         }),
       );
       ring.rotation.x = Math.PI / 2.45;
@@ -5077,6 +5235,118 @@ function buildSpacecraftTrails() {
   });
 }
 
+function makeSeededRandom(seed) {
+  let state = (getStableNumber(seed) * 1664525 + 1013904223) >>> 0;
+  return () => {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
+function randRange(rand, min, max) {
+  return min + (max - min) * rand();
+}
+
+function getPlanetVisualProfile(key = "earth") {
+  const profiles = {
+    solar: { roughness: 0.38, metalness: 0, atmosphere: 0xffd36a, atmosphereOpacity: 0.28, glow: 0xffd36a, glowOpacity: 0.32, emissive: 0xffa629, emissiveIntensity: 0.18 },
+    sun: { roughness: 0.3, metalness: 0, atmosphere: 0xffd36a, atmosphereOpacity: 0.36, glow: 0xffd36a, glowOpacity: 0.5, emissive: 0xffb74f, emissiveIntensity: 0.7 },
+    earth: { roughness: 0.58, metalness: 0.015, atmosphere: 0x6ddcf1, atmosphereOpacity: 0.25, glow: 0x58d3df, glowOpacity: 0.13, bump: false },
+    moon: { roughness: 0.93, metalness: 0, atmosphere: 0xd6d8dc, atmosphereOpacity: 0.055, glow: 0xcfd5df, glowOpacity: 0.05, bump: true, bumpScale: 0.045 },
+    mercury: { roughness: 0.94, metalness: 0, atmosphere: 0xc2b49d, atmosphereOpacity: 0.045, glow: 0xe3cfaa, glowOpacity: 0.05, bump: true, bumpScale: 0.038 },
+    venus: { roughness: 0.72, metalness: 0, atmosphere: 0xffc06a, atmosphereOpacity: 0.22, glow: 0xff9d4d, glowOpacity: 0.18, emissive: 0x2b1507, emissiveIntensity: 0.05 },
+    mars: { roughness: 0.89, metalness: 0, atmosphere: 0xff8058, atmosphereOpacity: 0.13, glow: 0xff6f38, glowOpacity: 0.11, bump: true, bumpScale: 0.032 },
+    jupiter: { roughness: 0.69, metalness: 0, atmosphere: 0xffd39a, atmosphereOpacity: 0.16, glow: 0xffbf69, glowOpacity: 0.16 },
+    saturn: { roughness: 0.71, metalness: 0, atmosphere: 0xf2d49b, atmosphereOpacity: 0.14, glow: 0xeed9aa, glowOpacity: 0.14 },
+    uranus: { roughness: 0.62, metalness: 0, atmosphere: 0x82f3ff, atmosphereOpacity: 0.2, glow: 0x72d7e5, glowOpacity: 0.18 },
+    neptune: { roughness: 0.64, metalness: 0, atmosphere: 0x5b8fff, atmosphereOpacity: 0.21, glow: 0x4d7dff, glowOpacity: 0.19 },
+  };
+  return profiles[key] || profiles.earth;
+}
+
+function makePlanetMaterialOptions(planet) {
+  const profile = getPlanetVisualProfile(planet.key);
+  const materialOptions = {
+    map: makeSolarTexture(planet.colors, planet.key === "jupiter" || planet.key === "saturn", planet.key),
+    roughness: profile.roughness,
+    metalness: profile.metalness,
+    emissive: new THREE.Color(profile.emissive || 0x000000),
+    emissiveIntensity: profile.emissiveIntensity || 0,
+  };
+  if (profile.bump) {
+    materialOptions.bumpMap = makePlanetBumpTexture(planet.key);
+    materialOptions.bumpScale = profile.bumpScale || planet.radius * 0.14;
+  }
+  return materialOptions;
+}
+
+function makePlanetRingTexture(key = "saturn") {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1024;
+  canvas.height = 96;
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const rand = makeSeededRandom(`${key}-rings`);
+  for (let x = 0; x < canvas.width; x += 1) {
+    const t = x / canvas.width;
+    const band = Math.sin(t * Math.PI * 32) * 0.18 + Math.sin(t * Math.PI * 91) * 0.08;
+    const gap = Math.abs(t - 0.47) < 0.018 || Math.abs(t - 0.71) < 0.012;
+    const alpha = gap ? 0.05 : THREE.MathUtils.clamp(0.28 + band + rand() * 0.18, 0.12, 0.82);
+    const warm = 190 + Math.floor(rand() * 42);
+    ctx.fillStyle = `rgba(${warm + 28},${warm + 8},${warm - 36},${alpha})`;
+    ctx.fillRect(x, 0, 1, canvas.height);
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  return texture;
+}
+
+function addSolarPlanetAtmosphere(bodyGroup, key, radius) {
+  const profile = getPlanetVisualProfile(key);
+  if (!profile.atmosphereOpacity) return;
+  const shell = new THREE.Mesh(
+    new THREE.SphereGeometry(radius * 1.06, 48, 32),
+    new THREE.MeshBasicMaterial({
+      color: profile.atmosphere,
+      transparent: true,
+      opacity: profile.atmosphereOpacity * 0.42,
+      side: THREE.BackSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  const glow = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: makeGlowTexture(`#${profile.glow.toString(16).padStart(6, "0")}`),
+      color: profile.glow,
+      transparent: true,
+      opacity: profile.glowOpacity,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  glow.scale.set(radius * 4.8, radius * 4.8, 1);
+  bodyGroup.add(shell, glow);
+}
+
+function addSolarPlanetCloudShell(bodyGroup, key, radius) {
+  if (!["earth", "venus"].includes(key)) return;
+  const material = new THREE.MeshBasicMaterial({
+    map: makeCloudTexture(),
+    color: key === "venus" ? 0xffd89a : 0xffffff,
+    transparent: true,
+    opacity: key === "venus" ? 0.24 : 0.2,
+    depthWrite: false,
+    blending: THREE.NormalBlending,
+  });
+  const clouds = new THREE.Mesh(new THREE.SphereGeometry(radius * 1.035, 48, 32), material);
+  clouds.userData = { solarClouds: true, spinSpeed: key === "venus" ? -0.00025 : 0.00042 };
+  bodyGroup.add(clouds);
+  solarOrbitAnimations.push({ spin: clouds, speed: key === "venus" ? -0.00018 : 0.00026 });
+}
+
 function makeSolarTexture(colors, banded = false, key = "generic") {
   const canvas = document.createElement("canvas");
   canvas.width = key === "sun" ? 1024 : 2048;
@@ -5120,15 +5390,69 @@ function fillPlanetGradient(ctx, width, height, colors) {
   ctx.fillRect(0, 0, width, height);
 }
 
-function addFineNoise(ctx, width, height, count, alpha = 0.07, warm = false) {
+function addFineNoise(ctx, width, height, count, alpha = 0.07, warm = false, rand = Math.random) {
   for (let i = 0; i < count; i += 1) {
-    const shade = warm ? 180 + Math.random() * 70 : 170 + Math.random() * 85;
-    ctx.fillStyle = `rgba(${shade},${warm ? shade * 0.82 : shade},${warm ? shade * 0.48 : shade + 10},${Math.random() * alpha})`;
-    ctx.fillRect(Math.random() * width, Math.random() * height, 1.4, 1.4);
+    const shade = warm ? 180 + rand() * 70 : 170 + rand() * 85;
+    ctx.fillStyle = `rgba(${shade},${warm ? shade * 0.82 : shade},${warm ? shade * 0.48 : shade + 10},${rand() * alpha})`;
+    ctx.fillRect(rand() * width, rand() * height, 1.4, 1.4);
   }
 }
 
+function addPlanetVignette(ctx, width, height, nightColor = "rgba(0,0,0,0.32)") {
+  const shade = ctx.createLinearGradient(0, 0, width, 0);
+  shade.addColorStop(0, nightColor);
+  shade.addColorStop(0.28, "rgba(255,255,255,0.02)");
+  shade.addColorStop(0.58, "rgba(255,255,255,0.08)");
+  shade.addColorStop(1, "rgba(0,0,0,0.28)");
+  ctx.save();
+  ctx.globalCompositeOperation = "multiply";
+  ctx.fillStyle = shade;
+  ctx.fillRect(0, 0, width, height);
+  ctx.restore();
+}
+
+function drawStormCells(ctx, width, height, rand, tint = "rgba(255,255,255,0.22)", count = 14) {
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  for (let i = 0; i < count; i += 1) {
+    const x = randRange(rand, width * 0.08, width * 0.92);
+    const y = randRange(rand, height * 0.16, height * 0.84);
+    const radius = randRange(rand, 24, 92);
+    ctx.strokeStyle = tint;
+    ctx.lineWidth = randRange(rand, 2, 7);
+    ctx.beginPath();
+    for (let t = 0; t < 3.8 * Math.PI; t += 0.18) {
+      const r = radius * (t / (3.8 * Math.PI));
+      const px = x + Math.cos(t + rand() * 0.06) * r;
+      const py = y + Math.sin(t) * r * 0.46;
+      if (t === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawRockyRidges(ctx, width, height, rand, color = "rgba(255,230,190,0.13)", count = 42) {
+  ctx.save();
+  ctx.globalCompositeOperation = "overlay";
+  for (let i = 0; i < count; i += 1) {
+    const y = rand() * height;
+    const amplitude = randRange(rand, 5, 22);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = randRange(rand, 1.2, 4.6);
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x <= width; x += 38) {
+      ctx.lineTo(x, y + Math.sin(x * randRange(rand, 0.008, 0.03) + i) * amplitude + randRange(rand, -7, 7));
+    }
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
 function drawSunTexture(ctx, width, height, colors) {
+  const rand = makeSeededRandom("sun-surface");
   const gradient = ctx.createRadialGradient(width * 0.48, height * 0.5, 8, width * 0.5, height * 0.5, width * 0.72);
   gradient.addColorStop(0, "#fff7bc");
   gradient.addColorStop(0.22, colors[0]);
@@ -5136,21 +5460,37 @@ function drawSunTexture(ctx, width, height, colors) {
   gradient.addColorStop(1, colors[2]);
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
-  for (let i = 0; i < 95; i += 1) {
-    const y = Math.random() * height;
-    const x = Math.random() * width;
-    const length = 50 + Math.random() * 170;
-    ctx.strokeStyle = `rgba(255, ${150 + Math.random() * 90}, 40, ${0.12 + Math.random() * 0.28})`;
-    ctx.lineWidth = 2 + Math.random() * 7;
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  for (let i = 0; i < 150; i += 1) {
+    const y = rand() * height;
+    const x = rand() * width;
+    const length = 50 + rand() * 210;
+    ctx.strokeStyle = `rgba(255, ${150 + rand() * 90}, 40, ${0.1 + rand() * 0.32})`;
+    ctx.lineWidth = 2 + rand() * 9;
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.bezierCurveTo(x + length * 0.25, y - 24, x + length * 0.55, y + 28, x + length, y + Math.random() * 34 - 17);
+    ctx.bezierCurveTo(x + length * 0.25, y - 24, x + length * 0.55, y + 28, x + length, y + rand() * 34 - 17);
     ctx.stroke();
   }
-  addFineNoise(ctx, width, height, 1800, 0.18, true);
+  for (let i = 0; i < 42; i += 1) {
+    const x = rand() * width;
+    const y = rand() * height;
+    const r = randRange(rand, 14, 54);
+    const cell = ctx.createRadialGradient(x, y, 0, x, y, r);
+    cell.addColorStop(0, "rgba(255,255,220,0.32)");
+    cell.addColorStop(1, "rgba(255,96,15,0)");
+    ctx.fillStyle = cell;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+  addFineNoise(ctx, width, height, 2200, 0.18, true, rand);
 }
 
 function drawEarthSolarTexture(ctx, width, height) {
+  const rand = makeSeededRandom("earth-solar-surface");
   const ocean = ctx.createLinearGradient(0, 0, width, height);
   ocean.addColorStop(0, "#0d315e");
   ocean.addColorStop(0.38, "#0b5790");
@@ -5160,16 +5500,16 @@ function drawEarthSolarTexture(ctx, width, height) {
   ctx.fillRect(0, 0, width, height);
 
   const landColors = ["#2e774d", "#4e8b4d", "#9a8052", "#6f7e54", "#d1c6a2"];
-  for (let i = 0; i < 38; i += 1) {
-    const x = Math.random() * width;
-    const y = height * 0.2 + Math.random() * height * 0.62;
-    const rx = 22 + Math.random() * 78;
-    const ry = 10 + Math.random() * 34;
-    ctx.fillStyle = landColors[Math.floor(Math.random() * landColors.length)];
-    ctx.globalAlpha = 0.5 + Math.random() * 0.32;
+  for (let i = 0; i < 60; i += 1) {
+    const x = rand() * width;
+    const y = height * 0.2 + rand() * height * 0.62;
+    const rx = 22 + rand() * 96;
+    const ry = 10 + rand() * 42;
+    ctx.fillStyle = landColors[Math.floor(rand() * landColors.length)];
+    ctx.globalAlpha = 0.5 + rand() * 0.32;
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate((Math.random() - 0.5) * 1.2);
+    ctx.rotate((rand() - 0.5) * 1.2);
     ctx.beginPath();
     ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
     ctx.fill();
@@ -5179,11 +5519,11 @@ function drawEarthSolarTexture(ctx, width, height) {
   ctx.fillStyle = "rgba(245,250,255,0.92)";
   ctx.fillRect(0, 0, width, height * 0.075);
   ctx.fillRect(0, height * 0.925, width, height * 0.075);
-  for (let i = 0; i < 34; i += 1) {
-    const y = Math.random() * height;
-    const x = Math.random() * width;
-    const w = 54 + Math.random() * 150;
-    const h = 8 + Math.random() * 24;
+  for (let i = 0; i < 58; i += 1) {
+    const y = rand() * height;
+    const x = rand() * width;
+    const w = 54 + rand() * 190;
+    const h = 8 + rand() * 30;
     const cloud = ctx.createRadialGradient(x, y, 0, x, y, w);
     cloud.addColorStop(0, "rgba(255,255,255,0.34)");
     cloud.addColorStop(0.52, "rgba(255,255,255,0.16)");
@@ -5197,30 +5537,34 @@ function drawEarthSolarTexture(ctx, width, height) {
     ctx.fill();
     ctx.restore();
   }
-  addFineNoise(ctx, width, height, 950, 0.05);
+  drawStormCells(ctx, width, height, rand, "rgba(255,255,255,0.14)", 18);
+  addPlanetVignette(ctx, width, height, "rgba(0,8,24,0.28)");
+  addFineNoise(ctx, width, height, 1150, 0.05, false, rand);
 }
 
 function drawRockyPlanetTexture(ctx, width, height, key, colors, banded) {
+  const rand = makeSeededRandom(`${key}-rocky-surface`);
   fillPlanetGradient(ctx, width, height, colors);
   const craterCount = key === "moon" || key === "mercury" ? 170 : 80;
   const warm = key === "mars";
   for (let i = 0; i < craterCount; i += 1) {
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-    const r = 3 + Math.random() * (key === "mars" ? 15 : 28);
+    const x = rand() * width;
+    const y = rand() * height;
+    const r = 3 + rand() * (key === "mars" ? 15 : 28);
     drawCrater(ctx, x, y, r, warm);
   }
+  drawRockyRidges(ctx, width, height, rand, warm ? "rgba(255,198,122,0.16)" : "rgba(235,242,255,0.14)", key === "mars" ? 54 : 38);
   if (key === "mars") {
     ctx.fillStyle = "rgba(242, 236, 210, 0.78)";
     ctx.fillRect(0, 0, width, height * 0.07);
     ctx.fillRect(0, height * 0.93, width, height * 0.07);
     for (let i = 0; i < 26; i += 1) {
       ctx.strokeStyle = "rgba(239, 168, 98, 0.18)";
-      ctx.lineWidth = 6 + Math.random() * 12;
+      ctx.lineWidth = 6 + rand() * 12;
       ctx.beginPath();
-      const y = Math.random() * height;
+      const y = rand() * height;
       ctx.moveTo(0, y);
-      ctx.bezierCurveTo(width * 0.28, y - 28, width * 0.63, y + 30, width, y + Math.random() * 46 - 23);
+      ctx.bezierCurveTo(width * 0.28, y - 28, width * 0.63, y + 30, width, y + rand() * 46 - 23);
       ctx.stroke();
     }
   }
@@ -5230,7 +5574,8 @@ function drawRockyPlanetTexture(ctx, width, height, key, colors, banded) {
       ctx.fillRect(0, y + Math.sin(y) * 3, width, 7);
     }
   }
-  addFineNoise(ctx, width, height, 1200, key === "moon" ? 0.08 : 0.06, warm);
+  addPlanetVignette(ctx, width, height, warm ? "rgba(30,8,2,0.25)" : "rgba(0,0,0,0.27)");
+  addFineNoise(ctx, width, height, 1500, key === "moon" ? 0.08 : 0.06, warm, rand);
 }
 
 function drawCrater(ctx, x, y, r, warm = false) {
@@ -5250,14 +5595,15 @@ function drawCrater(ctx, x, y, r, warm = false) {
 }
 
 function drawGasGiantTexture(ctx, width, height, key, colors) {
+  const rand = makeSeededRandom(`${key}-gas-surface`);
   fillPlanetGradient(ctx, width, height, colors);
   const bandPalette =
     key === "jupiter"
       ? ["rgba(255,235,197,0.34)", "rgba(150,84,43,0.32)", "rgba(244,183,112,0.27)", "rgba(70,38,25,0.2)"]
       : ["rgba(255,234,184,0.28)", "rgba(151,118,78,0.22)", "rgba(245,210,144,0.22)", "rgba(87,65,44,0.14)"];
   for (let y = -20; y < height + 24; y += 14) {
-    const bandHeight = 7 + Math.random() * 16;
-    ctx.fillStyle = bandPalette[Math.floor(Math.random() * bandPalette.length)];
+    const bandHeight = 7 + rand() * 16;
+    ctx.fillStyle = bandPalette[Math.floor(rand() * bandPalette.length)];
     ctx.beginPath();
     ctx.moveTo(0, y);
     for (let x = 0; x <= width; x += 24) {
@@ -5268,6 +5614,7 @@ function drawGasGiantTexture(ctx, width, height, key, colors) {
     ctx.closePath();
     ctx.fill();
   }
+  drawStormCells(ctx, width, height, rand, key === "jupiter" ? "rgba(255,233,192,0.12)" : "rgba(245,224,175,0.1)", key === "jupiter" ? 22 : 14);
   if (key === "jupiter") {
     ctx.fillStyle = "rgba(178, 69, 45, 0.82)";
     ctx.beginPath();
@@ -5277,43 +5624,51 @@ function drawGasGiantTexture(ctx, width, height, key, colors) {
     ctx.lineWidth = 4;
     ctx.stroke();
   }
-  addFineNoise(ctx, width, height, 900, 0.08, true);
+  addPlanetVignette(ctx, width, height, "rgba(19,9,2,0.22)");
+  addFineNoise(ctx, width, height, 1200, 0.08, true, rand);
 }
 
 function drawIceGiantTexture(ctx, width, height, key, colors) {
+  const rand = makeSeededRandom(`${key}-ice-surface`);
   fillPlanetGradient(ctx, width, height, colors);
   for (let y = 12; y < height; y += 22) {
     ctx.strokeStyle = key === "neptune" ? "rgba(190,220,255,0.18)" : "rgba(230,255,255,0.16)";
-    ctx.lineWidth = 2 + Math.random() * 6;
+    ctx.lineWidth = 2 + rand() * 6;
     ctx.beginPath();
     ctx.moveTo(0, y);
-    ctx.bezierCurveTo(width * 0.28, y - 14, width * 0.62, y + 18, width, y + Math.random() * 22 - 11);
+    ctx.bezierCurveTo(width * 0.28, y - 14, width * 0.62, y + 18, width, y + rand() * 22 - 11);
     ctx.stroke();
   }
+  drawStormCells(ctx, width, height, rand, key === "neptune" ? "rgba(160,210,255,0.12)" : "rgba(210,255,255,0.11)", 10);
   if (key === "neptune") {
     ctx.fillStyle = "rgba(12, 30, 103, 0.42)";
     ctx.beginPath();
     ctx.ellipse(width * 0.66, height * 0.48, width * 0.075, height * 0.045, -0.15, 0, Math.PI * 2);
     ctx.fill();
   }
-  addFineNoise(ctx, width, height, 620, 0.045);
+  addPlanetVignette(ctx, width, height, "rgba(0,8,38,0.24)");
+  addFineNoise(ctx, width, height, 760, 0.045, false, rand);
 }
 
 function drawVenusTexture(ctx, width, height, colors) {
+  const rand = makeSeededRandom("venus-cloud-surface");
   fillPlanetGradient(ctx, width, height, colors);
   for (let i = 0; i < 58; i += 1) {
-    const y = Math.random() * height;
+    const y = rand() * height;
     ctx.strokeStyle = i % 2 ? "rgba(255,224,157,0.22)" : "rgba(111,72,36,0.18)";
-    ctx.lineWidth = 8 + Math.random() * 18;
+    ctx.lineWidth = 8 + rand() * 18;
     ctx.beginPath();
     ctx.moveTo(-20, y);
-    ctx.bezierCurveTo(width * 0.22, y - 44, width * 0.6, y + 38, width + 20, y + Math.random() * 80 - 40);
+    ctx.bezierCurveTo(width * 0.22, y - 44, width * 0.6, y + 38, width + 20, y + rand() * 80 - 40);
     ctx.stroke();
   }
-  addFineNoise(ctx, width, height, 1100, 0.075, true);
+  drawStormCells(ctx, width, height, rand, "rgba(255,232,166,0.16)", 18);
+  addPlanetVignette(ctx, width, height, "rgba(44,18,3,0.23)");
+  addFineNoise(ctx, width, height, 1300, 0.075, true, rand);
 }
 
 function makePlanetBumpTexture(key) {
+  const rand = makeSeededRandom(`${key}-bump-map`);
   const canvas = document.createElement("canvas");
   canvas.width = 512;
   canvas.height = 256;
@@ -5322,9 +5677,9 @@ function makePlanetBumpTexture(key) {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   const count = key === "mars" ? 95 : 180;
   for (let i = 0; i < count; i += 1) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const r = 3 + Math.random() * (key === "mars" ? 18 : 30);
+    const x = rand() * canvas.width;
+    const y = rand() * canvas.height;
+    const r = 3 + rand() * (key === "mars" ? 18 : 30);
     const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
     gradient.addColorStop(0, "#555");
     gradient.addColorStop(0.72, "#737373");
@@ -5382,7 +5737,8 @@ function animateSatelliteTracker(now) {
   updateIssMarker();
   if (!satelliteTrackerGroup?.visible || isSimulationPaused) return;
   satelliteTrackerAnimations.forEach((item) => {
-    const t = (now * item.speed + item.offset) % 1;
+    const liveOrbit = item.periodMinutes ? Date.now() / (item.periodMinutes * 60000) : now * item.speed;
+    const t = (liveOrbit + item.offset) % 1;
     const next = (t + 0.004) % 1;
     item.object.position.copy(item.curve.getPointAt(t));
     item.object.lookAt(item.curve.getPointAt(next));
@@ -5390,18 +5746,19 @@ function animateSatelliteTracker(now) {
 }
 
 function makeCloudTexture() {
+  const rand = makeSeededRandom("earth-live-cloud-shell");
   const canvas = document.createElement("canvas");
   canvas.width = 2048;
   canvas.height = 1024;
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  for (let i = 0; i < 170; i += 1) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const width = 80 + Math.random() * 220;
-    const height = 18 + Math.random() * 55;
-    const alpha = 0.08 + Math.random() * 0.18;
+  for (let i = 0; i < 230; i += 1) {
+    const x = rand() * canvas.width;
+    const y = rand() * canvas.height;
+    const width = 70 + rand() * 260;
+    const height = 16 + rand() * 62;
+    const alpha = 0.07 + rand() * 0.2;
     const gradient = ctx.createRadialGradient(x, y, 0, x, y, width);
     gradient.addColorStop(0, `rgba(255,255,255,${alpha})`);
     gradient.addColorStop(0.45, `rgba(255,255,255,${alpha * 0.55})`);
@@ -5409,13 +5766,28 @@ function makeCloudTexture() {
     ctx.fillStyle = gradient;
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate((Math.random() - 0.5) * 0.35);
+    ctx.rotate((rand() - 0.5) * 0.55);
     ctx.scale(1, height / width);
     ctx.beginPath();
     ctx.arc(0, 0, width, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   }
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  for (let band = 0; band < 12; band += 1) {
+    const y = (band / 12) * canvas.height + randRange(rand, -28, 28);
+    ctx.strokeStyle = `rgba(255,255,255,${0.045 + rand() * 0.045})`;
+    ctx.lineWidth = randRange(rand, 6, 18);
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x <= canvas.width; x += 52) {
+      ctx.lineTo(x, y + Math.sin(x * 0.012 + band * 1.6) * randRange(rand, 10, 28));
+    }
+    ctx.stroke();
+  }
+  drawStormCells(ctx, canvas.width, canvas.height, rand, "rgba(255,255,255,0.12)", 18);
+  ctx.restore();
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -5503,10 +5875,7 @@ function buildFlightArcs() {
         blending: THREE.AdditiveBlending,
       }),
     );
-    const marker = new THREE.Mesh(
-      new THREE.SphereGeometry(0.017, 12, 8),
-      new THREE.MeshBasicMaterial({ color: 0xfff4a8 }),
-    );
+    const marker = makeSurfacePointModel("plane", 0xfff4a8, 0.026);
     flightArcsGroup.add(line, marker);
     flightArcAnimations.push({ curve, marker, offset: index / AIRLINE_ROUTES.features.length });
   });
@@ -5518,11 +5887,11 @@ function buildStaticDataLayers() {
   buildLineLayer(plateGroup, TECTONIC_PLATES, 0xff6f91, 0.72, 1.045);
   buildLineLayer(launchGroup, LAUNCH_ROUTES, 0xffbf69, 0.72, 1.11);
   buildLineLayer(migrationGroup, MIGRATION_ROUTES, 0x9df76d, 0.58, 1.09);
-  addPointGroup(volcanoGroup, VOLCANO_POINTS, 0xff7a38, 0.026, 1.05);
-  addPointGroup(portGroup, PORT_POINTS, 0x58d3df, 0.022, 1.055);
-  addPointGroup(airportGroup, AIRPORT_POINTS, 0x98a6ff, 0.02, 1.06);
-  addPointGroup(baseGroup, MILITARY_BASE_POINTS, 0xff6f91, 0.022, 1.062);
-  addPointGroup(spaceportGroup, SPACEPORT_POINTS, 0xffbf69, 0.024, 1.075);
+  addPointGroup(volcanoGroup, VOLCANO_POINTS, 0xff7a38, 0.026, 1.05, true, "volcano");
+  addPointGroup(portGroup, PORT_POINTS, 0x58d3df, 0.022, 1.055, true, "ship");
+  addPointGroup(airportGroup, AIRPORT_POINTS, 0x98a6ff, 0.02, 1.06, true, "plane");
+  addPointGroup(baseGroup, MILITARY_BASE_POINTS, 0xff6f91, 0.022, 1.062, true, "base");
+  addPointGroup(spaceportGroup, SPACEPORT_POINTS, 0xffbf69, 0.024, 1.075, true, "rocket");
   buildOceanCurrentArrows();
   buildWindFlowLayer();
   buildZoomGrid();
@@ -5562,10 +5931,10 @@ function buildSatelliteTrackerLayer() {
   satelliteTrackerGroup.clear();
   satelliteTrackerAnimations = [];
   const satellites = [
-    { name: "ISS", radius: RADIUS * 1.42, tilt: 51.6, yaw: -24, speed: 0.00016, color: 0xffffff },
-    { name: "GPS III", radius: RADIUS * 1.78, tilt: 55, yaw: 58, speed: 0.00007, color: 0x98a6ff },
-    { name: "Starlink train", radius: RADIUS * 1.34, tilt: 38, yaw: 112, speed: 0.00022, color: 0x58d3df },
-    { name: "Weather sat", radius: RADIUS * 1.62, tilt: 98, yaw: -78, speed: 0.0001, color: 0xecff8f },
+    { name: "GPS III", radius: RADIUS * 1.78, tilt: 55, yaw: 58, speed: 0.00007, periodMinutes: 718, color: 0x98a6ff },
+    { name: "Starlink train", radius: RADIUS * 1.34, tilt: 53, yaw: 112, speed: 0.00022, periodMinutes: 95, color: 0x58d3df },
+    { name: "Weather sat", radius: RADIUS * 1.62, tilt: 98, yaw: -78, speed: 0.0001, periodMinutes: 101, color: 0xecff8f },
+    { name: "GOES relay", radius: RADIUS * 1.92, tilt: 0, yaw: -36, speed: 0.00004, periodMinutes: 1436, color: 0xffbf69 },
   ];
   satellites.forEach((sat, index) => {
     const curve = makeOrbitalCurve(sat.radius, sat.tilt, sat.yaw);
@@ -5580,58 +5949,81 @@ function buildSatelliteTrackerLayer() {
     );
     satelliteTrackerGroup.add(orbit);
 
-    const tracker = new THREE.Group();
-    const body = new THREE.Mesh(
-      new THREE.BoxGeometry(0.035, 0.018, 0.018),
-      new THREE.MeshBasicMaterial({ color: sat.color, transparent: true, opacity: 0.92 }),
-    );
-    const panel = new THREE.Mesh(
-      new THREE.BoxGeometry(0.078, 0.006, 0.025),
-      new THREE.MeshBasicMaterial({ color: 0x9ba9bd, transparent: true, opacity: 0.76 }),
-    );
-    panel.position.x = 0.058;
-    const panelTwo = panel.clone();
-    panelTwo.position.x = -0.058;
-    tracker.add(body, panel, panelTwo);
-    const label = makeMapLabelSprite(sat.name, {
-      fill: "rgba(5,10,18,0.62)",
-      stroke: "rgba(255,255,255,0.44)",
-      text: "#eef5ff",
-    });
-    label.scale.multiplyScalar(0.43);
-    label.position.set(0.08, 0.05, 0);
-    tracker.add(label);
+    const tracker = makeSatelliteModel(sat.name, sat.color, 1);
     satelliteTrackerGroup.add(tracker);
-    satelliteTrackerAnimations.push({ curve, object: tracker, speed: sat.speed, offset: index / satellites.length });
+    satelliteTrackerAnimations.push({
+      curve,
+      object: tracker,
+      speed: sat.speed,
+      offset: index / satellites.length,
+      periodMinutes: sat.periodMinutes,
+    });
   });
   issLiveMarker = makeTrackedSatelliteSprite("ISS live", 0x9df76d);
   issLiveMarker.visible = false;
   satelliteTrackerGroup.add(issLiveMarker);
 }
 
-function makeTrackedSatelliteSprite(name, color) {
+function makeSatelliteModel(name, color, scale = 1) {
   const tracker = new THREE.Group();
-  const body = new THREE.Mesh(
-    new THREE.BoxGeometry(0.045, 0.024, 0.024),
-    new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.96 }),
-  );
-  const panel = new THREE.Mesh(
-    new THREE.BoxGeometry(0.092, 0.006, 0.032),
-    new THREE.MeshBasicMaterial({ color: 0xe8f2ff, transparent: true, opacity: 0.72 }),
-  );
-  panel.position.x = 0.07;
-  const panelTwo = panel.clone();
-  panelTwo.position.x = -0.07;
-  tracker.add(body, panel, panelTwo);
+  const accent = new THREE.Color(color);
+  const metalMaterial = new THREE.MeshStandardMaterial({
+    color: 0xd9e3ef,
+    roughness: 0.38,
+    metalness: 0.55,
+    emissive: accent,
+    emissiveIntensity: 0.08,
+  });
+  const darkMaterial = new THREE.MeshStandardMaterial({
+    color: 0x111827,
+    roughness: 0.55,
+    metalness: 0.32,
+    emissive: accent,
+    emissiveIntensity: 0.05,
+  });
+  const panelMaterial = new THREE.MeshStandardMaterial({
+    color: 0x5f7ca2,
+    roughness: 0.52,
+    metalness: 0.22,
+    emissive: accent,
+    emissiveIntensity: 0.12,
+  });
+  const glowMaterial = new THREE.MeshBasicMaterial({
+    color,
+    transparent: true,
+    opacity: 0.68,
+    blending: THREE.AdditiveBlending,
+  });
+  const s = 0.042 * scale;
+  const add = (mesh, position = [0, 0, 0], rotation = [0, 0, 0]) => {
+    mesh.position.set(...position);
+    mesh.rotation.set(...rotation);
+    tracker.add(mesh);
+    return mesh;
+  };
+
+  add(new THREE.Mesh(new THREE.BoxGeometry(s * 1.15, s * 0.72, s * 0.72), metalMaterial));
+  add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.16, s * 0.16, s * 1.6, 10), darkMaterial), [0, 0, 0], [0, 0, Math.PI / 2]);
+  add(new THREE.Mesh(new THREE.BoxGeometry(s * 2.4, s * 0.08, s * 0.72), panelMaterial), [s * 1.92, 0, 0]);
+  add(new THREE.Mesh(new THREE.BoxGeometry(s * 2.4, s * 0.08, s * 0.72), panelMaterial), [-s * 1.92, 0, 0]);
+  add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.12, s * 0.08, s * 0.95), metalMaterial), [s * 0.72, 0, 0]);
+  add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.12, s * 0.08, s * 0.95), metalMaterial), [-s * 0.72, 0, 0]);
+  add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.26, s * 0.7, 18), metalMaterial), [0, 0, -s * 0.82], [-Math.PI / 2, 0, 0]);
+  add(new THREE.Mesh(new THREE.TorusGeometry(s * 0.38, s * 0.025, 8, 28), glowMaterial), [0, 0, -s * 1.18]);
+  add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.025, s * 0.025, s * 1.35, 6), glowMaterial), [0, s * 0.92, 0]);
   const label = makeMapLabelSprite(name, {
     fill: "rgba(5, 10, 18, 0.74)",
-    stroke: "rgba(157,247,109,0.72)",
-    text: "#ecff8f",
+    stroke: `#${color.toString(16).padStart(6, "0")}`,
+    text: "#eef5ff",
   });
-  label.scale.multiplyScalar(0.45);
-  label.position.set(0.1, 0.06, 0);
+  label.scale.multiplyScalar(0.43 * scale);
+  label.position.set(s * 2.2, s * 1.55, 0);
   tracker.add(label);
   return tracker;
+}
+
+function makeTrackedSatelliteSprite(name, color) {
+  return makeSatelliteModel(name, color, 1.28);
 }
 
 function makeOrbitalCurve(radius, tilt, yaw) {
@@ -5648,33 +6040,219 @@ function buildLineLayer(group, featureCollection, color, opacity, radiusScale) {
   group.clear();
   featureCollection.features.forEach((feature) => {
     const points = feature.geometry.coordinates.map(([lon, lat]) => latLonToVector3(lat, lon, RADIUS * radiusScale));
+    const glow = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(points),
+      new THREE.LineBasicMaterial({
+        color,
+        transparent: true,
+        opacity: opacity * 0.34,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
     const line = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(points),
       new THREE.LineBasicMaterial({
         color,
         transparent: true,
-        opacity,
+        opacity: Math.min(0.96, opacity + 0.14),
         blending: THREE.AdditiveBlending,
       }),
     );
-    group.add(line);
+    glow.scale.setScalar(1.002);
+    group.add(glow, line);
   });
 }
 
-function addPointGroup(group, points, color, size, radiusScale, showLabels = true) {
+function makeSurfacePointModel(kind, color, size) {
+  const model = new THREE.Group();
+  const accent = new THREE.Color(color);
+  const accentHex = `#${color.toString(16).padStart(6, "0")}`;
+  const glowMaterial = new THREE.MeshBasicMaterial({
+    color,
+    transparent: true,
+    opacity: 0.92,
+    blending: THREE.AdditiveBlending,
+  });
+  const metalMaterial = new THREE.MeshStandardMaterial({
+    color: 0xe9f2ff,
+    roughness: 0.38,
+    metalness: 0.42,
+    emissive: accent,
+    emissiveIntensity: 0.1,
+  });
+  const darkMaterial = new THREE.MeshStandardMaterial({
+    color: 0x101722,
+    roughness: 0.66,
+    metalness: 0.18,
+    emissive: accent,
+    emissiveIntensity: 0.06,
+  });
+  const warmMaterial = new THREE.MeshStandardMaterial({
+    color: 0x7a3325,
+    roughness: 0.78,
+    metalness: 0.04,
+    emissive: accent,
+    emissiveIntensity: 0.12,
+  });
+  const s = size * 1.55;
+
+  const add = (mesh, position = [0, 0, 0], rotation = [0, 0, 0]) => {
+    mesh.position.set(...position);
+    mesh.rotation.set(...rotation);
+    model.add(mesh);
+    return mesh;
+  };
+  const pad = (radius = 1) =>
+    add(
+      new THREE.Mesh(
+        new THREE.CylinderGeometry(s * radius, s * radius * 0.86, s * 0.12, 24),
+        new THREE.MeshBasicMaterial({
+          color,
+          transparent: true,
+          opacity: 0.2,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      ),
+      [0, s * 0.02, 0],
+    );
+
+  if (kind === "plane") {
+    pad(1.3);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.18, s * 0.24, s * 3.2, 14), metalMaterial), [0, s * 0.45, 0], [Math.PI / 2, 0, 0]);
+    add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.26, s * 0.68, 14), glowMaterial), [0, s * 0.45, -s * 1.94], [-Math.PI / 2, 0, 0]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 2.6, s * 0.1, s * 0.52), glowMaterial), [0, s * 0.43, -s * 0.1]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.85, s * 0.08, s * 0.38), glowMaterial), [0, s * 0.58, s * 1.32]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.12, s * 0.64, s * 0.22), metalMaterial), [0, s * 0.82, s * 1.45]);
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.17, 12, 8), new THREE.MeshBasicMaterial({ color: 0xbfe9ff, transparent: true, opacity: 0.85 })), [0, s * 0.66, -s * 0.88]);
+    return model;
+  }
+
+  if (kind === "ship") {
+    pad(1.45);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 1.25, s * 0.35, s * 2.9), darkMaterial), [0, s * 0.32, 0]);
+    add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.65, s * 0.82, 4), glowMaterial), [0, s * 0.34, -s * 1.72], [-Math.PI / 2, 0, Math.PI / 4]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.82, s * 0.58, s * 0.72), metalMaterial), [0, s * 0.86, s * 0.42]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.5, s * 0.35, s * 0.45), metalMaterial), [0, s * 1.32, s * 0.62]);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.035, s * 0.035, s * 1.18, 8), glowMaterial), [0, s * 1.78, s * 0.18]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.9, s * 0.035, s * 0.06), glowMaterial), [0, s * 2.06, s * 0.18]);
+    return model;
+  }
+
+  if (kind === "base") {
+    pad(1.28);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 1.02, s * 1.16, s * 0.58, 6), darkMaterial), [0, s * 0.3, 0]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 1.25, s * 0.24, s * 0.75), metalMaterial), [0, s * 0.72, 0]);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.12, s * 0.16, s * 1.28, 8), metalMaterial), [0, s * 1.32, 0]);
+    add(new THREE.Mesh(new THREE.TorusGeometry(s * 0.52, s * 0.035, 8, 32), glowMaterial), [0, s * 1.88, -s * 0.28], [Math.PI / 2, 0, 0]);
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.18, 12, 8), glowMaterial), [0, s * 1.88, -s * 0.28]);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.025, s * 0.025, s * 1.1, 6), glowMaterial), [s * 0.5, s * 1.35, s * 0.28]);
+    return model;
+  }
+
+  if (kind === "rocket") {
+    pad(1.08);
+    add(new THREE.Mesh(new THREE.CylinderGeometry(s * 0.27, s * 0.29, s * 1.9, 16), metalMaterial), [0, s * 1.05, 0]);
+    add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.32, s * 0.64, 16), glowMaterial), [0, s * 2.32, 0]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.92, s * 0.2, s * 0.08), glowMaterial), [0, s * 0.34, 0]);
+    add(new THREE.Mesh(new THREE.BoxGeometry(s * 0.08, s * 0.2, s * 0.92), glowMaterial), [0, s * 0.34, 0]);
+    add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.34, s * 0.62, 12), new THREE.MeshBasicMaterial({ color: 0xffbf69, transparent: true, opacity: 0.72, blending: THREE.AdditiveBlending })), [0, -s * 0.08, 0], [Math.PI, 0, 0]);
+    return model;
+  }
+
+  if (kind === "volcano") {
+    pad(1.5);
+    add(new THREE.Mesh(new THREE.ConeGeometry(s * 1.25, s * 1.75, 24), warmMaterial), [0, s * 0.78, 0]);
+    add(new THREE.Mesh(new THREE.TorusGeometry(s * 0.43, s * 0.08, 10, 28), glowMaterial), [0, s * 1.66, 0], [Math.PI / 2, 0, 0]);
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.28, 16, 10), new THREE.MeshBasicMaterial({ color: 0xffbf69, transparent: true, opacity: 0.82, blending: THREE.AdditiveBlending })), [0, s * 1.72, 0]);
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.38, 14, 8), new THREE.MeshBasicMaterial({ color: 0xc9d4dc, transparent: true, opacity: 0.22, depthWrite: false })), [s * 0.26, s * 2.22, -s * 0.18]);
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.27, 14, 8), new THREE.MeshBasicMaterial({ color: 0xc9d4dc, transparent: true, opacity: 0.18, depthWrite: false })), [-s * 0.2, s * 2.04, s * 0.14]);
+    return model;
+  }
+
+  if (kind === "quake") {
+    [1.15, 2.05, 3.0].forEach((scale, index) => {
+      add(
+        new THREE.Mesh(
+          new THREE.RingGeometry(s * scale, s * (scale + 0.16), 36),
+          new THREE.MeshBasicMaterial({
+            color,
+            transparent: true,
+            opacity: 0.5 - index * 0.12,
+            side: THREE.DoubleSide,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+          }),
+        ),
+        [0, s * 0.08, 0],
+        [Math.PI / 2, 0, 0],
+      );
+    });
+    add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.75, 12, 8), glowMaterial), [0, s * 0.12, 0]);
+    return model;
+  }
+
+  pad(0.92);
+  add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.48, 16, 12), glowMaterial), [0, s * 0.78, 0]);
+  add(new THREE.Mesh(new THREE.ConeGeometry(s * 0.18, s * 0.66, 12), new THREE.MeshBasicMaterial({ color: accentHex, transparent: true, opacity: 0.72 })), [0, s * 0.34, 0], [Math.PI, 0, 0]);
+  return model;
+}
+
+function addPointGroup(group, points, color, size, radiusScale, showLabels = true, modelKind = "pin") {
   group.clear();
   points.forEach((item) => {
     const marker = new THREE.Group();
-    const dot = new THREE.Mesh(
-      new THREE.SphereGeometry(size, 16, 12),
-      new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.88 }),
+    const usesModel = modelKind !== "pin";
+    const top = latLonToVector3(item.lat, item.lon, RADIUS * radiusScale);
+    const normal = top.clone().normalize();
+    const base = latLonToVector3(item.lat, item.lon, RADIUS * 1.008);
+    const stem = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([base, top]),
+      new THREE.LineBasicMaterial({
+        color,
+        transparent: true,
+        opacity: usesModel ? 0.22 : 0.38,
+        blending: THREE.AdditiveBlending,
+      }),
     );
-    dot.position.copy(latLonToVector3(item.lat, item.lon, RADIUS * radiusScale));
-    marker.add(dot);
+    const glow = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeGlowTexture(`#${color.toString(16).padStart(6, "0")}`),
+        color,
+        transparent: true,
+        opacity: 0.33,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    glow.position.copy(top);
+    glow.scale.set(size * (usesModel ? 5.2 : 6.8), size * (usesModel ? 5.2 : 6.8), 1);
+    const icon = makeSurfacePointModel(modelKind, color, usesModel ? size * 1.15 : size);
+    icon.position.copy(top);
+    icon.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
+    icon.rotateY(THREE.MathUtils.degToRad((item.lon || 0) * 0.37));
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(size * 1.65, size * 2.3, 32),
+      new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity: usesModel ? 0.16 : 0.42,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    ring.position.copy(base);
+    ring.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
+    if (modelKind === "quake") {
+      marker.add(glow, icon);
+    } else {
+      marker.add(stem, glow, ring, icon);
+    }
     if (showLabels) {
       const label = makeMapLabelSprite(item.name, {
         fill: "rgba(5, 10, 18, 0.72)",
-        stroke: color,
+        stroke: `#${color.toString(16).padStart(6, "0")}`,
         text: "#eef5ff",
       });
       label.position.copy(latLonToVector3(item.lat, item.lon, RADIUS * (radiusScale + 0.07)));
@@ -5691,10 +6269,20 @@ function buildOceanCurrentArrows() {
   OCEAN_CURRENT_ROUTES.forEach((feature, index) => {
     const points = feature.geometry.coordinates.map(([lon, lat]) => latLonToVector3(lat, lon, RADIUS * 1.08));
     const curve = new THREE.CatmullRomCurve3(points);
-    for (let i = 0; i < 6; i += 1) {
+    const ribbon = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(140)),
+      new THREE.LineBasicMaterial({
+        color: 0x58d3df,
+        transparent: true,
+        opacity: 0.26,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    currentArrowGroup.add(ribbon);
+    for (let i = 0; i < 8; i += 1) {
       const arrow = makeCurrentArrow();
       currentArrowGroup.add(arrow);
-      currentAnimations.push({ curve, arrow, offset: (i / 6 + index * 0.13) % 1 });
+      currentAnimations.push({ curve, arrow, offset: (i / 8 + index * 0.13) % 1 });
     }
   });
 }
@@ -5724,20 +6312,30 @@ function buildWindFlowLayer() {
   WIND_JET_ROUTES.features.forEach((feature, index) => {
     const points = feature.geometry.coordinates.map(([lon, lat]) => latLonToVector3(lat, lon, RADIUS * 1.12));
     const curve = new THREE.CatmullRomCurve3(points);
+    const glow = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(curve.getPoints(120)),
+      new THREE.LineBasicMaterial({
+        color: 0xecff8f,
+        transparent: true,
+        opacity: 0.11,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
     const line = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(curve.getPoints(120)),
       new THREE.LineBasicMaterial({
         color: 0xecff8f,
         transparent: true,
-        opacity: 0.22,
+        opacity: 0.32,
         blending: THREE.AdditiveBlending,
       }),
     );
-    windArrowGroup.add(line);
-    for (let i = 0; i < 5; i += 1) {
+    glow.scale.setScalar(1.002);
+    windArrowGroup.add(glow, line);
+    for (let i = 0; i < 7; i += 1) {
       const arrow = makeWindArrow();
       windArrowGroup.add(arrow);
-      windAnimations.push({ curve, arrow, offset: (i / 5 + index * 0.17) % 1 });
+      windAnimations.push({ curve, arrow, offset: (i / 7 + index * 0.17) % 1 });
     }
   });
 }
@@ -5758,6 +6356,7 @@ function makeWindArrow() {
 function buildAuroraLayer() {
   if (!auroraGroup) return;
   auroraGroup.clear();
+  const rand = makeSeededRandom("aurora-curtains");
   [-72, 72].forEach((lat, hemisphereIndex) => {
     for (let i = 0; i < 4; i += 1) {
       const ring = new THREE.Mesh(
@@ -5777,6 +6376,26 @@ function buildAuroraLayer() {
       ring.scale.set(1.4 + i * 0.1, 0.52 + i * 0.03, 1);
       auroraGroup.add(ring);
     }
+    for (let i = 0; i < 28; i += 1) {
+      const lon = i * (360 / 28) + randRange(rand, -5, 5);
+      const curtainLat = lat + randRange(rand, -3, 3);
+      const normal = latLonToVector3(curtainLat, lon, 1).normalize();
+      const curtain = new THREE.Mesh(
+        new THREE.PlaneGeometry(randRange(rand, 0.035, 0.075), randRange(rand, 0.12, 0.28), 1, 4),
+        new THREE.MeshBasicMaterial({
+          color: i % 3 === 0 ? 0x58d3df : 0x9df76d,
+          transparent: true,
+          opacity: randRange(rand, 0.08, 0.18),
+          side: THREE.DoubleSide,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      );
+      curtain.position.copy(latLonToVector3(curtainLat, lon, RADIUS * randRange(rand, 1.085, 1.18)));
+      curtain.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
+      curtain.rotateZ(randRange(rand, -0.45, 0.45));
+      auroraGroup.add(curtain);
+    }
   });
 }
 
@@ -5784,6 +6403,7 @@ function buildMeteorShower() {
   if (!meteorShowerGroup) return;
   meteorShowerGroup.clear();
   meteorAnimations = [];
+  const rand = makeSeededRandom("cinematic-meteor-shower");
   const materialBase = new THREE.LineBasicMaterial({
     color: 0xffe2a3,
     transparent: true,
@@ -5791,16 +6411,29 @@ function buildMeteorShower() {
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   });
-  for (let i = 0; i < 34; i += 1) {
-    const start = new THREE.Vector3(-8 + Math.random() * 18, 6 + Math.random() * 10, -10 - Math.random() * 20);
-    const end = start.clone().add(new THREE.Vector3(3 + Math.random() * 4, -4 - Math.random() * 5, 1 + Math.random() * 4));
+  for (let i = 0; i < 54; i += 1) {
+    const start = new THREE.Vector3(-8 + rand() * 18, 6 + rand() * 10, -10 - rand() * 20);
+    const end = start.clone().add(new THREE.Vector3(3 + rand() * 4.8, -4 - rand() * 5.8, 1 + rand() * 4.5));
+    const meteor = new THREE.Group();
     const line = new THREE.Line(
-      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0.7, -0.48, 0.16)]),
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0.95, -0.58, 0.18)]),
       materialBase.clone(),
     );
-    line.position.copy(start);
-    meteorShowerGroup.add(line);
-    meteorAnimations.push({ object: line, start, end, offset: Math.random(), speed: 0.00006 + Math.random() * 0.00004 });
+    const head = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeGlowTexture("#ffe2a3"),
+        color: 0xffe2a3,
+        transparent: true,
+        opacity: 0.72,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    head.scale.set(0.22, 0.22, 1);
+    meteor.add(line, head);
+    meteor.position.copy(start);
+    meteorShowerGroup.add(meteor);
+    meteorAnimations.push({ object: meteor, line, head, start, end, offset: rand(), speed: 0.00006 + rand() * 0.00005 });
   }
 }
 
@@ -5808,12 +6441,13 @@ function buildDebrisField() {
   if (!debrisFieldGroup) return;
   debrisFieldGroup.clear();
   debrisAnimations = [];
+  const rand = makeSeededRandom("orbital-debris-field");
   const pointsGeometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(360 * 3);
-  for (let i = 0; i < 360; i += 1) {
-    const lat = -58 + Math.random() * 116;
-    const lon = -180 + Math.random() * 360;
-    const pointVector = latLonToVector3(lat, lon, RADIUS * (1.31 + Math.random() * 0.46));
+  const positions = new Float32Array(520 * 3);
+  for (let i = 0; i < 520; i += 1) {
+    const lat = -58 + rand() * 116;
+    const lon = -180 + rand() * 360;
+    const pointVector = latLonToVector3(lat, lon, RADIUS * (1.31 + rand() * 0.52));
     positions[i * 3] = pointVector.x;
     positions[i * 3 + 1] = pointVector.y;
     positions[i * 3 + 2] = pointVector.z;
@@ -5823,9 +6457,9 @@ function buildDebrisField() {
     pointsGeometry,
     new THREE.PointsMaterial({
       color: 0xd8e5f7,
-      size: 0.009,
+      size: 0.0105,
       transparent: true,
-      opacity: 0.44,
+      opacity: 0.58,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }),
@@ -5929,7 +6563,7 @@ function renderEarthquakeLayer() {
         item.note || `Magnitude ${item.mag.toFixed(1)}`,
       ),
     );
-  addPointGroup(earthquakeGroup, quakes, 0xff6f91, 0.017, 1.07, false);
+  addPointGroup(earthquakeGroup, quakes, 0xff6f91, 0.017, 1.07, false, "quake");
 }
 
 function loadIssPosition() {
@@ -5943,6 +6577,7 @@ function loadIssPosition() {
         lon,
         velocity: Number(data.velocity),
         altitude: Number(data.altitude),
+        timestamp: performance.now(),
       };
       updateIssMarker();
       updateIssHud();
@@ -5950,25 +6585,41 @@ function loadIssPosition() {
     })
     .catch(() => {
       if (!issLiveData) {
-        issLiveData = { lat: 0.18, lon: -42.4, velocity: 27600, altitude: 420 };
+        issLiveData = { lat: 0.18, lon: -42.4, velocity: 27600, altitude: 420, timestamp: performance.now() };
       }
       updateIssMarker();
       updateIssHud(true);
     });
 }
 
+function getAnimatedIssPosition() {
+  if (!issLiveData) return null;
+  const elapsedSeconds = Math.max(0, (performance.now() - (issLiveData.timestamp || performance.now())) / 1000);
+  const velocity = Number.isFinite(issLiveData.velocity) ? issLiveData.velocity : 27600;
+  const kilometersPerDegree = 40075 / 360;
+  const longitudeDrift = (velocity / 3600 / kilometersPerDegree) * elapsedSeconds;
+  return {
+    ...issLiveData,
+    lon: normalizeLon(issLiveData.lon + longitudeDrift),
+  };
+}
+
 function updateIssMarker() {
   if (!issLiveMarker || !issLiveData) return;
+  const livePosition = getAnimatedIssPosition();
+  if (!livePosition) return;
   issLiveMarker.visible = currentBodyKey === "earth" && layerState.satelliteTracker;
-  issLiveMarker.position.copy(latLonToVector3(issLiveData.lat, issLiveData.lon, RADIUS * 1.48));
+  issLiveMarker.position.copy(latLonToVector3(livePosition.lat, livePosition.lon, RADIUS * 1.48));
   issLiveMarker.lookAt(getGlobeCenter());
 }
 
 function updateIssHud(isFallback = false) {
   if (!ui.issPosition || !ui.issVelocity || !issLiveData) return;
-  ui.issPosition.textContent = `${issLiveData.lat.toFixed(2)}°, ${normalizeLon(issLiveData.lon).toFixed(2)}°`;
-  const speed = Number.isFinite(issLiveData.velocity) ? `${formatNumber(Math.round(issLiveData.velocity))} km/h` : "Orbiting";
-  const altitude = Number.isFinite(issLiveData.altitude) ? `${Math.round(issLiveData.altitude)} km` : "LEO";
+  const livePosition = getAnimatedIssPosition();
+  if (!livePosition) return;
+  ui.issPosition.textContent = `${livePosition.lat.toFixed(2)}°, ${livePosition.lon.toFixed(2)}°`;
+  const speed = Number.isFinite(livePosition.velocity) ? `${formatNumber(Math.round(livePosition.velocity))} km/h` : "Orbiting";
+  const altitude = Number.isFinite(livePosition.altitude) ? `${Math.round(livePosition.altitude)} km` : "LEO";
   ui.issVelocity.textContent = `${isFallback ? "Last known" : "Live"} / ${speed} / ${altitude}`;
 }
 
@@ -5981,7 +6632,9 @@ function buildCelestialMarkers(body) {
 function animateFlightArcs(now) {
   flightArcAnimations.forEach((item) => {
     const t = (now * 0.00009 + item.offset) % 1;
+    const next = (t + 0.006) % 1;
     item.marker.position.copy(item.curve.getPointAt(t));
+    item.marker.lookAt(item.curve.getPointAt(next));
   });
 }
 
@@ -5994,6 +6647,7 @@ function animateOceanCurrentArrows(now) {
     item.arrow.position.copy(pointA);
     item.arrow.lookAt(pointB);
     item.arrow.rotateX(Math.PI / 2);
+    item.arrow.material.opacity = 0.56 + Math.sin(now * 0.0024 + item.offset * 18) * 0.18;
   });
 }
 
@@ -6014,7 +6668,14 @@ function animateMeteorShower(now) {
   meteorAnimations.forEach((item) => {
     const phase = (now * item.speed + item.offset) % 1;
     item.object.position.copy(item.start).lerp(item.end, phase);
-    item.object.material.opacity = 0.14 + (1 - phase) * 0.56;
+    const opacity = 0.1 + (1 - phase) * 0.62;
+    if (item.object.material) item.object.material.opacity = opacity;
+    if (item.line?.material) item.line.material.opacity = opacity;
+    if (item.head?.material) {
+      item.head.material.opacity = opacity + 0.1;
+      const size = 0.12 + (1 - phase) * 0.18;
+      item.head.scale.set(size, size, 1);
+    }
   });
 }
 
@@ -6660,17 +7321,17 @@ function makeCountryFeatureSections(record) {
   const radioUrl = `https://radio.garden/search?q=${encodeURIComponent(record.capital || record.name)}`;
   const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(record.name.replaceAll(" ", "_"))}`;
   return `
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="data history">
       <h4>Organizations</h4>
       <div class="badge-row">${badges}</div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history">
       <h4>Name origin</h4>
       <p>${escapeHtml(getNameOrigin(record))}</p>
       <a class="detail-action" href="${escapeHtml(wikiUrl)}" target="_blank" rel="noreferrer">Read more</a>
       <a class="detail-action" href="${escapeHtml(radioUrl)}" target="_blank" rel="noreferrer">Open local radio</a>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="data tourism">
       <h4>Currency converter</h4>
       <div class="currency-converter">
         <div class="converter-grid">
@@ -6690,7 +7351,7 @@ function makeCountryFeatureSections(record) {
         </div>
       </div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="tourism data">
       <h4>Trip cost estimator</h4>
       <div class="trip-grid">
         <div class="trip-cost"><strong>$${trip.food}</strong><span>Food</span></div>
@@ -6699,7 +7360,7 @@ function makeCountryFeatureSections(record) {
       </div>
       <p>Estimated daily total: <strong>$${trip.total}</strong> per traveler.</p>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="data">
       <h4>Salary, fuel, business</h4>
       <div class="economy-grid">
         <span><b>${escapeHtml(economy.minimumWage)}</b><em>Minimum wage</em></span>
@@ -6709,41 +7370,41 @@ function makeCountryFeatureSections(record) {
         <span><b>${escapeHtml(economy.taxSummary)}</b><em>Tax summary</em></span>
       </div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="tourism data">
       <h4>Cost of living by city</h4>
       <div class="cost-city-grid">
         ${cityCosts.map((item) => `<span><b>${escapeHtml(item[0])}</b><em>${escapeHtml(item[1])}</em></span>`).join("")}
       </div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history data">
       <h4>Local alphabet preview</h4>
       <p class="alphabet-preview">${escapeHtml(alphabet.script)}</p>
       <p>${escapeHtml(alphabet.note)}</p>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history tourism">
       <h4>National costume cards</h4>
       <div class="costume-grid">
         ${costumes.map((item) => `<article class="costume-card"><strong>${escapeHtml(item[0])}</strong><span>${escapeHtml(item[1])}</span></article>`).join("")}
       </div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="geography">
       <h4>Endangered animals</h4>
       <div class="mini-card-row">${animals.map((item) => `<span class="mini-data-chip">${escapeHtml(item)}</span>`).join("")}</div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history">
       <h4>Famous people</h4>
       <div class="people-grid">${people}</div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history">
       <h4>National symbols</h4>
       <div class="mini-card-row">${symbols}</div>
       <p><strong>License plate example:</strong> ${escapeHtml(getLicensePlate(record))}</p>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history data">
       <h4>Scientific achievements</h4>
       <div class="mini-card-row">${science}</div>
     </section>
-    <section class="feature-card">
+    <section class="feature-card" data-country-section="history data">
       <h4>Famous inventions</h4>
       <div class="invention-grid">${inventions}</div>
     </section>

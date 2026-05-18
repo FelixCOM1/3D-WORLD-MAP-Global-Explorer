@@ -848,6 +848,57 @@ select {
   line-height: 1.48;
 }
 
+.country-info-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin: 12px 0 10px;
+  padding: 7px;
+  border: 1px solid rgba(149, 170, 202, 0.16);
+  border-radius: 8px;
+  background: rgba(7, 12, 22, 0.64);
+}
+
+.country-info-tab {
+  min-width: 0;
+  min-height: 32px;
+  padding: 0 7px;
+  border: 1px solid rgba(149, 170, 202, 0.22);
+  border-radius: 6px;
+  background: rgba(13, 19, 31, 0.72);
+  color: var(--soft);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-info-tab:hover {
+  border-color: var(--line-strong);
+  color: #effcff;
+}
+
+.country-info-tab.is-active {
+  border-color: color-mix(in srgb, var(--panel-accent-b), transparent 28%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--panel-accent-a), transparent 75%),
+    color-mix(in srgb, var(--panel-accent-b), transparent 82%)
+  );
+  color: #f7ffe6;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--panel-accent-a), transparent 82%);
+}
+
+.app-shell.is-solar-mode .country-info-tabs {
+  display: none;
+}
+
+.info-section {
+  margin-top: 12px;
+}
+
 .detail-block[hidden] {
   display: none;
 }
@@ -2575,5 +2626,726 @@ select {
   .timeline-control,
   .time-console {
     display: none;
+  }
+}
+
+/* Layout safety pass for the expanded explorer HUD. */
+.iss-hud,
+.achievements-hud {
+  position: absolute;
+  left: 24px;
+  z-index: 7;
+  width: 260px;
+  border: 1px solid rgba(118, 206, 255, 0.22);
+  background: linear-gradient(180deg, rgba(11, 18, 28, 0.9), rgba(8, 12, 18, 0.84));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+}
+
+.iss-hud {
+  top: 112px;
+}
+
+.achievements-hud {
+  top: 248px;
+  max-height: min(32vh, 250px);
+  overflow: auto;
+}
+
+.iss-hud .micro,
+.achievements-hud .micro {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.iss-hud span,
+.achievements-hud > span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.iss-hud strong,
+.achievements-hud strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--text);
+}
+
+.iss-hud em {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+}
+
+#achievement-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.achievement-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.achievement-pill.is-unlocked {
+  border-color: rgba(127, 239, 107, 0.34);
+  color: var(--text);
+  background: rgba(127, 239, 107, 0.09);
+}
+
+.app-shell.is-solar-mode .iss-hud,
+.app-shell.is-solar-mode .achievements-hud,
+.app-shell:not(.is-exploring) .iss-hud,
+.app-shell:not(.is-exploring) .achievements-hud {
+  display: none;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .layer-bar {
+  top: 112px;
+  bottom: auto;
+  left: 304px;
+  right: auto;
+  width: 224px;
+  max-height: min(44vh, 390px);
+}
+
+.app-shell.is-solar-mode .layer-bar {
+  top: 104px;
+  right: 24px;
+  bottom: auto;
+  max-height: calc(100vh - 260px);
+}
+
+.range-layer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.range-layer input[type="range"] {
+  width: 100%;
+  min-width: 0;
+}
+
+.terrain-legend {
+  left: 304px;
+  right: auto;
+  bottom: 112px;
+  max-width: min(560px, calc(100vw - 900px));
+  z-index: 6;
+}
+
+.saved-view-strip {
+  left: 304px;
+  right: auto;
+  bottom: 24px;
+  width: 250px;
+  max-width: calc(100vw - 940px);
+  z-index: 6;
+}
+
+.screenshot-gallery {
+  left: 568px;
+  right: auto;
+  bottom: 24px;
+  width: 260px;
+  max-width: calc(100vw - 960px);
+  z-index: 6;
+}
+
+.mini-map {
+  left: 24px;
+  bottom: 24px;
+  z-index: 6;
+}
+
+.coordinates {
+  left: 24px;
+  bottom: 176px;
+}
+
+.timeline-control,
+.time-console {
+  z-index: 7;
+}
+
+.country-panel {
+  z-index: 10;
+}
+
+.economy-grid,
+.cost-city-grid,
+.costume-grid,
+.animal-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.economy-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.economy-card,
+.cost-card,
+.economy-grid span,
+.cost-city-grid span,
+.cost-city,
+.alphabet-preview,
+.costume-card,
+.animal-card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 10px;
+}
+
+.economy-card span,
+.cost-card span,
+.cost-city span,
+.economy-grid em,
+.cost-city-grid em,
+.alphabet-preview span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.economy-card strong,
+.cost-card strong,
+.cost-city strong,
+.economy-grid b,
+.cost-city-grid b {
+  display: block;
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.economy-grid em,
+.cost-city-grid em {
+  margin-top: 3px;
+  font-style: normal;
+}
+
+.alphabet-preview p {
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.costume-grid,
+.animal-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.costume-card img,
+.animal-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+}
+
+.costume-card strong,
+.animal-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.costume-card span,
+.animal-card span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1420px) {
+  .iss-hud,
+  .achievements-hud {
+    width: 230px;
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .layer-bar {
+    left: 270px;
+    width: 210px;
+  }
+
+  .terrain-legend {
+    left: 270px;
+    max-width: min(440px, calc(100vw - 760px));
+  }
+
+  .saved-view-strip {
+    left: 270px;
+    width: 220px;
+  }
+
+  .screenshot-gallery {
+    left: 504px;
+    width: 220px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .iss-hud,
+  .achievements-hud {
+    display: none;
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .layer-bar {
+    left: 18px;
+    top: 104px;
+    max-height: min(36vh, 320px);
+  }
+
+  .terrain-legend {
+    left: 18px;
+    bottom: 190px;
+    max-width: 360px;
+  }
+
+  .saved-view-strip,
+  .screenshot-gallery {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .terrain-legend,
+  .mini-map,
+  .coordinates,
+  .compass-hud {
+    display: none;
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .layer-bar,
+  .app-shell.is-solar-mode .layer-bar {
+    top: auto;
+    left: 12px;
+    right: 12px;
+    bottom: 78px;
+    width: auto;
+    max-height: 34vh;
+  }
+
+  .economy-grid,
+  .costume-grid,
+  .animal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hud-actions {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  justify-self: end;
+  max-width: min(720px, 45vw);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.hud-actions::-webkit-scrollbar {
+  height: 4px;
+}
+
+.hud-actions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.body-select,
+.icon-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.app-shell.is-solar-mode .mini-map,
+.app-shell.is-solar-mode .saved-view-strip,
+.app-shell.is-solar-mode .screenshot-gallery,
+.app-shell.is-solar-mode .coordinates,
+.app-shell.is-solar-mode .compass-hud {
+  display: none;
+}
+
+@media (max-width: 1420px) and (min-width: 1181px) {
+  .hud {
+    grid-template-columns: auto minmax(260px, 1fr) minmax(360px, 43vw);
+    gap: 14px;
+    min-height: 78px;
+    padding: 10px 18px;
+    overflow: hidden;
+  }
+
+  .brand-mark {
+    gap: 10px;
+  }
+
+  .brand-mark small {
+    display: none;
+  }
+
+  .orbit-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .space-nav {
+    justify-content: center;
+    gap: 14px;
+    overflow: hidden;
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .hud-actions {
+    max-width: 43vw;
+  }
+
+  .country-panel {
+    top: 88px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hud-actions {
+    max-width: calc(100vw - 36px);
+    flex-wrap: nowrap;
+  }
+
+  .hud {
+    overflow: hidden;
+  }
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .compass-hud {
+  left: auto;
+  right: calc(min(520px, 34vw) + 42px);
+  top: 112px;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .saved-view-strip {
+  top: calc(112px + min(44vh, 390px) + 14px);
+  bottom: auto;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .screenshot-gallery {
+  top: calc(112px + min(44vh, 390px) + 14px);
+  bottom: auto;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+  top: calc(112px + min(44vh, 390px) + 124px);
+  bottom: auto;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .timeline-control {
+  left: auto;
+  right: calc(min(520px, 34vw) + 42px);
+  transform: none;
+}
+
+.app-shell:not(.is-solar-mode).is-exploring .time-console {
+  left: auto;
+  right: calc(min(520px, 34vw) + 55px);
+  transform: none;
+}
+
+@media (max-width: 1420px) and (min-width: 1181px) {
+  .app-shell:not(.is-solar-mode).is-exploring .compass-hud {
+    right: calc(min(520px, 34vw) + 34px);
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .saved-view-strip,
+  .app-shell:not(.is-solar-mode).is-exploring .screenshot-gallery {
+    top: calc(112px + min(44vh, 390px) + 14px);
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+    top: calc(112px + min(44vh, 390px) + 118px);
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .timeline-control {
+    right: calc(min(520px, 34vw) + 24px);
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .time-console {
+    right: calc(min(520px, 34vw) + 36px);
+  }
+}
+
+@media (max-width: 1180px) {
+  .app-shell:not(.is-solar-mode).is-exploring .compass-hud,
+  .app-shell:not(.is-solar-mode).is-exploring .saved-view-strip,
+  .app-shell:not(.is-solar-mode).is-exploring .screenshot-gallery,
+  .app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+    display: none;
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .timeline-control {
+    left: 12px;
+    right: auto;
+    bottom: calc(46vh + 16px);
+    width: min(420px, calc(100vw - 224px));
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .time-console {
+    left: auto;
+    right: 12px;
+    bottom: calc(46vh + 72px);
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell:not(.is-solar-mode).is-exploring .layer-bar,
+  .app-shell:not(.is-solar-mode).is-exploring .timeline-control {
+    display: none;
+  }
+
+  .app-shell:not(.is-solar-mode).is-exploring .time-console {
+    left: 12px;
+    right: 12px;
+    bottom: calc(46vh + 14px);
+    width: auto;
+    justify-content: center;
+  }
+}
+
+.saved-view-strip,
+.screenshot-gallery,
+.achievements-hud {
+  display: none !important;
+}
+
+.hud {
+  align-items: start;
+}
+
+.hud-actions {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(74px, 1fr));
+  gap: 7px;
+  justify-self: end;
+  align-self: start;
+  max-width: min(750px, 46vw);
+  max-height: 96px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 2px 3px;
+  scrollbar-width: thin;
+}
+
+.body-select,
+.icon-button {
+  min-width: 0;
+  width: 100%;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body-select {
+  grid-column: span 2;
+}
+
+.hud-actions::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.hud-actions::-webkit-scrollbar-thumb {
+  background: rgba(88, 211, 223, 0.48);
+}
+
+.layer-bar {
+  transition:
+    width 180ms ease,
+    max-height 180ms ease,
+    padding 180ms ease,
+    opacity 180ms ease;
+}
+
+.layer-title {
+  align-items: center;
+  gap: 10px;
+}
+
+.layer-close {
+  min-width: 58px;
+  height: 30px;
+  border: 1px solid rgba(88, 211, 223, 0.55);
+  background: rgba(7, 18, 26, 0.88);
+  color: #ecff8f;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.app-shell.is-layers-closed .layer-bar {
+  width: 96px !important;
+  max-height: 44px !important;
+  min-height: 44px;
+  padding: 0 !important;
+  overflow: hidden;
+  transform: none !important;
+  opacity: 0.94;
+}
+
+.app-shell.is-layers-closed .layer-title {
+  height: 44px;
+  margin: 0;
+  padding: 0;
+}
+
+.app-shell.is-layers-closed .layer-title strong,
+.app-shell.is-layers-closed .layer-bar label,
+.app-shell.is-layers-closed .range-layer,
+.app-shell.is-layers-closed .file-layer {
+  display: none !important;
+}
+
+.app-shell.is-layers-closed .layer-close {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(135deg, rgba(7, 18, 26, 0.98), rgba(19, 42, 55, 0.94));
+  color: #ecff8f;
+  font-size: 0;
+}
+
+.app-shell.is-layers-closed .layer-close::after {
+  content: "Layers";
+  font-size: 0.76rem;
+}
+
+.terrain-legend,
+.app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+  top: auto !important;
+  left: 304px !important;
+  right: auto !important;
+  bottom: 18px !important;
+  max-width: min(560px, calc(100vw - 880px));
+  z-index: 12;
+}
+
+.terrain-legend span {
+  min-height: 30px;
+}
+
+@media (max-width: 1420px) {
+  .hud-actions {
+    grid-template-columns: repeat(4, minmax(68px, 1fr));
+    max-width: min(520px, 44vw);
+  }
+
+  .terrain-legend,
+  .app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+    left: 224px !important;
+    max-width: min(520px, calc(100vw - 740px));
+  }
+}
+
+@media (max-width: 1180px) {
+  .hud-actions {
+    grid-template-columns: repeat(4, minmax(64px, 1fr));
+    max-width: calc(100vw - 36px);
+    max-height: 126px;
+    flex-wrap: initial;
+  }
+
+  .terrain-legend,
+  .app-shell:not(.is-solar-mode).is-exploring .terrain-legend {
+    display: flex !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell:not(.is-solar-mode).is-exploring .layer-bar {
+    display: block;
+    left: 12px;
+    right: auto;
+    bottom: 62px;
+    width: min(320px, calc(100vw - 24px));
+    max-height: 38vh;
+  }
+
+  .hud-actions {
+    grid-template-columns: repeat(3, minmax(62px, 1fr));
+  }
+}
+
+#layers-toggle,
+.layer-close {
+  display: none !important;
+}
+
+.hud-actions {
+  grid-template-columns: repeat(7, minmax(76px, 1fr));
+  max-width: min(680px, 48vw);
+  max-height: 122px;
+  overflow-y: hidden;
+}
+
+#layers-panel-button.is-active {
+  border-color: rgba(236, 255, 143, 0.58);
+  color: #ecff8f;
+  box-shadow:
+    inset 0 0 0 1px rgba(236, 255, 143, 0.08),
+    0 0 18px rgba(88, 211, 223, 0.12);
+}
+
+.app-shell.is-layers-closed .layer-bar {
+  display: none !important;
+}
+
+@media (max-width: 1180px) {
+  .hud-actions {
+    grid-template-columns: repeat(4, minmax(64px, 1fr));
+    max-width: calc(100vw - 36px);
+    max-height: 126px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .hud-actions {
+    grid-template-columns: repeat(3, minmax(62px, 1fr));
   }
 }
